@@ -1,4 +1,4 @@
-# Sprint Backlog (2019-01-01 to 2019-01-31)
+# Sprint Backlog (2019-01-26 to 2019-02-01)
 
 | ID | User Story | Effort | Priority | Validation Criteria | Owner |
 |----|------------|--------|----------|---------------------|-------|
@@ -6,4 +6,3 @@
 
 
 
-Additional examples can be found on [Google](https://www.google.com/search?q=sprint+backlog+examples&tbm=isch)
