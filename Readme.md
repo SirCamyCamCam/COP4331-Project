@@ -10,10 +10,18 @@ For the gamers, real time strategist’s and the general public, this game cater
 * Amin Kavehzadeh
 
 # Sprint 1
-* Product Backlog
-* Sprint Backlog
-* Requirements
-* [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
-* Burndown Chart
-* Velocity Chart
+- [Product Backlog]
+- [Sprint Backlog]
+- [Requirements]
+- [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
+- [Burndown Chart]
+- [Velocity Chart]
+- Design Documents
+  - System Architecture
+  - Class Diagrams
+  - Sequence Diagrams
+  - etc.
+- Source Code
+- Automated Tests
+- Product Demonstration
 
