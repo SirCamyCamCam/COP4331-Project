@@ -8,3 +8,4 @@
 | 003 | As a player, I would like to switch views, in order to see the surface and my underground colony | 3 | 1 | When I want to change views, I should be able to see the surface or underground | To Do | 
 | 004 | As a player, I would like to spawn ants, in order to manage populations of the colony | 4 | 1 | When I select a type of ant, it should spawn and show in the ant counter | To Do |
 | 005 | As a player, I would like to see the status of my colony, in order to know what I need to do next | 6 | 1 | When I need to know how my colony is doing, I will look at the status bars | To Do |
+| 006 | As a player, I would like to see a frequency counter of each type of ant I've created as well as dead ants | 3 | 3 | When I need to check my ant frequencies I should be able to look at a distribution bar | To Do |
