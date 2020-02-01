@@ -308,6 +308,7 @@
   <ItemGroup>
     <Compile Include="Assets\Prefabs\Null.cs" />
     <Compile Include="Assets\Scripts\Main\Ants\AntManager.cs" />
+    <Compile Include="Assets\Scripts\Main\UI\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\NULL.cs" />
   </ItemGroup>
   <ItemGroup>
