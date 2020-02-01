@@ -56,6 +56,7 @@
      <Compile Include="Assets\Prefabs\Null.cs" />
      <Compile Include="Assets\Scripts\Main\Ants\AntManager.cs" />
      <Compile Include="Assets\Scripts\Main\UI\MainUIManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
      <Compile Include="Assets\Scripts\MainMenu\NULL.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/amink/Documents/GitHub/COP4331-Project/project/Coloniant/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
