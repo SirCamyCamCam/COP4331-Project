@@ -32,4 +32,7 @@ public class ButtonPress : MonoBehaviour {
 		start.SetActive(true);
 		option.SetActive(false);
 	}
+	public void ExitPressd(){
+		Application.Quit(); 
+	}
 }
