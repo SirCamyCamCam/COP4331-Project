@@ -14,7 +14,7 @@ For the gamers, real time strategist’s and the general public, this game cater
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint1_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
-- [Burndown Chart]
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1gBLiF37R8ASyhEuSRIRIB8FOppTpLP2ud3x4NF99A_s/edit?usp=sharing)
 - [Velocity Chart]
 - Design Documents
   - System Architecture
