@@ -17,3 +17,5 @@
 |            013 |           006 | Have the ability to view the trash fill status of the colony | Verified | 
 |            014 |           006 | Have the ability to view the flow of road within the colony | Verified | 
 |            015 |           006 | Have the ability to see the current populations of all ants within the colony | Verified | 
+|            016 |           007 | Have the ability to change perspectives (birds eye/third person) to change the perspectives | Verified |
+|            017 |           008 | Have easier access and update the user stories and make them easier to read | Verified | 
