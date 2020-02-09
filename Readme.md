@@ -8,7 +8,7 @@ For the gamers, real time strategist’s and the general public, this game cater
 * Henry Alvarez
 * Amin Kavehzadeh
 
-# Sprint 1
+# Sprint 2
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint1_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
