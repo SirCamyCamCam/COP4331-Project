@@ -5,7 +5,7 @@ For the gamers, real time strategist’s and the general public, this game cater
 # Team Members
 
 * Cameron Carstens
-* Henry Alvarez333333333
+* Henry Alvarez
 * Amin Kavehzadeh
 
 # Sprint 1
