@@ -8,3 +8,6 @@
 | 003 | As a player, I would like to switch views, in order to see the surface and my underground colony | 3 | 1 | When I want to change views, I should be able to see the surface or underground | To Do | 
 | 004 | As a player, I would like to spawn ants, in order to manage populations of the colony | 4 | 1 | When I select a type of ant, it should spawn and show in the ant counter | In Progress |
 | 005 | As a player, I would like to see the status of my colony, in order to know what I need to do next | 6 | 1 | When I need to know how my colony is doing, I will look at the status bars | Done |
+| 006 | As a player, I would like to implement birds eye and third person views, in order to easily visualize the needs in the colony | 4 | 2 | When I prefer certain views over others, I have the ability to edit them. | To Do |
+| 007 | As a student, I would like to imrpove user stories and optimize those that have been done | 3 | 4 | So I can navigate through the code and game easier. | To Do |
+
