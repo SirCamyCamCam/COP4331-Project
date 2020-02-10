@@ -17,8 +17,7 @@ The game is expected to be playable. Other than these, guidelines are listed on 
 
 # User Interface Design
 
-You should have one or more user interface screens in this section. Each screen should be accompanied by an explaination of the screens purpose and how the user will interact with it. You should relate each screen to one another as the user transitions through the states of your application. You should also have a table that relates each window or component to the support using stories. 
-
+[User Interface Design] (https://docs.google.com/document/d/1kpGgwfg6r6enp68Jdj-jGx1Z2RlYuP_FJamOdQT0AVk/edit?usp=sharing)
 # Resource Management
 
 # Security
