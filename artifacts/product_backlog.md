@@ -10,4 +10,3 @@
 | 006 | As a player, I would like to see the status of my colony, in order to know what I need to do next | 6 | 1 | When I need to know how my colony is doing, I will look at the status bars | Done |
 | 007 | As a player, I would like to implement birds eye and third person views, in order to easily visualize the needs in the colony | 4 | 2 | When I prefer certain views over others, I have the ability to edit them. | To Do |
 | 008 | As a student, I would like to imrpove user stories and optimize those that have been done | 3 | 4 | So I can navigate through the code and game easier. | To Do |
-
