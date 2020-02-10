@@ -2,7 +2,7 @@
 
 | ID | User Story | Effort | Priority | Validation Criteria | Status |
 |----|------------|--------|----------|---------------------|--------|
-| 001 | As a student, I want to create and format the github repository, so that all the information is easy to find, which will lead to success in the class. | 2 | 1 | The github site will be easily manageable when creating the project | Done |
+| 001 | A̶s̶ a̶ s̶t̶u̶d̶e̶n̶t̶, I̶ w̶a̶n̶t̶ t̶o̶ c̶r̶e̶a̶t̶e̶ a̶n̶d̶ f̶o̶r̶m̶a̶t̶ t̶h̶e̶ g̶i̶t̶h̶u̶b̶ r̶e̶p̶o̶s̶i̶t̶o̶r̶y̶, s̶o̶ t̶h̶a̶t̶ a̶l̶l̶ t̶h̶e̶ i̶n̶f̶o̶r̶m̶a̶t̶i̶o̶n̶ i̶s̶ e̶a̶s̶y̶ t̶o̶ f̶i̶n̶d̶, w̶h̶i̶c̶h̶ w̶i̶l̶l̶ l̶e̶a̶d̶ t̶o̶ s̶u̶c̶c̶e̶s̶s̶ i̶n̶ t̶h̶e̶ c̶l̶a̶s̶s̶. | 2 | 1 | The github site will be easily manageable when creating the project | Done |
 | 002 | As a player, I would like to open the game to a main menu, as I may need to change options and exit | 4 | 7 | When I open the game, it should open to a menu | Done |
 | 003 | As a player, I would like to move the camera, as I need to be able to see the entirety of the playing field | 7 | 2 | When I scroll or click and drag, the camera should move where I want it | Done |
 | 004 | As a player, I would like to switch views, in order to see the surface and my underground colony | 3 | 1 | When I want to change views, I should be able to see the surface or underground | To Do | 
