@@ -8,11 +8,12 @@ You should have an UML class diagram in this section, along with a description o
 
 # Data Design
 
-If you are using a database, you should have a basic Entity Relationship Diagram (ERD) in this section. This diagram should describe the tables in your database and their relationship to one another (especially primary/foreign keys), including the columns within each table. 
+No Database needed
 
 # Business Rules
 
-You should list the assumptions, rules, and guidelines from external sources that are impacting your program design. 
+The game is expected to be an exectable.
+The game is expected to be playable.
 
 # User Interface Design
 
