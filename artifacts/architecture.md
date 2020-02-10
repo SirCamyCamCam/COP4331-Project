@@ -12,8 +12,8 @@ No Database needed
 
 # Business Rules
 
-The game is expected to be an exectable.
-The game is expected to be playable.
+The game is expected to be an executable.
+The game is expected to be playable. Other than these, guidelines are listed on the professor's syllabus
 
 # User Interface Design
 
