@@ -33,7 +33,7 @@ A standard of 30 fps will be required on an 7th gen i5 processor.
 
 # Scalability
 
-A limit of 25,000 ants will be implement.
+A limit of 25,000 ants will be implemented.
 
 # Interoperability
 
