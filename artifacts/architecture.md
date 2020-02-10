@@ -1,10 +1,10 @@
 # Program Organization
 
-You should have a diagram of your high level architecture in this section, along with a description of each component and a table that relates each component to one or more user stories.
+[High Level Program Organization Diagram](https://drive.google.com/file/d/1QNWbmi5RV_b5zfNown9PiCDa56DgCP-i/view?usp=sharing)
 
 # Major Classes
 
-You should have an UML class diagram in this section, along with a description of each class and a table that relates each component to one or more user stories. At a minimum, you need 1 diagram of your major classes. You are encouraged to also include more detailed diagrams that include all of your classes. 
+[Major Classes UML Diagram](https://drive.google.com/file/d/1eRgI3UygqXtf3x0KT0tUmMOeRiznU86I/view?usp=sharing)
 
 # Data Design
 
