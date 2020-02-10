@@ -48,7 +48,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1gBLiF37R8ASyhEuSRIRIB8FOppTpLP2ud3x4NF99A_s/edit?usp=sharing)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit?usp=sharing)
 - Design Documents
-  - [System Architecture]
+  - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts)
   - [Class Diagrams]
   - [Sequence Diagrams]
 - Source Code
