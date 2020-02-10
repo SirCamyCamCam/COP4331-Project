@@ -50,7 +50,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
   - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
-  - [Sequence Diagrams](https://drive.google.com/file/d/1QNWbmi5RV_b5zfNown9PiCDa56DgCP-i/view?usp=sharing)
+  - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
 - Source Code
 - Automated Tests
 - Product Demonstration
