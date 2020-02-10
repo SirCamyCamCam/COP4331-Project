@@ -17,7 +17,7 @@ The game is expected to be playable. Other than these, guidelines are listed on 
 
 # User Interface Design
 
-[User Interface Design] (https://docs.google.com/document/d/1kpGgwfg6r6enp68Jdj-jGx1Z2RlYuP_FJamOdQT0AVk/edit?usp=sharing)
+[User Interface Design](https://docs.google.com/document/d/1kpGgwfg6r6enp68Jdj-jGx1Z2RlYuP_FJamOdQT0AVk/edit?usp=sharing)
 # Resource Management
 
 # Security
