@@ -17,6 +17,8 @@ There are 5 objectives. It will be the responsibility of the player to choose wh
 4. Manage space/roads - Not enough room in your colony and you can't lay enough eggs or grow enough fungus. If the roads aren't big enough then you have slowed movement and reduced productivity. 
 5. Manage populations - Having not enough or too many of one ant can negatively impact your progress. This is the player's main way to keep the colony happy and healthy and progress over time.
 
+Ants do not have a long lifespan and will sacarfice themselves for the greater good of the colony. It is the player's task to keep and eye out on which populations are dying off and be able to replace them as needed.
+
 # Team Members
 
 * Cameron Carstens
