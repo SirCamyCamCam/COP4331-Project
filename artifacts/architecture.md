@@ -4,7 +4,7 @@
 
 # Major Classes
 
-[Major Classes UML Diagram](https://drive.google.com/file/d/1eRgI3UygqXtf3x0KT0tUmMOeRiznU86I/view?usp=sharing)
+[Major Classes UML Diagram](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
 
 # Data Design
 
