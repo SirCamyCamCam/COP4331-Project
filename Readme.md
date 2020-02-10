@@ -6,7 +6,6 @@ For the gamers, real time strategist’s and the general public, this game cater
 
 * Cameron Carstens
 * Henry Alvarez
-* Ahmad Barhamje
 * Amin Kavehzadeh
 
 # Sprint 1
@@ -14,8 +13,8 @@ For the gamers, real time strategist’s and the general public, this game cater
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint1_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
-- [Burndown Chart]
-- [Velocity Chart]
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1gBLiF37R8ASyhEuSRIRIB8FOppTpLP2ud3x4NF99A_s/edit?usp=sharing)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit?usp=sharing)
 - Design Documents
   - System Architecture
   - Class Diagrams
@@ -24,4 +23,5 @@ For the gamers, real time strategist’s and the general public, this game cater
 - Source Code
 - Automated Tests
 - Product Demonstration
+
 
