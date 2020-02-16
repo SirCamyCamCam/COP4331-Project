@@ -57,7 +57,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 
 # Sprint 3
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
-- [Sprint Backlog]
+- [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint3_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
 - [Burndown Chart]
