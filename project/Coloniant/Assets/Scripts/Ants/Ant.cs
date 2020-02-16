@@ -40,6 +40,8 @@ public class Ant : MonoBehaviour {
 
     #region Inspector Fields
 
+    [SerializeField]
+    private SpriteRenderer antSpriteRenderer;
 
     #endregion
 
@@ -103,7 +105,22 @@ public class Ant : MonoBehaviour {
 
     #region Public Methods
 
-    
+    // Switches between above ground a below ground
+    public void ChangeView(AntManager.SceneView view)
+    {
+        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        {
+            antSpriteRenderer.enabled = false;
+        }
+        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        {
+            antSpriteRenderer.enabled = true;
+        }
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        {
+            
+        }
+    }
 
     #endregion
 
@@ -112,7 +129,7 @@ public class Ant : MonoBehaviour {
     // Kills the ant
     private void Die()
     {
-
+        Destroy(gameObject);
     }
 
     // Finds the next Waypoint in the path

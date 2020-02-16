@@ -104,37 +104,37 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a queen ant
     private void SpawnQueen()
     {
-        
+        Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
     }
 
     // Spawns a forager ant
     private void SpawnForager()
     {
-        
+        Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a gardener ant
     private void SpawnGardener()
     {
-        
+        Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
     }
     
     // Spawns a excavator
     private void SpawnExcavator()
     {
-        
+        Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a trash handeler
     private void SpawnTrashHandler()
     {
-        
+        Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a solider
     private void SpawnSolider()
     {
-        
+        Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     #endregion

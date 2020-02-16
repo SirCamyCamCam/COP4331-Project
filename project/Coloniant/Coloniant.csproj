@@ -312,6 +312,7 @@
     <Compile Include="Assets\Scripts\Ants\QueenAnt.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
   </ItemGroup>
