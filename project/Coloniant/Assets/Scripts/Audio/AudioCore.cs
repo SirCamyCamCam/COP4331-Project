@@ -160,6 +160,7 @@ public class AudioCore : MonoBehaviour {
 
     #endregion
 
+    #region Coroutine
 
     private IEnumerator WaitForSound(string clipname)
     {
@@ -167,4 +168,6 @@ public class AudioCore : MonoBehaviour {
         yield return new WaitForSeconds(myRef.clipRef.length);
         PlaySound(AudioChannel.PLAYER_SOUNDS, clipname, false, null);
     }
+
+    #endregion
 }
