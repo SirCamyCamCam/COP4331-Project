@@ -111,11 +111,6 @@ public class MainUIManager : MonoBehaviour {
         protectionPanel.SetActive(false);
         foodPanel.SetActive(false);
 
-        isFoodShowing = false;
-        isTrashShowing = false;
-        isAntsShowing = false;
-        isProtectionShowing = false;
-
         foodDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         protectionDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         trashDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
