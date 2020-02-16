@@ -101,6 +101,18 @@ public class MainUIManager : MonoBehaviour {
 
     #region Monobehaviors
 
+    private void Awake()
+    {
+        if (main == null)
+        {
+            main = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {

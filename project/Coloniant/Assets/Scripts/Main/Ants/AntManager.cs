@@ -18,7 +18,8 @@ public class AntManager : MonoBehaviour{
 
     #region Inspector Fields
 
-
+    [Header("Ant Settings")]
+    public float spawnRate;
 
     #endregion
 
@@ -30,50 +31,109 @@ public class AntManager : MonoBehaviour{
     private int excavatorsAntCount = 0;
     private int foragerAntCount = 0;
     private int gardenerAntCount = 0;
+    private List<Ant> antList;
 
-#endregion
+    #endregion
+
+    #region Monobehaviors
+
+    private void Awake()
+    {
+        if (main == null)
+        {
+            main = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    #endregion
 
     #region Public Methods
 
     // Adds to solider count
-    public void AddToSoldierCount()
+    public void AddToSoldierCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null solider ant!");
+            return;
+        }
         soliderAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Adds to queen count
-    public void AddToQueenCount()
+    public void AddToQueenCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null queen ant!");
+            return;
+        }
         queenAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Adds to trash count
-    public void AddToTrashHandlerCount()
+    public void AddToTrashHandlerCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null trash handler ant!");
+            return;
+        }
         trashHandlersAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Adds to Excavator Count
-    public void AddToExcavatorCount()
+    public void AddToExcavatorCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null excavator ant!");
+            return;
+        }
         excavatorsAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Adds to forager count
-    public void AddToForagerCount()
+    public void AddToForagerCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null forager ant!");
+            return;
+        }
         foragerAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Adds to gardener count
-    public void AddToGardenerCount()
+    public void AddToGardenerCount(Ant antToAdd)
     {
+        if (antToAdd == null)
+        {
+            Debug.LogError("Attempted to add a null gardener ant!");
+            return;
+        }
         gardenerAntCount++;
+        antList.Add(antToAdd);
     }
 
     // Removes from solider count
-    public void RemoveFromSoldierCount()
+    public void RemoveFromSoldierCount(Ant antToRemove)
     {
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null solder ant!");
+            return;
+        }
+        antList.Remove(antToRemove);
         if (soliderAntCount > 0)
         {
             soliderAntCount--;
@@ -85,9 +145,14 @@ public class AntManager : MonoBehaviour{
     }
 
     // Removes from queen count
-    public void RemoveFromQueenCount()
+    public void RemoveFromQueenCount(Ant antToRemove)
     {
-        if(queenAntCount > 0)
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null queen ant!");
+            return;
+        }
+        if (queenAntCount > 0)
         {
             queenAntCount--;
         }
@@ -98,9 +163,14 @@ public class AntManager : MonoBehaviour{
     }
 
     // Removes from trash handeler count
-    public void RemoveFromTrashHandlerCount()
+    public void RemoveFromTrashHandlerCount(Ant antToRemove)
     {
-        if(trashHandlersAntCount > 0)
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null trash handeler ant!");
+            return;
+        }
+        if (trashHandlersAntCount > 0)
         {
             trashHandlersAntCount--;
         }
@@ -111,9 +181,14 @@ public class AntManager : MonoBehaviour{
     }
 
     // Removes from excavator count
-    public void RemoveFromExcavatorCount()
+    public void RemoveFromExcavatorCount(Ant antToRemove)
     {
-        if(excavatorsAntCount > 0)
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null excavator ant!");
+            return;
+        }
+        if (excavatorsAntCount > 0)
         {
             excavatorsAntCount--;
         }
@@ -124,9 +199,14 @@ public class AntManager : MonoBehaviour{
     }
 
     // Removes from forager count
-    public void RemoveFromForagerCount()
+    public void RemoveFromForagerCount(Ant antToRemove)
     {
-        if(foragerAntCount > 0)
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null forager ant!");
+            return;
+        }
+        if (foragerAntCount > 0)
         {
             foragerAntCount--;
         }
@@ -137,9 +217,14 @@ public class AntManager : MonoBehaviour{
     }
 
     // Removes from gardener count
-    public void RemoveFromGardenerCount()
+    public void RemoveFromGardenerCount(Ant antToRemove)
     {
-        if(gardenerAntCount > 0)
+        if (antToRemove == null)
+        {
+            Debug.LogError("Attemped to remove a null gardener ant!");
+            return;
+        }
+        if (gardenerAntCount > 0)
         {
             gardenerAntCount--;
         }
