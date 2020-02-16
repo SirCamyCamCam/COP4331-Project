@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
 
     public double minZ = -10.0;
     public double maxZ = -0.3;
-
+     
     void Update()
     {
         Vector3 pos = transform.position;
