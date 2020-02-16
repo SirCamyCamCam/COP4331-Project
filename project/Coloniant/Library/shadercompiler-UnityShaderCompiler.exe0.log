@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Base path: C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: preprocess
@@ -205,6 +206,11 @@ Cmd: initializeCompiler
 =======
 Base path: C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data
 Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+>>>>>>> Stashed changes
+=======
+Base path: C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 >>>>>>> Stashed changes
