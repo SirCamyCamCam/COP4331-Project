@@ -49,8 +49,23 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit?usp=sharing)
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
-  - [Class Diagrams]
-  - [Sequence Diagrams](https://drive.google.com/file/d/1QNWbmi5RV_b5zfNown9PiCDa56DgCP-i/view?usp=sharing)
+  - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
+  - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
 - Source Code
 - Automated Tests
-- Product Demonstration
+- [Product Demonstration](https://youtu.be/6p3Kt19F7HQ)
+
+# Sprint 3
+- [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
+- [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint3_backlog.md)
+- [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
+- [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
+- [Burndown Chart]
+- [Velocity Chart]
+- Design Documents
+  - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
+  - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
+  - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
+- [Source Code]
+- [Automated Tests]
+- [Product Demonstration]

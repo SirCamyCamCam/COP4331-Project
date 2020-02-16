@@ -1,61 +1,115 @@
-﻿using System.Collections;
+﻿// --------------------------------------------------------------
+// Coloniant - Ant Manager                              2/16/2020
+// Author(s): Cameron Carstens
+// Contact: cameroncarstens@knights.ucf.edu
+// --------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MainUIManager : MonoBehaviour {
 
-    // Food Stuff
-    public Text foodProducionTextNumber;
-    public Text foodConsumptionTextNumber;
-    public Slider foodRatioSlider;
-    public Transform foodDropDownButton;
-    public GameObject foodPanel;
-    private bool isFoodShowing;
+    #region Enum
 
-    // Protection Stuff
-    public Text protectionSoliderTextNumber;
-    public Text protectionTotalTextNumber;
-    public Slider protectionRatioSlider;
-    public Transform protectionDropDownButton;
-    public GameObject protectionPanel;
-    private bool isProtectionShowing;
+    private enum ShowingPanel
+    {
+        FOOD,
+        PROTECTION,
+        ANTS,
+        TRASH,
+        NONE
+    };
 
-    // Trash Stuff
-    public Text trashSpaceTextNumber;
-    public Text trashTotalTextNumber;
-    public Slider trashRatioSlider;
-    public Transform trashDropDownButton;
-    public GameObject trashPanel;
-    private bool isTrashShowing;
+    #endregion
 
-    // Flow
+    #region Static
+
+    public static MainUIManager main;
+
+    #endregion
+
+    #region Inspector Fields
+
+    [Header("Food")]
+    [SerializeField]
+    private Text foodProducionTextNumber;
+    [SerializeField]
+    private Text foodConsumptionTextNumber;
+    [SerializeField]
+    private Slider foodRatioSlider;
+    [SerializeField]
+    private Transform foodDropDownButton;
+    [SerializeField]
+    private GameObject foodPanel;
+
+    [Header("Protection")]
+    [SerializeField]
+    private Text protectionSoliderTextNumber;
+    [SerializeField]
+    private Text protectionTotalTextNumber;
+    [SerializeField]
+    private Slider protectionRatioSlider;
+    [SerializeField]
+    private Transform protectionDropDownButton;
+    [SerializeField]
+    private GameObject protectionPanel;
+
+    [Header("Trash")]
+    [SerializeField]
+    private Text trashSpaceTextNumber;
+    [SerializeField]
+    private Text trashTotalTextNumber;
+    [SerializeField]
+    private Slider trashRatioSlider;
+    [SerializeField]
+    private Transform trashDropDownButton;
+    [SerializeField]
+    private GameObject trashPanel;
+
+    [Header("Flow")]
     public Slider flowSlider;
 
-    // Ants
-    public Text totalAntsTextNumber;
-    public Text totalSoldierTextNumber;
-    public Text totalForagerTextNumber;
-    public Text totalGardenersTextNumber;
-    public Text totalTrashHandlersTextNumber;
-    public Text totalExcavatorsTextNumber;
-    public Text totalQueensTextNumber;
-    public Transform totalAntsDropDownButton;
-    public GameObject totalAntPanel;
-    private bool isAntsShowing;
+    [Header("Ants")]
+    [SerializeField]
+    private Text totalAntsTextNumber;
+    [SerializeField]
+    private Text totalSoldierTextNumber;
+    [SerializeField]
+    private Text totalForagerTextNumber;
+    [SerializeField]
+    private Text totalGardenersTextNumber;
+    [SerializeField]
+    private Text totalTrashHandlersTextNumber;
+    [SerializeField]
+    private Text totalExcavatorsTextNumber;
+    [SerializeField]
+    private Text totalQueensTextNumber;
+    [SerializeField]
+    private Transform totalAntsDropDownButton;
+    [SerializeField]
+    private GameObject totalAntPanel;
 
-	// Use this for initialization
-	void Start ()
+    #endregion
+
+    #region Run-Time Fields
+
+    private ShowingPanel currentPanel;
+
+    #endregion
+
+    #region Monobehaviors
+
+    // Use this for initialization
+    void Start ()
     {
+        currentPanel = ShowingPanel.NONE;
+
         totalAntPanel.SetActive(false);
         trashPanel.SetActive(false);
         protectionPanel.SetActive(false);
         foodPanel.SetActive(false);
-
-        isFoodShowing = false;
-        isTrashShowing = false;
-        isAntsShowing = false;
-        isProtectionShowing = false;
 
         foodDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         protectionDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
@@ -66,91 +120,158 @@ public class MainUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(isFoodShowing == true)
+		switch(currentPanel)
         {
-            // Update text values
-        }
-
-        if(isTrashShowing == true)
-        {
-            // Update text values
-        }
-
-        if(isAntsShowing == true)
-        {
-            // Update Text values
-        }
-
-        if(isProtectionShowing == true)
-        {
-            // Update text values
+            case ShowingPanel.ANTS:
+                UpdateAntPanel();
+                break;
+            case ShowingPanel.FOOD:
+                UpdateFoodPanel();
+                break;
+            case ShowingPanel.PROTECTION:
+                UpdateProtectionPanel();
+                break;
+            case ShowingPanel.TRASH:
+                UpdateTrashPanel();
+                break;
+            default:
+                currentPanel = ShowingPanel.NONE;
+                break;
         }
 	}
 
- #region Public 
+    #endregion
 
+    #region Public Methods
+
+    // Drop down button function for food
     public void FoodButton()
     {
-        if (isFoodShowing == false)
+        if (currentPanel == ShowingPanel.FOOD)
         {
-            isFoodShowing = true;
-            foodPanel.SetActive(true);
-            foodDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
-        }
-        else
-        {
-            isFoodShowing = false;
+            currentPanel = ShowingPanel.NONE;
             foodPanel.SetActive(false);
             foodDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-
-    public void TrashButton()
-    {
-        if (isTrashShowing == false)
-        {
-            isTrashShowing = true;
-            trashPanel.SetActive(true);
-            trashDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
-        }
         else
         {
-            isTrashShowing = false;
+            OnlyOnePanelAllowedToShow();
+            currentPanel = ShowingPanel.FOOD;
+            foodPanel.SetActive(true);
+            foodDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
+        }
+    }
+
+    // Drop down button function for trash
+    public void TrashButton()
+    {
+        if (currentPanel == ShowingPanel.TRASH)
+        {
+            currentPanel = ShowingPanel.NONE;
             trashPanel.SetActive(false);
             trashDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-
-    public void AntsButton()
-    {
-        if (isAntsShowing == false)
-        {
-            isAntsShowing = true;
-            totalAntPanel.SetActive(true);
-            totalAntsDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
-        }
         else
         {
-            isAntsShowing = false;
+            OnlyOnePanelAllowedToShow();
+            currentPanel = ShowingPanel.TRASH;
+            trashPanel.SetActive(true);
+            trashDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
+        }
+    }
+
+    // Drop down button function for ants
+    public void AntsButton()
+    {
+        if (currentPanel == ShowingPanel.ANTS)
+        {
+            currentPanel = ShowingPanel.NONE;
             totalAntPanel.SetActive(false);
             totalAntsDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-
-    public void ProtectionButton()
-    {
-        if (isProtectionShowing == false)
-        {
-            isProtectionShowing = true;
-            protectionPanel.SetActive(true);
-            protectionDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
-        }
         else
         {
-            isProtectionShowing = false;
+            OnlyOnePanelAllowedToShow();
+            currentPanel = ShowingPanel.ANTS;
+            totalAntPanel.SetActive(true);
+            totalAntsDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
+        }
+    }
+
+    // Drop down button function for protection
+    public void ProtectionButton()
+    {
+        if (currentPanel == ShowingPanel.PROTECTION)
+        {
+            currentPanel = ShowingPanel.NONE;
             protectionPanel.SetActive(false);
             protectionDropDownButton.rotation = Quaternion.Euler(0, 0, 0);
         }
+        else
+        {
+            OnlyOnePanelAllowedToShow();
+            currentPanel = ShowingPanel.PROTECTION;
+            protectionPanel.SetActive(true);
+            protectionDropDownButton.rotation = Quaternion.Euler(0, 0, 180);
+        }
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    // Disables other panels if we open another one for performance sake
+    private void OnlyOnePanelAllowedToShow()
+    {
+        if (currentPanel != ShowingPanel.NONE)
+        {
+            switch (currentPanel)
+            {
+                case ShowingPanel.ANTS:
+                    AntsButton();
+                    currentPanel = ShowingPanel.NONE;
+                    break;
+                case ShowingPanel.FOOD:
+                    FoodButton();
+                    currentPanel = ShowingPanel.NONE;
+                    break;
+                case ShowingPanel.PROTECTION:
+                    ProtectionButton();
+                    currentPanel = ShowingPanel.NONE;
+                    break;
+                case ShowingPanel.TRASH:
+                    TrashButton();
+                    currentPanel = ShowingPanel.NONE;
+                    break;
+                default:
+                    currentPanel = ShowingPanel.NONE;
+                    break;
+            }
+        }
+    }
+
+    // Updates all the values on the food panel when needed
+    private void UpdateFoodPanel()
+    {
+        // To Do
+    }
+
+    // Updates all the values on the ant panel when needed
+    private void UpdateAntPanel()
+    {
+        // To Do
+    }
+
+    // Updates all the values on the protection panel when needed
+    private void UpdateProtectionPanel()
+    {
+        // To Do
+    }
+
+    // Updates all the values on the trash panel when needed
+    private void UpdateTrashPanel()
+    {
+        // To Do
     }
 
     #endregion
