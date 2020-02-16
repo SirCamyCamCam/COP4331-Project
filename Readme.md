@@ -66,6 +66,6 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
   - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
   - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
-- [Source Code]
+- [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
 - [Automated Tests]
 - [Product Demonstration]
