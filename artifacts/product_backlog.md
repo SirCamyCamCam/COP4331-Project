@@ -9,3 +9,5 @@
 | 005 | As a player, I would like to spawn ants, in order to manage populations of the colony | 4 | 1 | When I select a type of ant, it should spawn and show in the ant counter | In Progress |
 | 006 | ~~As a player, I would like to see the status of my colony, in order to know what I need to do next~~ | 6 | 1 | When I need to know how my colony is doing, I will look at the status bars | Done |
 | 007 |~~As a student, I would like to improve user stories and optimize those that have been done~~ | 3 | 4 | So I can navigate through the code and game easier. | Done |
+| 003 | As a player, I would like to be able to change the volume within my game | 4 | 3 | I would like to keep my ears from ringing and be able to hear at all | To Do |
+| 004 | As a player, I would like to create waypoints for my ants to travel to and from | 7 | 1 | It is vital that we can control the movement of ants throughout the game | To Do | 
