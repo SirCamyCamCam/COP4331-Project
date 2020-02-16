@@ -307,13 +307,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Prefabs\Null.cs" />
+    <Compile Include="Assets\Scripts\Ants\Ant.cs" />
+    <Compile Include="Assets\Scripts\Ants\AntManager.cs" />
+    <Compile Include="Assets\Scripts\Ants\QueenAnt.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
-    <Compile Include="Assets\Scripts\Main\Ants\Ant.cs" />
-    <Compile Include="Assets\Scripts\Main\Ants\AntManager.cs" />
-    <Compile Include="Assets\Scripts\Main\Ants\QueenAnt.cs" />
-    <Compile Include="Assets\Scripts\Main\Camera\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\Main\UI\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
+    <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
