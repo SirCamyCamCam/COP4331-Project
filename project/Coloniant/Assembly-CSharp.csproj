@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Prefabs\Null.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Main\Ants\Ant.cs" />
     <Compile Include="Assets\Scripts\Main\Ants\AntManager.cs" />
+    <Compile Include="Assets\Scripts\Main\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Main\UI\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\NULL.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Henry/Documents/GitHub/COP4331-Project/project/Coloniant/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
