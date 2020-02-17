@@ -306,6 +306,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Prefabs\Null.cs" />
     <Compile Include="Assets\Scripts\Ants\Ant.cs" />
     <Compile Include="Assets\Scripts\Ants\AntManager.cs" />
     <Compile Include="Assets\Scripts\Ants\ExcavatorAnt.cs" />
