@@ -42,12 +42,13 @@ public class Ant : MonoBehaviour {
 
     [SerializeField]
     private SpriteRenderer antSpriteRenderer;
+    [SerializeField]
+    private int lifeSeconds;
 
     #endregion
 
     #region Run-Time fields
 
-    private int lifeSeconds;
     private AntState antState;
     private AntLevel antLevel;
     [HideInInspector]
@@ -92,6 +93,9 @@ public class Ant : MonoBehaviour {
                 break;
         }
 
+        antLevel = AntLevel.UNDER_GROUND;
+        ChangeView(AntManager.main.currentView);
+        antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
 	}
 
@@ -118,7 +122,15 @@ public class Ant : MonoBehaviour {
         }
         else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.UNDER_GROUND)
         {
-            
+            antSpriteRenderer.enabled = true;
+        }
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        {
+            antSpriteRenderer.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("Invalid combination of scene and ant views in ants!");
         }
     }
 

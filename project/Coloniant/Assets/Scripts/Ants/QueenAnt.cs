@@ -24,6 +24,8 @@ public class QueenAnt : MonoBehaviour {
 
     #endregion
 
+    public static QueenAnt main;
+
     #region Inspector Fields
 
     [Header("Prefabs")]
@@ -43,6 +45,8 @@ public class QueenAnt : MonoBehaviour {
     [Header("Dependencies")]
     [SerializeField]
     private Ant ant;
+    [SerializeField]
+    private GameObject spawn;
 
     #endregion
 
@@ -59,6 +63,7 @@ public class QueenAnt : MonoBehaviour {
     private void Awake()
     {
         ant.antType = Ant.AntType.QUEEN;
+        main = this;
     }
 
     // Use this for initialization
@@ -104,37 +109,37 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a queen ant
     private void SpawnQueen()
     {
-        Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
+        Instantiate(queenPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
     }
 
     // Spawns a forager ant
     private void SpawnForager()
     {
-        Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(foragerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a gardener ant
     private void SpawnGardener()
     {
-        Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(gardenerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
     
     // Spawns a excavator
     private void SpawnExcavator()
     {
-        Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(excavatorPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a trash handeler
     private void SpawnTrashHandler()
     {
-        Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(trashHandlerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a solider
     private void SpawnSolider()
     {
-        Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     #endregion
@@ -150,7 +155,7 @@ public class QueenAnt : MonoBehaviour {
         // create a new instance of the coroutine to check again
         for (int i = 0; i < 6; i++)
         {
-            if (antsToSpawn[i] != 0)
+            if (antsToSpawn[i] > 0)
             {
                 switch(i)
                 {
@@ -174,6 +179,7 @@ public class QueenAnt : MonoBehaviour {
                         break;
                 }
 
+                antsToSpawn[i]--;
                 spawnTimer = null;
                 SpawnAnts();
                 yield break;

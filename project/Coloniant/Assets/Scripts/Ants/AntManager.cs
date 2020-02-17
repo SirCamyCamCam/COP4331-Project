@@ -42,6 +42,8 @@ public class AntManager : MonoBehaviour{
     private int foragerAntCount = 0;
     private int gardenerAntCount = 0;
     private List<Ant> antList;
+    [HideInInspector]
+    public SceneView currentView;
 
     #endregion
 
@@ -57,6 +59,13 @@ public class AntManager : MonoBehaviour{
         {
             Destroy(this);
         }
+
+        antList = new List<Ant>();
+    }
+
+    private void Start()
+    {
+
     }
 
     #endregion
@@ -66,6 +75,7 @@ public class AntManager : MonoBehaviour{
     // Changes the current view
     public void SwitchLevelView(SceneView view)
     {
+        currentView = view;
         foreach (Ant a in antList)
         {
             a.ChangeView(view);

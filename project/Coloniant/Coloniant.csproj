@@ -306,15 +306,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Prefabs\Null.cs" />
     <Compile Include="Assets\Scripts\Ants\Ant.cs" />
     <Compile Include="Assets\Scripts\Ants\AntManager.cs" />
+    <Compile Include="Assets\Scripts\Ants\ExcavatorAnt.cs" />
+    <Compile Include="Assets\Scripts\Ants\ForagerAnt.cs" />
+    <Compile Include="Assets\Scripts\Ants\GardenerAnt.cs" />
     <Compile Include="Assets\Scripts\Ants\QueenAnt.cs" />
+    <Compile Include="Assets\Scripts\Ants\SoliderAnt.cs" />
+    <Compile Include="Assets\Scripts\Ants\TrashHandlerAnt.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnExcavatorButton.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnForagerButton.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnGardenerButton.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnQueenButton.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnSoliderButton.cs" />
+    <Compile Include="Assets\Scripts\UI\SpawnTrashHandlerButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
