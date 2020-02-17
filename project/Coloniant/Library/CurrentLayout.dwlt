@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 75
+  controlID: 100
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 76
+  controlID: 101
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 77
+  controlID: 102
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -283,10 +283,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 305.33334
-    y: 92
-    width: 693
-    height: 288
+    x: 308.6667
+    y: 99.333336
+    width: 685
+    height: 281
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -319,16 +319,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 693
       height: 271
     m_Scale: {x: 0.25092593, y: 0.25092593}
     m_Translation: {x: 346.5, y: 135.5}
+=======
+      width: 685
+      height: 264
+    m_Scale: {x: 0.36666667, y: 0.36666667}
+    m_Translation: {x: 342.5, y: 132}
+>>>>>>> parent of b263f8e... update
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -1380.8856
       y: -540
       width: 2761.7712
@@ -338,6 +346,17 @@ MonoBehaviour:
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 693, y: 288}
+=======
+      x: -934.0909
+      y: -360
+      width: 1868.1818
+      height: 720
+    m_MinimalGUI: 1
+  m_defaultScale: 0.36666667
+  m_TargetTexture: {fileID: 0}
+  m_CurrentColorSpace: 0
+  m_LastWindowPixelSize: {x: 1027.5, y: 421.5}
+>>>>>>> parent of b263f8e... update
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000100000100
@@ -371,7 +390,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 20f7ffff46f8ffff8af9ffff60fbffff00000000
+=======
+    m_ExpandedIDs: e4fbffff00000000
+>>>>>>> parent of b263f8e... update
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -602,20 +625,26 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\ThePr\OneDrive\Documents\GitHub\COP4331-Project\project\Coloniant
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 75}
+<<<<<<< HEAD
     m_SelectedIDs: 4c2a0000
     m_LastClickedID: 10828
     m_ExpandedIDs: 00000000222a0000962a00004e2b0000962b0000fa2d000000ca9a3b
+=======
+    m_SelectedIDs: 082a0000
+    m_LastClickedID: 10760
+    m_ExpandedIDs: 00000000082a00007c2a0000342b00007c2b00007030000000ca9a3b
+>>>>>>> parent of b263f8e... update
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -670,7 +699,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009629000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -719,9 +748,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 401.33334
-    width: 998
-    height: 257
+    y: 408
+    width: 1001
+    height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
