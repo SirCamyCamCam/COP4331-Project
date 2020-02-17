@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnSoliderButton : MonoBehaviour {
+public class Null : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,4 @@ public class SpawnSoliderButton : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void SpawnAnt()
-    {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);
-    }
 }
