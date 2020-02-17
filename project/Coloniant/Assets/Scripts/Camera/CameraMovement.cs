@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public static CameraMovement instance;
+    /*public static CameraMovement instance;
 
     public Transform followTransform;
     public Transform cameraTransform;
@@ -149,8 +149,8 @@ public class CameraMovement : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * movementTime);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * movementTime);
-    }
-    /*public float panSpeed = 1f;
+    }*/
+    public float panSpeed = 1f;
     public Vector2 panLimit;
     public float scrollSpeed = 20f;
 
@@ -183,5 +183,5 @@ public class CameraMovement : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, -panLimit.y, panLimit.y);
 
         transform.position = pos;
-    }*/
+    }
 }
