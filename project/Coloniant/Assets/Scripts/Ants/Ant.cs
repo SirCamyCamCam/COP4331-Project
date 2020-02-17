@@ -40,12 +40,15 @@ public class Ant : MonoBehaviour {
 
     #region Inspector Fields
 
+    [SerializeField]
+    private SpriteRenderer antSpriteRenderer;
+    [SerializeField]
+    private int lifeSeconds;
 
     #endregion
 
     #region Run-Time fields
 
-    private int lifeSeconds;
     private AntState antState;
     private AntLevel antLevel;
     [HideInInspector]
@@ -90,6 +93,9 @@ public class Ant : MonoBehaviour {
                 break;
         }
 
+        antLevel = AntLevel.UNDER_GROUND;
+        ChangeView(AntManager.main.currentView);
+        antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
 	}
 
@@ -103,7 +109,30 @@ public class Ant : MonoBehaviour {
 
     #region Public Methods
 
-    
+    // Switches between above ground a below ground
+    public void ChangeView(AntManager.SceneView view)
+    {
+        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        {
+            antSpriteRenderer.enabled = false;
+        }
+        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        {
+            antSpriteRenderer.enabled = true;
+        }
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        {
+            antSpriteRenderer.enabled = true;
+        }
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        {
+            antSpriteRenderer.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("Invalid combination of scene and ant views in ants!");
+        }
+    }
 
     #endregion
 
@@ -112,7 +141,7 @@ public class Ant : MonoBehaviour {
     // Kills the ant
     private void Die()
     {
-
+        Destroy(gameObject);
     }
 
     // Finds the next Waypoint in the path
