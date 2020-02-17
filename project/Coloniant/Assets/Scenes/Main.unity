@@ -113,7 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &43272894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,11 +5374,6 @@ Prefab:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 265188253}
-    - target: {fileID: 212279560602015710, guid: 2e9bd40a961d24a419adde3bb2808b38,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
   m_IsPrefabAsset: 0
@@ -7723,5 +7717,3 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142544822}
   m_CullTransparentMesh: 0
-=======
->>>>>>> 9e13c4c433a92a5adbeae04ddff046a2ce05932a
