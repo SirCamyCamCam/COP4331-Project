@@ -63,12 +63,13 @@ public class QueenAnt : MonoBehaviour {
     private void Awake()
     {
         ant.antType = Ant.AntType.QUEEN;
+        antsToSpawn = new int[6];
+
         main = this;
     }
 
     // Use this for initialization
     void Start () {
-        antsToSpawn = new int[6];
         spawnWaitTime = AntManager.main.spawnRate;
 	}
 

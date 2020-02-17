@@ -79,6 +79,7 @@ MonoBehaviour:
   excavatorPrefab: {fileID: 1853555374842396, guid: 102cfe3f595a4584aab19aab1ab31456,
     type: 2}
   ant: {fileID: 114432846909596808}
+  spawn: {fileID: 0}
 --- !u!212 &212279560602015710
 SpriteRenderer:
   m_ObjectHideFlags: 1
