@@ -47,6 +47,9 @@ MonoBehaviour:
 =======
     width: 1280
     height: 637
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
   m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -115,7 +118,11 @@ MonoBehaviour:
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 105
+=======
+  controlID: 66
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 66
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -143,7 +150,11 @@ MonoBehaviour:
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 106
+=======
+  controlID: 67
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 67
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -171,7 +182,11 @@ MonoBehaviour:
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 107
+=======
+  controlID: 68
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 68
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -197,6 +212,9 @@ MonoBehaviour:
 =======
     width: 304
     height: 316
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -392,9 +410,15 @@ MonoBehaviour:
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: ac2b0000
     m_LastClickedID: 0
     m_ExpandedIDs: 38eeffff4cefffff96f0ffffe6f1ffffa0f4ffff66fbffff00000000
+=======
+    m_SelectedIDs: e8290000
+    m_LastClickedID: 0
+    m_ExpandedIDs: cefbffff00000000
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_SelectedIDs: e8290000
     m_LastClickedID: 0
@@ -455,9 +479,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 3.797328, y: -0.82232934, z: -31.541002}
+    speed: 2
+    m_Value: {x: 3.797328, y: -0.82232934, z: -31.541002}
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_Target: {x: 3.797328, y: -0.82232934, z: -31.541002}
     speed: 2
@@ -495,9 +525,15 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: 30.20026
+    speed: 2
+    m_Value: 30.20026
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_Target: 30.20026
     speed: 2
@@ -643,17 +679,23 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
   - Assets/Scenes
 =======
+=======
+>>>>>>> parent of 1a93f40... Spawn Ants!
     - Assets/Scripts/Core
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
   - Assets/Scripts/Core
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\ThePr\OneDrive\Documents\GitHub\COP4331-Project\project\Coloniant
@@ -661,15 +703,21 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 75}
     m_SelectedIDs: 402a0000
     m_LastClickedID: 10816
     m_ExpandedIDs: 00000000182a00008a2a0000422b00008a2b0000262d000000ca9a3b
 =======
+=======
+>>>>>>> parent of 1a93f40... Spawn Ants!
     scrollPos: {x: 0, y: 11}
     m_SelectedIDs: 062a0000
     m_LastClickedID: 10758
     m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f000000ca9a3b
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -699,7 +747,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000182a00008a2a0000422b00008a2b0000262d0000
+=======
+    m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f0000
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f0000
 >>>>>>> parent of 1a93f40... Spawn Ants!

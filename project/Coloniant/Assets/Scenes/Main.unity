@@ -948,10 +948,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
 =======
   m_LocalPosition: {x: 6.2532167, y: 1.2853754, z: -32.11068}
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+  m_LocalPosition: {x: 0, y: 0, z: -32.11068}
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   m_LocalPosition: {x: 0, y: 0, z: -32.11068}
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -1135,10 +1139,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
 =======
   m_LocalPosition: {x: 6.2532167, y: 1.2853754, z: -32.11068}
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+  m_LocalPosition: {x: 0, y: 0, z: -32.11068}
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   m_LocalPosition: {x: 0, y: 0, z: -32.11068}
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -1667,10 +1675,14 @@ Transform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &547229080
 =======
 --- !u!1 &552703291
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+--- !u!1 &552703291
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 --- !u!1 &552703291
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -6330,6 +6342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   currentView: 0
 --- !u!1 &2142544822
 GameObject:
@@ -6408,5 +6421,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 =======
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
