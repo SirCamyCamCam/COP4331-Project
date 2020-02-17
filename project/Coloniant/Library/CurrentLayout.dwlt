@@ -48,6 +48,9 @@ MonoBehaviour:
     width: 1280
     height: 637
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -119,7 +122,11 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 105
+=======
+  controlID: 66
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 66
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -151,7 +158,11 @@ MonoBehaviour:
   vertical: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 106
+=======
+  controlID: 67
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 67
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -183,7 +194,11 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 107
+=======
+  controlID: 68
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
   controlID: 68
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -213,6 +228,9 @@ MonoBehaviour:
     width: 304
     height: 316
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -411,9 +429,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: ac2b0000
     m_LastClickedID: 0
     m_ExpandedIDs: 38eeffff4cefffff96f0ffffe6f1ffffa0f4ffff66fbffff00000000
+=======
+    m_SelectedIDs: e8290000
+    m_LastClickedID: 0
+    m_ExpandedIDs: cefbffff00000000
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_SelectedIDs: e8290000
     m_LastClickedID: 0
@@ -480,9 +504,15 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 3.797328, y: -0.82232934, z: -31.541002}
+    speed: 2
+    m_Value: {x: 3.797328, y: -0.82232934, z: -31.541002}
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_Target: {x: 3.797328, y: -0.82232934, z: -31.541002}
     speed: 2
@@ -526,9 +556,15 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: 30.20026
+    speed: 2
+    m_Value: 30.20026
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_Target: 30.20026
     speed: 2
@@ -680,6 +716,7 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 57
@@ -688,12 +725,17 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
+=======
+>>>>>>> parent of 1a93f40... Spawn Ants!
     - Assets/Scripts/Core
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
   - Assets/Scripts/Core
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -704,6 +746,7 @@ MonoBehaviour:
   m_FolderTreeState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 75}
     m_SelectedIDs: 402a0000
     m_LastClickedID: 10816
@@ -711,11 +754,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
+=======
+>>>>>>> parent of 1a93f40... Spawn Ants!
     scrollPos: {x: 0, y: 11}
     m_SelectedIDs: 062a0000
     m_LastClickedID: 10758
     m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f000000ca9a3b
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1a93f40... Spawn Ants!
+=======
 >>>>>>> parent of 1a93f40... Spawn Ants!
 =======
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -748,7 +796,11 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000182a00008a2a0000422b00008a2b0000262d0000
+=======
+    m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f0000
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
     m_ExpandedIDs: 00000000f82900006c2a0000242b00006a2b0000762f0000
 >>>>>>> parent of 1a93f40... Spawn Ants!

@@ -107,10 +107,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(queenPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -125,10 +129,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(foragerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -143,10 +151,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(gardenerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -161,10 +173,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(excavatorPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -179,10 +195,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(trashHandlerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
@@ -197,10 +217,14 @@ public class QueenAnt : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 =======
         
 >>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
+=======
+        Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of 1a93f40... Spawn Ants!
 =======
         Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of 1a93f40... Spawn Ants!
