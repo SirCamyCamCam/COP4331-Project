@@ -10,16 +10,6 @@ using UnityEngine;
 
 public class AntManager : MonoBehaviour{
 
-    #region Enum
-
-    public enum SceneView
-    {
-        UNDER_GROUND,
-        ABOVE_GROUND
-    }
-
-    #endregion
-
     #region Static Fields
 
     public static AntManager main;
@@ -72,6 +62,7 @@ public class AntManager : MonoBehaviour{
 
     #region Public Methods
 
+<<<<<<< HEAD
     // Changes the current view
     public void SwitchLevelView(SceneView view)
     {
@@ -82,6 +73,8 @@ public class AntManager : MonoBehaviour{
         }
     }
 
+=======
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     // Adds to solider count
     public void AddToSoldierCount(Ant antToAdd)
     {

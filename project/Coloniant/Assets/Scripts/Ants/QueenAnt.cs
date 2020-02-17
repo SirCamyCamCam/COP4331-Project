@@ -109,37 +109,61 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a queen ant
     private void SpawnQueen()
     {
+<<<<<<< HEAD
         Instantiate(queenPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
 
     // Spawns a forager ant
     private void SpawnForager()
     {
+<<<<<<< HEAD
         Instantiate(foragerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
 
     // Spawns a gardener ant
     private void SpawnGardener()
     {
+<<<<<<< HEAD
         Instantiate(gardenerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
     
     // Spawns a excavator
     private void SpawnExcavator()
     {
+<<<<<<< HEAD
         Instantiate(excavatorPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
 
     // Spawns a trash handeler
     private void SpawnTrashHandler()
     {
+<<<<<<< HEAD
         Instantiate(trashHandlerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
 
     // Spawns a solider
     private void SpawnSolider()
     {
+<<<<<<< HEAD
         Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        
+>>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
     }
 
     #endregion
