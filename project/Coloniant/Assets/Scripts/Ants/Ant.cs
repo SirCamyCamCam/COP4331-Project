@@ -40,13 +40,11 @@ public class Ant : MonoBehaviour {
 
     #region Inspector Fields
 
-<<<<<<< HEAD
+
     [SerializeField]
     private SpriteRenderer antSpriteRenderer;
     [SerializeField]
     private int lifeSeconds;
-=======
->>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
 
     #endregion
 
@@ -112,7 +110,6 @@ public class Ant : MonoBehaviour {
 
     #region Public Methods
 
-<<<<<<< HEAD
     // Switches between above ground a below ground
     public void ChangeView(AntManager.SceneView view)
     {
@@ -137,9 +134,6 @@ public class Ant : MonoBehaviour {
             Debug.LogError("Invalid combination of scene and ant views in ants!");
         }
     }
-=======
-    
->>>>>>> 6c2782b0c52ca62d44e4c469642e74110b9a9dd8
 
     #endregion
 
