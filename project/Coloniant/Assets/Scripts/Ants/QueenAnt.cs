@@ -64,13 +64,13 @@ public class QueenAnt : MonoBehaviour {
     {
         ant.antType = Ant.AntType.QUEEN;
         main = this;
+        antsToSpawn = new int[6];
     }
 
     // Use this for initialization
     void Start () {
-        antsToSpawn = new int[6];
         spawnWaitTime = AntManager.main.spawnRate;
-	}
+    }
 
     // Update is called once per frame
     /*void Update () {
