@@ -320,15 +320,21 @@ MonoBehaviour:
       x: 0
       y: 17
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 693
       height: 271
     m_Scale: {x: 0.25092593, y: 0.25092593}
     m_Translation: {x: 346.5, y: 135.5}
 =======
+=======
+>>>>>>> parent of b263f8e... update
       width: 685
       height: 264
     m_Scale: {x: 0.36666667, y: 0.36666667}
     m_Translation: {x: 342.5, y: 132}
+<<<<<<< HEAD
+>>>>>>> parent of b263f8e... update
+=======
 >>>>>>> parent of b263f8e... update
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -336,6 +342,7 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
       x: -1380.8856
       y: -540
@@ -347,6 +354,8 @@ MonoBehaviour:
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 693, y: 288}
 =======
+=======
+>>>>>>> parent of b263f8e... update
       x: -934.0909
       y: -360
       width: 1868.1818
@@ -356,6 +365,9 @@ MonoBehaviour:
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 1027.5, y: 421.5}
+<<<<<<< HEAD
+>>>>>>> parent of b263f8e... update
+=======
 >>>>>>> parent of b263f8e... update
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -391,7 +403,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 20f7ffff46f8ffff8af9ffff60fbffff00000000
+=======
+    m_ExpandedIDs: e4fbffff00000000
+>>>>>>> parent of b263f8e... update
 =======
     m_ExpandedIDs: e4fbffff00000000
 >>>>>>> parent of b263f8e... update
@@ -637,10 +653,13 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 75}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 4c2a0000
     m_LastClickedID: 10828
     m_ExpandedIDs: 00000000222a0000962a00004e2b0000962b0000fa2d000000ca9a3b
 =======
+=======
+>>>>>>> parent of b263f8e... update
     m_SelectedIDs: 082a0000
     m_LastClickedID: 10760
     m_ExpandedIDs: 00000000082a00007c2a0000342b00007c2b00007030000000ca9a3b
