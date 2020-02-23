@@ -27,10 +27,15 @@ public class GameManager : MonoBehaviour {
 
     #region Inspector Fields
 
+    [Header("Dependencies")]
     [SerializeField]
     private SpriteRenderer surface;
     [SerializeField]
     private SpriteRenderer ground;
+
+    [Header("Settings")]
+    [SerializeField]
+    private float flowUpdateSeconds;
 
 #endregion
 
@@ -60,6 +65,16 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         SwitchViews();
 	}
+
+    #endregion
+
+    #region Public Methods
+
+    // Returns the flow update seconds
+    public float FlowUpdateSeconds()
+    {
+        return flowUpdateSeconds;
+    }
 
     #endregion
 

@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 Base path: C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+=======
+Base path: C:/Program Files/Unity/Editor/Data
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+>>>>>>> ecd1ab3f018abea070c20395c69fbc5ac949892f
