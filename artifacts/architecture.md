@@ -8,7 +8,7 @@
 
 # Data Design
 
-No Database needed
+No Database needed. All values and information needed to run the game will be stored in a few global variables within classes. These variables will be either local to the class or stored in a static class accessible by other classes if needed across the game.
 
 # Business Rules
 
@@ -21,56 +21,56 @@ The game is expected to be playable. Other than these, guidelines are listed on 
 
 # Resource Management
 
-Resourses will be managed in the Unity Editor using the performace tool.
+Resourses will be managed in the Unity Editor using the performace tool. Recource usage in processing movements of the ants will be most vital to keep as low as possible as this will use most processing power. As few update functions as possible will be used and no physcis will be used.
 
 # Security
 
-No security requirements will be needed.
+No major security requirements will be needed. There is no login or vital privacy information that needs to be protected. However, use of private values and methods will be used by default.
 
 # Performance
 
-A standard of 30 fps will be required on an 7th gen i5 processor.
+A standard of 30 fps will be required with 1,000 ants spawned. GPU performace will not need to be evaluated and will not be very demanding. CPU performace optimization will be most vital. 
 
 # Scalability
 
-A limit of 25,000 ants will be implemented.
+As a single player game, there will only ever be 1 user at any given time. No local multiplayer or online multiplayer functionality will be considered. 
 
 # Interoperability
 
-No communication between devices will be needed.
+The game is only expected to run on Windows machines.
 
 # Internationalization/Localization
 
-The game and all it's funtions will reside locally on each machine.
+The game will only be for domestic release within the United States.
 
 # Input/Output
 
-All input will be received through the keyboard and mouse. All output will be displayed within the executable on screen.
+All input will be received through the keyboard and mouse. All output will be displayed within the executable on the player's screen.
 
 # Error Processing
 
-A standard of printing any errors to the console will be implimented.
+A standard of printing any errors to the console will be implimented. Using Unity's error pause functionality, "Debug.LogError("Message");" will be the stanard if any error are caught with try catch and if statements.
 
 # Fault Tolerance
 
-An error will result in the removal of that ant in which the error occured.
+An error with an ant will simply remove the ant from game and any other error will hault the game.
 
 # Architectural Feasibility
 
-The program shall run on all windows machines.
+
 
 # Overengineering
 
-Only the core functions of the game will be created at start.
+
 
 # Build-vs-Buy Decisions
 
-All resourses used will be orignal and built.
+All resourses used will be original and built by the students. Upon further development, if there is a functionality beyond the student's scrope, a Unity Plugin will be considered.
 
 # Reuse
 
-The ant class will be resued for all ants.
+
 
 # Change Strategy
 
-All classes will be serperated and independent for easy change later in the development process.
+
