@@ -9,7 +9,7 @@
 |            005 |           002 | The main menu system must have a options button in order to change the volume and graphics settings | Verified | 
 |            006 |           003 | The Camera system must be able to zoom out to see the enitre map via srolling the mouse wheel down | Verified | 
 |            007 |           003 | The Camera system must be able to zoom in to see smaller portions of the map via scrolling the mouse wheel up | Verified | 
-|            008 |           004 | The player must have the ability to control the populations of the ant colony | Verfied | 
+|            008 |           004 | The player must have the ability to control the populations of the ant colony with the Queen Ant | Verfied | 
 |            009 |           005 | The player must have the ability to view the surface map of the game | Verified | 
 |            010 |           005 | The player must have the ability to view the underground map of the game | Verified | 
 |            011 |           006 | The player must have the ability to view the current food production and consumption | Verified | 
@@ -18,3 +18,6 @@
 |            014 |           006 | The player must have the ability to view the flow of road within the colony | Verified | 
 |            015 |           006 | The player must have the ability to see the current populations of all ants within the colony | Verified | 
 |            016 |           002 | The Camera system must have the ability to move omidirectional using the mouse to drag | Verified |
+|            017 |           010 | The Audio Controller must be able to be called from anywhere in the project | Verified | 
+|            018 |           010 | The Audio Controller must have the ability to have different channels for different types of effects | Verfied |
+
