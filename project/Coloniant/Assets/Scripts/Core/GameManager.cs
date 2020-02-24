@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour {
     private void Awake()
     {
         currentView = CurrentView.UNDER_GROUND;
+        main = this;
     }
 
     // Use this for initialization
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour {
             {
                 currentView = CurrentView.SURFACE;
                 AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
+                WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
                 surface.enabled = true;
                 ground.enabled = false;
             }
@@ -95,6 +97,7 @@ public class GameManager : MonoBehaviour {
             {
                 currentView = CurrentView.UNDER_GROUND;
                 AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
+                WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
                 surface.enabled = false;
                 ground.enabled = true;
             }
