@@ -7,13 +7,13 @@
 |            003 |           002 | The main menu system must have a play button to begin playing the game | The main menu can take you to the game | 2 | Necessary | Verified | 
 |            004 |           002 | The main menu system must have a exit button in order to exit the application | The game can close at the click of a button | 2 | Necessary | Verified | 
 |            005 |           002 | The main menu system must have a options button in order to change the volume and graphics settings | The options can be open from any point of the game | Important | Verified | 
-|            006 |           003 | The Camera system must be able to zoom out to see the enitre map via srolling the mouse wheel down | Satisfied | 
-|            007 |           003 | The Camera system must be able to zoom in to see smaller portions of the map via scrolling the mouse wheel up | Satisfied | 
-|            008 |           005 | The player must have the ability to control the populations of the ant colony with the Queen Ant | Satisfied | 
-|            009 |           006 | The player must have the ability to view the surface map of the game | Satisfied | 
-|            010 |           006 | The player must have the ability to view the underground map of the game | Satisfied | 
-|            011 |           006 | The player must have the ability to view the current food production and consumption | Satisfied | 
-|            012 |           006 | The player must have the ability to view the ant to solider ratio status | Satisfied | 
+|            006 |           003 | The Camera system must be able to zoom out to see the entire map via scrolling the mouse wheel down | The game can be zoomed in and out | 4 | Necessary | Satisfied | 
+|            007 |           003 | The Camera system must be able to zoom in to see smaller portions of the map via scrolling the mouse wheel up | The ants and other small objects can be seen | 4 | Important | Satisfied | 
+|            008 |           005 | The player must have the ability to control the populations of the ant colony with the Queen Ant | The population can be managed | 5 | Necessary | Satisfied | 
+|            009 |           006 | The player must have the ability to view the surface map of the game | The surface can be seen in the game | 5 | Necessary | Satisfied | 
+|            010 |           006 | The player must have the ability to view the underground map of the game | The underground can be seen in the game | 5 | Necessary | Satisfied | 
+|            011 |           006 | The player must have the ability to view the current food production and consumption | The food production and consumption can be seen from any point in the game | 4 | Necesary | Satisfied | 
+|            012 |           006 | The player must have the ability to view the ant to solider ratio status | The amount of ants and soldiers can be seen from any point in the game | 3 | Necessary | Satisfied | 
 |            013 |           006 | The player must have the ability to view the trash fill status of the colony | Satisfied | 
 |            014 |           006 | The player must have the ability to view the flow of road within the colony | Satisfied | 
 |            015 |           006 | The player must have the ability to see the current populations of all ants within the colony | Satisfied | 
