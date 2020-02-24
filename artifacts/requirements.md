@@ -22,4 +22,10 @@
 |            018 |           009 | The Audio Controller must have the ability to have different channels for different types of effects | Different sounds are heard from different actions | 6 | Necessary | Satisfied |
 |            019 |           008 | The player must be able to create waypoints by clicking on a location for ants to travel | A marker can be placed to set a waypoint | 4 | Important | Planned |
 |            020 |           009 | The audio should be able to be changed at any point throughout the game | When the audio can be adjusted throughout the game | 4 | Necessary | Satisfied | 
+|            021 |           010 | The queen ant should stay at nursery waypoints to spawn ants | The queen can spawn ants consistently at the waypoints | 8 | Important | Planned |
+|            022 |           011 | Waypoints should be able to become nursery waypoints | The waypoints can turn into nursery waypoints | 5 | Necessary | Working | 
+|            023 |           012 | Waypoints should be able to become farming waypoints | The waypoints can turn into farming waypoints | 5 | Necessary | Working |
+|            024 |           013 | Waypoints should be able to become trash sites | The waypoints can turn into trash sites | 5 | Necessary | Working |
+|            025 |           014 | Nurseries should have one queen each | One queen can be assigned to one nursery | 2 | Important | Planned | 
+|            026 |           015 | Different ants should have different classes that can conduct various actions | Ants can be assigned roles | 6 | Necessary | Planned |
 
