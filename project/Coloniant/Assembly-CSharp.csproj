@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -332,8 +331,6 @@
   
 </Project>
 =======
-=======
->>>>>>> parent of 12b57f0... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -658,9 +655,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-<<<<<<< HEAD
-</Project>
->>>>>>> parent of 12b57f0... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
-=======
 </Project>
 >>>>>>> parent of 12b57f0... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
