@@ -1,10 +1,10 @@
 # Program Organization
 
-[High Level Program Organization Diagram](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
+[High Level Program Organization Diagram](https://drive.google.com/file/d/1rf1bcVQuNXr1jEMKfpWL9t0AQpL9ZQ_a/view?usp=sharing)
 
 # Major Classes
 
-[Major Classes UML Diagram](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
+[Major Classes UML Diagram](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
 
 # Data Design
 
