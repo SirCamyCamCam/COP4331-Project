@@ -75,7 +75,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Sprint Backlog]
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
-- [Burndown Chart]
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1DusqotmqBdPE1kYLgs0zxXKAWzsH5KlU3_yK1mZ_ZG4/edit#gid=0)
 - [Velocity Chart]
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
