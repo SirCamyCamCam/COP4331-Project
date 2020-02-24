@@ -6,7 +6,7 @@
 |            002 |           002 | The game must open up to a main menu page on execution of the application | You have a menu when the game is launched | 2 | Necessary | Verified | 
 |            003 |           002 | The main menu system must have a play button to begin playing the game | The main menu can take you to the game | 2 | Necessary | Verified | 
 |            004 |           002 | The main menu system must have a exit button in order to exit the application | The game can close at the click of a button | 2 | Necessary | Verified | 
-|            005 |           002 | The main menu system must have a options button in order to change the volume and graphics settings | The options can be open from any point of the game | Important | Verified | 
+|            005 |           002 | The main menu system must have a options button in order to change the volume and graphics settings | The options can be open from any point of the game | 3 | Important | Verified | 
 |            006 |           003 | The Camera system must be able to zoom out to see the entire map via scrolling the mouse wheel down | The game can be zoomed in and out | 4 | Necessary | Satisfied | 
 |            007 |           003 | The Camera system must be able to zoom in to see smaller portions of the map via scrolling the mouse wheel up | The ants and other small objects can be seen | 4 | Important | Satisfied | 
 |            008 |           005 | The player must have the ability to control the populations of the ant colony with the Queen Ant | The population can be managed | 5 | Necessary | Satisfied | 
