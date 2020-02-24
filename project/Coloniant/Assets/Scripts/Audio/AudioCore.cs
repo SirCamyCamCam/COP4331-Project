@@ -72,7 +72,7 @@ public class AudioCore : MonoBehaviour {
 
     private void Start()
     {
-        PlaySound(AudioChannel.BACKGROUND_MUSIC, "BackgroundMusic", false, null);
+        //PlaySound(AudioChannel.BACKGROUND_MUSIC, "BackgroundMusic", false, null);
     }
 
     #endregion
@@ -110,7 +110,7 @@ public class AudioCore : MonoBehaviour {
     {
         int channelIndex = (int)audioChannel;
 
-        audioSources[channelIndex].Stop();
+        //audioSources[channelIndex].Stop();
     }
 
     // Pauses selected channel no matter what sound is playing
@@ -154,8 +154,8 @@ public class AudioCore : MonoBehaviour {
 
     public void UpdateBackgoundVolume(float volume)
     {
-        int channelIndex = (int)AudioChannel.BACKGROUND_MUSIC;
-        audioSources[channelIndex].volume = volume;
+        //int channelIndex = (int)AudioChannel.BACKGROUND_MUSIC;
+        //audioSources[channelIndex].volume = volume;
     }
 
     #endregion

@@ -319,6 +319,7 @@
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\TestScript\SpawnAntTest.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestWaypoints.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnExcavatorButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnForagerButton.cs" />

@@ -83,15 +83,15 @@ public class QueenAnt : MonoBehaviour {
     #region Public Methods
 
     // Adds an ant which should spawn
-    public void AddAntToSpawn(Ants type, int count)
+    public bool AddAntToSpawn(Ants type, int count)
     {
         if (count <= 0)
         {
-            return;
+            return false;
         }
         antsToSpawn[(int)type] += count;
 
-        SpawnAnts();
+        return SpawnAnts();
     }
 
     #endregion
@@ -99,12 +99,17 @@ public class QueenAnt : MonoBehaviour {
     #region Private Methods
 
     // Calls to start spawning ants
-    private void SpawnAnts()
+    private bool SpawnAnts()
     {
         if (spawnTimer == null)
         {
             spawnTimer = StartCoroutine(spawnAntTimer());
         }
+        else
+        {
+            return false;
+        }
+        return true;
     }
 
     // Spawns a queen ant
