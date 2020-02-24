@@ -72,7 +72,7 @@ public class AudioCore : MonoBehaviour {
 
     private void Start()
     {
-        PlaySound(AudioChannel.BACKGROUND_MUSIC, "BackgroundMusic", false, null);
+        //PlaySound(AudioChannel.BACKGROUND_MUSIC, "BackgroundMusic", false, null);
     }
 
     #endregion
