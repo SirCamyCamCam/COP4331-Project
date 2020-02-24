@@ -21,7 +21,7 @@ No Database needed. All values and information needed to run the game will be st
 
 # User Interface Design
 
-[User Interface Design](https://docs.google.com/document/d/1kpGgwfg6r6enp68Jdj-jGx1Z2RlYuP_FJamOdQT0AVk/edit?usp=sharing)
+[User Interface Design](https://drive.google.com/file/d/1y19n5RXKEGh5QyZh-GHqrepDc1g9EyBM/view?usp=sharing)
 
 # Resource Management
 
