@@ -198,7 +198,6 @@ public class WaypointManager : MonoBehaviour {
             transitionWaypoint,
             startNurseryPosition.transform.position
             );
-        Debug.Log(exitWaypoint.Count);
         // Spawn entrance point
         entranceWaypoint.Add(
             SpawnWaypoint(
@@ -208,7 +207,6 @@ public class WaypointManager : MonoBehaviour {
                 startEntrancePosition.transform.position
                 )
             );
-        Debug.Log("Here 2");
         // Spawn trash site
         SpawnWaypoint(
             WaypointType.TRASH_SITE,
