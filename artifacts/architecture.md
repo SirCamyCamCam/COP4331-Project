@@ -13,6 +13,7 @@ No Database needed. All values and information needed to run the game will be st
 # Business Rules
 
 | Business Rule ID | Rule |
+| ----------------- | ---- | 
 | 000 | The game is expected to be an executable | 
 | 001 | Users shall not be able to adjust files |
 | 002 | Users can only adjust their own game settings and options |
