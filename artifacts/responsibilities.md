@@ -13,3 +13,5 @@
  - Updated sprint information in the backlog
  - Added user stories
  - Reformatted github/Updated gitignore
+ 
+ ## Amin Kavehzadeh 
