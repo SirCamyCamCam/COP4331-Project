@@ -15,3 +15,6 @@
  - Reformatted github/Updated gitignore
  
  ## Amin Kavehzadeh 
+- revised the Master Audio slider to function in all scenes and transfer information over from scene to scene 
+ - created a new UI tab in the main scene that enabels the designation of waypoints 
+ - created buttons utilizing the Unity UI and a Waypoint manager script to handel the designation of farming,nursery, and trash site waypoints
