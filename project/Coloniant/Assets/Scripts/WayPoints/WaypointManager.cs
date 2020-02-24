@@ -11,8 +11,7 @@ public class WaypointManager : MonoBehaviour {
 
     #region Inner Classes
 
-    [System.Serializable]
-    public class WaypointBridge
+    private class WaypointBridge : Object
     {
         public Waypoint waypoint1;
         public Waypoint waypoint2;
@@ -36,7 +35,6 @@ public class WaypointManager : MonoBehaviour {
         FARM_SITE,
         LEAF_SITE,
         ENTRANCE,
-        EXIT,
         TRANSITION
     }
 
@@ -68,8 +66,6 @@ public class WaypointManager : MonoBehaviour {
     [SerializeField]
     private GameObject startEntrancePosition;
     [SerializeField]
-    private GameObject startExitPostion;
-    [SerializeField]
     private GameObject startLeafPostion;
 
     [Header("Prefabs")]
@@ -92,7 +88,6 @@ public class WaypointManager : MonoBehaviour {
     private List<Waypoint> trashWaypoint;
     private List<Waypoint> entranceWaypoints;
     private List<Waypoint> transitionWaypoints;
-    private List<Waypoint> exitWaypoints;
     private HashSet<WaypointBridge> bridgeSet;
     private Dictionary<WaypointBridge, int> maxAntsAllowedBetweenWaypoints;
     private Dictionary<WaypointBridge, int> curentAntsInBridges;
@@ -114,22 +109,14 @@ public class WaypointManager : MonoBehaviour {
         curentAntsInBridges = new Dictionary<WaypointBridge, int>();
         flowBetweenWaypoints = new Dictionary<WaypointBridge, float>();
         idleAntAtWaypointCount = new Dictionary<Waypoint, int>();
-        bridgeSet = new HashSet<WaypointBridge>();
-
-        allWaypoints = new List<Waypoint>();
-        leafWaypoints = new List<Waypoint>();
-        nurseryWaypoints = new List<Waypoint>();
-        farmWaypoints = new List<Waypoint>();
-        trashSitesWaypoint = new List<Waypoint>();
-        trashWaypoint =  new List<Waypoint>();
-        entranceWaypoints =  new List<Waypoint>();
-        transitionWaypoints = new List<Waypoint>();
-        exitWaypoints = new List<Waypoint>();
-}
+    }
 
     // Use this for initialization
     void Start () {
-        SpawnAllOriginalWaypoints();
+        // Spawn all the necesary waypoints to begin the game
+        SpawnWaypoint(WaypointType.TRANSITION, Level.UNDER_GROUND, null, startTransitionPosition.transform.position);
+        //SpawnWaypoint(WaypointType.FARM_SITE, Level.UNDER_GROUND, )
+
         currentOverallFlow = 1;
         flowUpdateTime = GameManager.main.FlowUpdateSeconds();
         StartCoroutine(waitToUpdateOverallFlow());
@@ -161,78 +148,12 @@ public class WaypointManager : MonoBehaviour {
         currentOverallFlow = totalFlow / (float)bridgeSet.Count;
     }
 
-    // Spawns all the original waypoints to start the game
-    private void SpawnAllOriginalWaypoints()
-    {
-        List<Waypoint> transitionWaypoint = new List<Waypoint>();
-        List<Waypoint> entranceWaypoint = new List<Waypoint>();
-        List<Waypoint> exitWaypoint = new List<Waypoint>();
-        // Spawn Transition point
-        transitionWaypoint.Add(
-            SpawnWaypoint(
-                WaypointType.TRANSITION,
-                Level.UNDER_GROUND, transitionWaypoints,
-                startTransitionPosition.transform.position
-                )
-            );
-        // Spawn farm point
-        SpawnWaypoint(
-            WaypointType.FARM_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startFarmPosition.transform.position
-            );
-        // Spawn exit point
-        exitWaypoint.Add(
-            SpawnWaypoint(
-                WaypointType.EXIT,
-                Level.UNDER_GROUND,
-                transitionWaypoint, 
-                startExitPostion.transform.position
-                )
-            );
-        // Spawn nursery point
-        SpawnWaypoint(
-            WaypointType.NURSERY_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startNurseryPosition.transform.position
-            );
-        Debug.Log(exitWaypoint.Count);
-        // Spawn entrance point
-        entranceWaypoint.Add(
-            SpawnWaypoint(
-                WaypointType.ENTRANCE,
-                Level.ABOVE_GROUND,
-                exitWaypoint,
-                startEntrancePosition.transform.position
-                )
-            );
-        Debug.Log("Here 2");
-        // Spawn trash site
-        SpawnWaypoint(
-            WaypointType.TRASH_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startTrashPosition.transform.position
-            );
-        // Spawn Leaf site
-        SpawnWaypoint(
-            WaypointType.LEAF_SITE,
-            Level.ABOVE_GROUND,
-            entranceWaypoint,
-            startLeafPostion.transform.position
-            );
-
-        Destroy(startNurseryPosition.transform.parent.gameObject);
-    }
-
     #endregion
 
     #region Public Methods
 
     // Spawns a new Waypoint
-    public Waypoint SpawnWaypoint(
+    public bool SpawnWaypoint(
         WaypointManager.WaypointType waypointType, 
         WaypointManager.Level waypointLevel, 
         List<Waypoint> connectedWaypoints, 
@@ -242,46 +163,32 @@ public class WaypointManager : MonoBehaviour {
         GameObject newWaypointGameObject = Instantiate(waypointPrefab, spawnLocation, new Quaternion(0, 0, 0, 0));
         if (newWaypointGameObject == null)
         {
-            Debug.Log("Failed to spawn a " + waypointType);
-            return null;
+            return false;
         }
 
         // Get Waypoint object
         Waypoint newWaypointClass = newWaypointGameObject.GetComponent<Waypoint>();
         if (newWaypointClass == null)
         {
-            Debug.Log("Failed to get waypoint class");
-            return null;
+            return false;
         }
 
-        // Assign connected waypoints
         newWaypointClass.SetUpWaypointTypes(waypointType, waypointLevel, connectedWaypoints);
 
-        // Connect everything else
-        if (connectedWaypoints.Count > 0)
+        // Connect everything
+        foreach (Waypoint w in connectedWaypoints)
         {
-            foreach (Waypoint w in connectedWaypoints)
+            w.AddAConnectedWaypoint(newWaypointClass);
+            WaypointBridge newBridge = new WaypointBridge(w, newWaypointClass);
+            if (newBridge == null)
             {
-                if (w == null)
-                {
-                    Debug.Log("Failed to get connected waypoints");
-                    return null;
-                }
-                w.AddAConnectedWaypoint(newWaypointClass);
-                WaypointBridge newBridge = new WaypointBridge(w, newWaypointClass);
-                if (newBridge == null)
-                {
-                    Debug.Log("Failed to create a new bridge for " + waypointType);
-                    return null;
-                }
-                bridgeSet.Add(newBridge);
-                curentAntsInBridges.Add(newBridge, 0);
-                maxAntsAllowedBetweenWaypoints.Add(newBridge, maxAntsOnStart);
-                flowBetweenWaypoints.Add(newBridge, 0);
+                return false;
             }
+            bridgeSet.Add(newBridge);
+            maxAntsAllowedBetweenWaypoints.Add(newBridge, maxAntsOnStart);
+            flowBetweenWaypoints.Add(newBridge, 0);
         }
 
-        // Add to type list
         switch(waypointType)
         {
             case WaypointType.FARM_SITE:
@@ -305,18 +212,13 @@ public class WaypointManager : MonoBehaviour {
             case WaypointType.TRASH_SITE:
                 trashSitesWaypoint.Add(newWaypointClass);
                 break;
-            case WaypointType.EXIT:
-                trashSitesWaypoint.Add(newWaypointClass);
-                break;
             default:
-                Debug.Log("Failed to assign waypoint type");
-                return null;
+                return false;
         }
 
-        // Add to all
         allWaypoints.Add(newWaypointClass);
 
-        return newWaypointClass;
+        return true;
     }
 
     public bool RemoveWaypoint(Waypoint waypointToRemove)
@@ -324,18 +226,8 @@ public class WaypointManager : MonoBehaviour {
         bool foundBridge = false;
         foreach (WaypointBridge wb in bridgeSet)
         {
-            if (wb.waypoint1 == waypointToRemove)
+            if (wb.waypoint1 == waypointToRemove || wb.waypoint2 == waypointToRemove)
             {
-                // Delete from connected waypoints
-                wb.waypoint2.RemoveAConnectedWaypoint(waypointToRemove);
-                bridgeSet.Remove(wb);
-                foundBridge = true;
-                // Add functionality to connect the other two waypoints
-            }
-            else if(wb.waypoint2 == waypointToRemove)
-            {
-                // Delete from connected waypoints
-                wb.waypoint1.RemoveAConnectedWaypoint(waypointToRemove);
                 bridgeSet.Remove(wb);
                 foundBridge = true;
                 // Add functionality to connect the other two waypoints
@@ -346,6 +238,8 @@ public class WaypointManager : MonoBehaviour {
         {
             return false;
         }
+
+
 
         return true;
     }
@@ -386,14 +280,6 @@ public class WaypointManager : MonoBehaviour {
             }
         }
         return false;
-    }
-
-    public void SwitchWaypointLevel(Level level)
-    {
-        foreach (Waypoint w in allWaypoints)
-        {
-            w.SwitchLevel(level);
-        }
     }
 
     #endregion

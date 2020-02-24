@@ -15,8 +15,10 @@ public class Waypoint : MonoBehaviour {
     [Header("Dependencies")]
     [SerializeField]
     private GameObject attachedGameObject;
+
+    [Header("Settings")]
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    private int maxAntsNum;
 
     #endregion
 
@@ -38,45 +40,7 @@ public class Waypoint : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        switch (type)
-        {
-            case WaypointManager.WaypointType.FARM_SITE:
-                spriteRenderer.color = Color.green;
-                break;
-            case WaypointManager.WaypointType.ENTRANCE:
-                spriteRenderer.color = Color.black;
-                break;
-            case WaypointManager.WaypointType.LEAF_SITE:
-                spriteRenderer.color = Color.cyan;
-                break;
-            case WaypointManager.WaypointType.NURSERY_SITE:
-                spriteRenderer.color = Color.red;
-                break;
-            case WaypointManager.WaypointType.TRANSITION:
-                spriteRenderer.color = Color.gray;
-                break;
-            case WaypointManager.WaypointType.TRASH:
-                spriteRenderer.color = Color.yellow;
-                break;
-            case WaypointManager.WaypointType.TRASH_SITE:
-                spriteRenderer.color = Color.blue;
-                break;
-            case WaypointManager.WaypointType.EXIT:
-                spriteRenderer.color = Color.black;
-                break;
-            default:
-                Debug.LogError("No type found for waypoint!");
-                break;
-        }
 
-        if (GameManager.main.currentView == GameManager.CurrentView.SURFACE && level == WaypointManager.Level.UNDER_GROUND)
-        {
-            spriteRenderer.enabled = false;
-        }
-        else if (GameManager.main.currentView == GameManager.CurrentView.UNDER_GROUND && level == WaypointManager.Level.ABOVE_GROUND)
-        {
-            spriteRenderer.enabled = false;
-        }
     }
 
     // Update is called once per frame
@@ -100,39 +64,6 @@ public class Waypoint : MonoBehaviour {
     public void AddAConnectedWaypoint(Waypoint newWaypoint)
     {
         connectedWaypoints.Add(newWaypoint);
-    }
-
-    // Removes a waypoint from connected
-    public void RemoveAConnectedWaypoint(Waypoint removedWaypoint)
-    {
-        connectedWaypoints.Remove(removedWaypoint);
-    }
-
-    // Returns the current level
-    public WaypointManager.Level CurrentLevel()
-    {
-        return level;
-    }
-
-    // Switches the current level
-    public void SwitchLevel(WaypointManager.Level changeLevel)
-    {
-        if (level == WaypointManager.Level.ABOVE_GROUND && changeLevel == WaypointManager.Level.ABOVE_GROUND)
-        {
-            spriteRenderer.enabled = true;
-        }
-        else if (level == WaypointManager.Level.ABOVE_GROUND && changeLevel == WaypointManager.Level.UNDER_GROUND)
-        {
-            spriteRenderer.enabled = false;
-        }
-        else if (level == WaypointManager.Level.UNDER_GROUND && changeLevel == WaypointManager.Level.UNDER_GROUND)
-        {
-            spriteRenderer.enabled = true;
-        }
-        else if (level == WaypointManager.Level.UNDER_GROUND && changeLevel == WaypointManager.Level.ABOVE_GROUND)
-        {
-            spriteRenderer.enabled = false;
-        }
     }
 
     #endregion
