@@ -16,7 +16,7 @@
 |            012 |           006 | The player must have the ability to view the ant to solider ratio status | The amount of ants and soldiers can be seen from any point in the game | 3 | Necessary | Satisfied | 
 |            013 |           006 | The player must have the ability to view the trash fill status of the colony | The amount of trash can be seen at any point in the game | 3 | Necessary | Satisfied | 
 |            014 |           006 | The player must have the ability to view the flow of road within the colony | The flow of the road can be seen in the colony | 4 | Important | Satisfied | 
-|            015 |           006 | The player must have the ability to see the current populations of all ants within the colony |  | The player can see the population of ants | 4 | Necessary | Satisfied | 
+|            015 |           006 | The player must have the ability to see the current populations of all ants within the colony | The population of ants can be seen throughout the game | 4 | Necessary | Satisfied | 
 |            016 |           002 | The Camera system must have the ability to move omidirectional using the mouse to drag | The camera can be moved in every direction | 4 | Necessary | Satisfied |
 |            017 |           009 | The Audio Controller must be able to be called from anywhere in the project | The audio settings can be accessed at any point | 4 | Important | Satisfied | 
 |            018 |           009 | The Audio Controller must have the ability to have different channels for different types of effects | Different sounds are heard from different actions | 6 | Necessary | Satisfied |
