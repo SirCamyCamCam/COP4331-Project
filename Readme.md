@@ -64,7 +64,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit#gid=0)
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
-  - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
+  - [Class Diagrams](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
   - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
 - [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
 - [Automated Tests](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts/TestScript)
@@ -72,14 +72,14 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 
 # Sprint 4
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
-- [Sprint Backlog]
+- [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint4_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
-- [Burndown Chart]
-- [Velocity Chart]
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1gBLiF37R8ASyhEuSRIRIB8FOppTpLP2ud3x4NF99A_s/edit#gid=87165207)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit#gid=0)
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
-  - [Class Diagrams](https://drive.google.com/file/d/1Mod25xS7f7hBW-XTqNl8qTcv_Jkq9KxR/view?usp=sharing)
+  - [Class Diagrams](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
   - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
 - [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
 - [Automated Tests]
