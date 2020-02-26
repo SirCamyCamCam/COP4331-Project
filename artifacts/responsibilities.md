@@ -1,4 +1,4 @@
- ## Cameron Carsten:
+ ## Cameron Carstens:
 
 - Added 3 charts to design documentation
 - Updated all categories in the design documentation
