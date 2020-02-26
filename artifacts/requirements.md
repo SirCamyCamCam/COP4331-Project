@@ -4,9 +4,7 @@
 |----------------|---------------|-------------|---------------------|--------|----------|--------|
 |            001 |           001 | Have a correctly setup gitHub page in alignment to the sample gitHub provided by Dr. Hollander | The requirements page looks like the example one | 1 | Necessary | Satisfied | 
 |            002 |           002 | The game must open up to a main menu page on execution of the application | You have a menu when the game is launched | 4 | Necessary | Satisfied | 
-|            003 |           002 | The main menu system must have various options (Play game, Settings, Exit) to  | The main menu can take you to the game once the play button is pressed | 4 | Necessary | Satisfied | 
-|            004 |           002 | The main menu system must have a exit button in order to exit the application | The game can close at the click of a button | 4 | Necessary | Satisfied | 
-|            005 |           002 | The main menu system must have a options button in order to change the volume and graphics settings | The options can be open from any point of the game | 4 | Important | Satisfied | 
+|            003 |           002 | The main menu system must have various options (Play game, Settings, Exit) | The main menu can take you to the game once the play button is pressed | 4 | Necessary | Satisfied | 
 |            006 |           003 | The Camera system must be orthographic and adjustable by scrolling up and down | The ants and other small objects can be seen | 7 | Important | Satisfied | 
 |            007 |           005 | The player must have the ability to control the populations of the ant colony with the Queen Ant | The population can be managed | 5 | Necessary | Satisfied | 
 |            008 |           006 | The player must have the ability to view the surface map of the game | The surface can be seen in the game | 5 | Necessary | Satisfied | 
