@@ -71,7 +71,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Product Demonstration](https://www.youtube.com/watch?v=ivLUCNLZI-k)
 
 # Sprint 4
-- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities.md)
+- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities_sprint4.md)
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint4_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
@@ -87,7 +87,7 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Product Demonstration](https://www.youtube.com/watch?v=npeapxLao-8)
 
 # Sprint 5
-- [Responsibilities]
+- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities_sprint5.md)
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint5_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
