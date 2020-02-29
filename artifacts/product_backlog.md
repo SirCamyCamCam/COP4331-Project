@@ -6,8 +6,8 @@
 | 002 | ~~As a player, I would like to open the game to a main menu, as I may need to change options and exit~~ | 4 | 7 | Given a game (.exe file), when I open it, then the game will open up to the main menu | Done |
 | 003 | ~~As a player, I would like to move the camera, as I need to be able to see the entirety of the playing field~~ | 7 | 2 | Given the game, when I use WASD and scroll, then the camera should move and zoom in according to the input | Done |
 | 004 | ~~As a player, I would like to switch views, in order to see the surface and my underground colony~~ | 3 | 1 | Given the game, when I want to change views, then I should be able to see the surface or underground | Done | 
-| 005 | ~~As a player, I would like to spawn ants, in order to manage populations of the colony~~ | 4 | 1 | When I select a type of ant, it should spawn and show in the ant counter | Done |
-| 006 | ~~As a player, I would like to see the status of my colony, in order to know what I need to do next~~ | 6 | 1 | When I need to know how my colony is doing, I will look at the status bars | Done |
+| 005 | ~~As a player, I would like to spawn ants, in order to manage populations of the colony~~ | 4 | 1 | Given ants, when I select a type of ant, then it should spawn and show in the ant counter | Done |
+| 006 | ~~As a player, I would like to see the status of my colony, in order to know what I need to do next~~ | 6 | 1 | Given an ant colony, when I need to know how my colony is doing, then I will look at the status bars | Done |
 | 007 | ~~As a player, I would like to be able to change the volume within my game~~ | 4 | 3 | I would like to keep my ears from ringing and be able to hear at all | Done |
 | 008 | ~~As a player, I would like to create waypoints for my ants to travel to and from~~ | 7 | 1 | It is vital that we can control the movement of ants throughout the game | Done | 
 | 009 | ~~As a player, I would like to hear sound effects to make the game more immersive and give me feedback~~ | 8 | 2 | Sound design is a vital aspect to making a game feel more interactive | Done |
