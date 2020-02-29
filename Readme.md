@@ -85,3 +85,19 @@ Ants do not have a long lifespan and will sacarfice themselves for the greater g
 - [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
 - [Automated Tests](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts/TestScript)
 - [Product Demonstration](https://www.youtube.com/watch?v=npeapxLao-8)
+
+# Sprint 5
+- [Responsibilities]
+- [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
+- [Sprint Backlog]
+- [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
+- [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
+- [Burndown Chart]
+- [Velocity Chart]
+- Design Documents
+  - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
+  - [Class Diagrams](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
+  - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
+- [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
+- [Automated Tests](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts/TestScript)
+- [Product Demonstration]
