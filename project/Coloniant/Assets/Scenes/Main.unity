@@ -3401,7 +3401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 872439727}
   m_Layer: 0
-  m_Name: OriginalSpawnLocations
+  m_Name: OriginalWaypointSpawnLocations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5934,7 +5934,11 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
+<<<<<<< HEAD
   field of view: 57.2
+=======
+  field of view: 75
+>>>>>>> ffd4e101be156e318e365bcc8f22623ea74660e2
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5959,7 +5963,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477167260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -42.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8665,6 +8669,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 0
+  defaultAntSpeed: 2
+  defaultIdleNoise: 0.1
+  defaultRotationSpeed: 3
+  defaultIdleDistance: 3
   currentView: 0
 --- !u!1 &2142544822
 GameObject:

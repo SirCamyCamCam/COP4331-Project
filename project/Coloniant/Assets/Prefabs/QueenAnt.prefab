@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   antSpriteRenderer: {fileID: 212279560602015710}
   lifeSeconds: 1000
+  antGameObject: {fileID: 1886451855588212}
   antType: 0
 --- !u!114 &114602168266510262
 MonoBehaviour:

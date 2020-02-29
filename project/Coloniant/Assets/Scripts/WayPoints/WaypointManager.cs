@@ -130,6 +130,8 @@ public class WaypointManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         SpawnAllOriginalWaypoints();
+        QueenAnt.main.SetNursery(nurseryWaypoints[0].gameObject);
+        QueenAnt.main.ant.AssignTargetWaypoint(nurseryWaypoints[0].gameObject);
         currentOverallFlow = 1;
         flowUpdateTime = GameManager.main.FlowUpdateSeconds();
         StartCoroutine(waitToUpdateOverallFlow());

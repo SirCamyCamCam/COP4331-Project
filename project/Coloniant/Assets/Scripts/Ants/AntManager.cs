@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - Ant Manager                              2/16/2020
+// Coloniant - Ant Manager                              2/29/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -30,6 +30,14 @@ public class AntManager : MonoBehaviour{
 
     [Header("Ant Settings")]
     public float spawnRate;
+    [SerializeField]
+    private float defaultAntSpeed;
+    [SerializeField]
+    private float defaultIdleNoise;
+    [SerializeField]
+    private float defaultRotationSpeed;
+    [SerializeField]
+    private float defaultIdleDistance;
 
     #endregion
 
@@ -63,14 +71,33 @@ public class AntManager : MonoBehaviour{
         antList = new List<Ant>();
     }
 
-    private void Start()
-    {
-
-    }
-
     #endregion
 
     #region Public Methods
+
+    // Return the default ant speed
+    public float DefaultAntSpeed()
+    {
+        return defaultAntSpeed;
+    }
+
+    // Return the default ant idle noice
+    public float DefaultAntIdleNoise()
+    {
+        return defaultIdleNoise;
+    }
+
+    // Returns the default rotation speed
+    public float DefaultRotationSpeed()
+    {
+        return defaultRotationSpeed;
+    }
+    
+    // Returns the default idle distance
+    public float DefaultIdleDistance()
+    {
+        return defaultIdleDistance;
+    }
 
     // Changes the current view
     public void SwitchLevelView(SceneView view)
