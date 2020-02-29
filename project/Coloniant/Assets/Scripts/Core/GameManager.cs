@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - GameManager                              2/16/2020
+// Coloniant - GameManager                              2/29/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
