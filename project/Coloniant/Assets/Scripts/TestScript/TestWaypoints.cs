@@ -65,6 +65,6 @@ public class TestWaypoints {
         Assert.False(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, null));
         Assert.True(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, waypoint2));
     }
-
+    */
 }
-*/
+ */
