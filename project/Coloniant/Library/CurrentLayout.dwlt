@@ -109,11 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-<<<<<<< HEAD
   controlID: 66
-=======
-  controlID: 13648
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,11 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-<<<<<<< HEAD
   controlID: 67
-=======
-  controlID: 13649
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,11 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-<<<<<<< HEAD
   controlID: 24
-=======
-  controlID: 13601
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,13 +201,8 @@ MonoBehaviour:
     y: 0
     width: 753
     height: 309
-<<<<<<< HEAD
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-=======
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
@@ -386,15 +369,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 60e6ffff42e7ffff24e8ffffeef9ffff00000000
-=======
-    m_SelectedIDs: 02360000
-    m_LastClickedID: 13826
-    m_ExpandedIDs: 42e8ffff88f7ffff000000002034000050350000
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -449,15 +426,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
-=======
-    m_Target: {x: -1.5873278, y: 0.42311835, z: 0.70436954}
-    speed: 2
-    m_Value: {x: -1.5873278, y: 0.42311835, z: 0.70436954}
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -489,15 +460,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
-=======
-    m_Target: 13.234367
-    speed: 2
-    m_Value: 13.234367
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -635,34 +600,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
     - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scenes
-=======
-    - Assets/Prefabs
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets/Prefabs
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ThePr\OneDrive\Documents\GitHub\COP4331-Project\project\Coloniant
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
     m_SelectedIDs: c62b0000
     m_LastClickedID: 11206
     m_ExpandedIDs: 000000009c2b0000122c0000cc2c0000122d0000822e000000ca9a3b
-=======
-    m_SelectedIDs: 822d0000
-    m_LastClickedID: 11650
-    m_ExpandedIDs: 000000006e2c0000e42c00009a2d0000e02d0000f82f000000ca9a3b
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -690,11 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
     m_ExpandedIDs: 000000009c2b0000122c0000cc2c0000122d0000822e0000
-=======
-    m_ExpandedIDs: 000000006e2c0000e42c00009a2d0000e02d0000f82f000000ca9a3b
->>>>>>> parent of 9adfddb... Merge branch 'master' of https://github.com/SirCamyCamCam/COP4331-Project
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
