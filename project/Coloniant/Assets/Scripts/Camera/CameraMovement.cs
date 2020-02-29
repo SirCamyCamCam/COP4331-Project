@@ -2,7 +2,8 @@
 
 public class CameraMovement : MonoBehaviour
 {
-    public float panSpeed = 1f;
+    public float panSpeed ;
+    
     public Vector2 panLimit;
     public float scrollSpeed = 20f;
 
@@ -11,6 +12,13 @@ public class CameraMovement : MonoBehaviour
      
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            panSpeed = 2f;
+        }
+        else {
+            panSpeed = 1f;
+        }
         Vector3 pos = transform.position;
         if (Input.GetKey("w"))
         {
