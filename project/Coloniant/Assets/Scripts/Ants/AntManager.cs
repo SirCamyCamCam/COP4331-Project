@@ -326,6 +326,12 @@ public class AntManager : MonoBehaviour{
         return trashHandlersAntCount;
     }
 
+    // Returns the total ant count
+    public int GetTotalAntCount()
+    {
+        return trashHandlersAntCount + foragerAntCount + gardenerAntCount + excavatorsAntCount + queenAntCount + soliderAntCount;
+    }
+
     #endregion
 
     #region Private Methods

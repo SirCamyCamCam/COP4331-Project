@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WaypointManager : MonoBehaviour {
 
@@ -72,6 +73,10 @@ public class WaypointManager : MonoBehaviour {
     [SerializeField]
     private GameObject startLeafPostion;
 
+    [Header("Line Renderer")]
+    public Material lineMaterial;
+    public float lineWidth;
+
     [Header("Prefabs")]
     [SerializeField]
     private GameObject waypointPrefab;
@@ -94,6 +99,7 @@ public class WaypointManager : MonoBehaviour {
     private List<Waypoint> transitionWaypoints;
     private List<Waypoint> exitWaypoints;
     private HashSet<WaypointBridge> bridgeSet;
+    private Dictionary<WaypointBridge, LineRenderer> waypointLines;
     private Dictionary<WaypointBridge, int> maxAntsAllowedBetweenWaypoints;
     private Dictionary<WaypointBridge, int> curentAntsInBridges;
     private Dictionary<WaypointBridge, float> flowBetweenWaypoints;
@@ -114,6 +120,7 @@ public class WaypointManager : MonoBehaviour {
         curentAntsInBridges = new Dictionary<WaypointBridge, int>();
         flowBetweenWaypoints = new Dictionary<WaypointBridge, float>();
         idleAntAtWaypointCount = new Dictionary<Waypoint, int>();
+        waypointLines = new Dictionary<WaypointBridge, LineRenderer>();
         bridgeSet = new HashSet<WaypointBridge>();
 
         allWaypoints = new List<Waypoint>();
@@ -246,6 +253,8 @@ public class WaypointManager : MonoBehaviour {
             return null;
         }
 
+        newWaypointGameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
         // Get Waypoint object
         Waypoint newWaypointClass = newWaypointGameObject.GetComponent<Waypoint>();
         if (newWaypointClass == null)
@@ -278,6 +287,32 @@ public class WaypointManager : MonoBehaviour {
                 curentAntsInBridges.Add(newBridge, 0);
                 maxAntsAllowedBetweenWaypoints.Add(newBridge, maxAntsOnStart);
                 flowBetweenWaypoints.Add(newBridge, 0);
+
+                LineRenderer newLine = new GameObject().AddComponent<LineRenderer>();
+                newLine.material = main.lineMaterial;
+                newLine.startWidth = lineWidth;
+                newLine.endWidth = lineWidth;
+                newLine.numCapVertices = 5;
+                newLine.SetPosition(0, w.GetComponent<Transform>().position);
+                newLine.SetPosition(1, newWaypointGameObject.transform.position);
+                newLine.sortingOrder = 5;
+                if (waypointLevel == Level.ABOVE_GROUND && w.CurrentLevel() == Level.ABOVE_GROUND && GameManager.main.currentView == GameManager.CurrentView.UNDER_GROUND)
+                {
+                    newLine.enabled = false;
+                }
+                else if (waypointLevel == Level.UNDER_GROUND && w.CurrentLevel() == Level.UNDER_GROUND && GameManager.main.currentView == GameManager.CurrentView.SURFACE)
+                {
+                    newLine.enabled = false;
+                }
+                else if (waypointLevel == Level.UNDER_GROUND && w.CurrentLevel() == Level.ABOVE_GROUND)
+                {
+                    newLine.enabled = false;
+                }
+                else if (waypointLevel == Level.ABOVE_GROUND && w.CurrentLevel() == Level.UNDER_GROUND)
+                {
+                    newLine.enabled = false;
+                }
+                waypointLines.Add(newBridge, newLine);
             }
         }
 
@@ -393,6 +428,17 @@ public class WaypointManager : MonoBehaviour {
         foreach (Waypoint w in allWaypoints)
         {
             w.SwitchLevel(level);
+        }
+        foreach (WaypointBridge w in bridgeSet)
+        {
+            if (w.waypoint1.CurrentLevel() == level && w.waypoint2.CurrentLevel() == level)
+            {
+                waypointLines[w].enabled = true;
+            }
+            else
+            {
+                waypointLines[w].enabled = false;
+            }
         }
     }
 

@@ -150,7 +150,10 @@ public class MainUIManager : MonoBehaviour {
                 currentPanel = ShowingPanel.NONE;
                 break;
         }
-	}
+
+        // Top Bars
+        totalAntsTextNumber.text = AntManager.main.GetTotalAntCount().ToString();
+    }
 
     #endregion
 
@@ -271,7 +274,12 @@ public class MainUIManager : MonoBehaviour {
     // Updates all the values on the ant panel when needed
     private void UpdateAntPanel()
     {
-        // To Do
+        totalSoldierTextNumber.text = AntManager.main.GetSoliderCount().ToString();
+        totalTrashHandlersTextNumber.text = AntManager.main.GetTrashHandlerCount().ToString();
+        totalQueensTextNumber.text = AntManager.main.GetQueenCount().ToString();
+        totalGardenersTextNumber.text = AntManager.main.GetGardenerCount().ToString();
+        totalExcavatorsTextNumber.text = AntManager.main.GetExcavatorCount().ToString();
+        totalForagerTextNumber.text = AntManager.main.GetForagerCount().ToString();
     }
 
     // Updates all the values on the protection panel when needed
