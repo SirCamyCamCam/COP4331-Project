@@ -8648,8 +8648,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 0
-  defaultAntSpeed: 3
-  defaultIdleNoise: 0.5
+  defaultAntSpeed: 2
+  defaultIdleNoise: 0.1
+  defaultRotationSpeed: 3
+  defaultIdleDistance: 3
   currentView: 0
 --- !u!1 &2142544822
 GameObject:

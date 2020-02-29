@@ -61,6 +61,9 @@ public class Ant : MonoBehaviour {
     private float xDirection;
     private float yDirection;
     private float idleNoise;
+    private float rotationSpeed;
+    private float idleDistance;
+    private bool isReturningToWaypoint;
 
     #endregion
 
@@ -98,10 +101,13 @@ public class Ant : MonoBehaviour {
         ChangeView(AntManager.main.currentView);
         antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
-        xDirection = 0;
-        yDirection = 0;
+        xDirection = 500000;
+        yDirection = 500000;
         currentSpeed = AntManager.main.DefaultAntSpeed();
         idleNoise = AntManager.main.DefaultAntIdleNoise();
+        rotationSpeed = AntManager.main.DefaultRotationSpeed();
+        idleDistance = AntManager.main.DefaultIdleDistance();
+        isReturningToWaypoint = false;
 	}
 
     // No update for effeciency
@@ -159,17 +165,39 @@ public class Ant : MonoBehaviour {
     // Called when the Ant is idle
     private void IdleAnt()
     {
-        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < 5f)
+        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) > idleDistance && isReturningToWaypoint == false)
+        {
+            isReturningToWaypoint = true;
+        }
+        else if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < idleDistance - 1 && isReturningToWaypoint == true)
+        {
+            isReturningToWaypoint = false;
+        }
+
+        xDirection += 1 * Random.value;
+        yDirection += 1 * Random.value;
+
+        if (xDirection == int.MaxValue || yDirection == int.MaxValue)
+        {
+            xDirection = 0;
+            yDirection = 0;
+        }
+
+        if (isReturningToWaypoint == false)
         {
             float randomVal = Mathf.PerlinNoise(
-                antGameObject.transform.position.x * idleNoise,
-                antGameObject.transform.position.y * idleNoise);
-            float angle = Mathf.Lerp(-360, 360, randomVal);
-            antGameObject.transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+                xDirection * idleNoise,
+                yDirection * idleNoise);
+            float angle = Mathf.Lerp(-10, 10, randomVal);
+            antGameObject.transform.eulerAngles = new Vector3(0,0, antGameObject.transform.eulerAngles.z + angle);
         }
         else
         {
-            antGameObject.transform.LookAt(targetWaypoint.transform);
+            Vector3 direction = (targetWaypoint.transform.position - antGameObject.transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.back);
+            antGameObject.transform.rotation = Quaternion.Slerp(antGameObject.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+            antGameObject.transform.eulerAngles = new Vector3(0, 0, antGameObject.transform.eulerAngles.z);
+
         }
         antGameObject.transform.position +=
             antGameObject.transform.up

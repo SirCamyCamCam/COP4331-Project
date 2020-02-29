@@ -34,6 +34,10 @@ public class AntManager : MonoBehaviour{
     private float defaultAntSpeed;
     [SerializeField]
     private float defaultIdleNoise;
+    [SerializeField]
+    private float defaultRotationSpeed;
+    [SerializeField]
+    private float defaultIdleDistance;
 
     #endregion
 
@@ -86,6 +90,18 @@ public class AntManager : MonoBehaviour{
     public float DefaultAntIdleNoise()
     {
         return defaultIdleNoise;
+    }
+
+    // Returns the default rotation speed
+    public float DefaultRotationSpeed()
+    {
+        return defaultRotationSpeed;
+    }
+    
+    // Returns the default idle distance
+    public float DefaultIdleDistance()
+    {
+        return defaultIdleDistance;
     }
 
     // Changes the current view
