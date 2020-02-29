@@ -2,6 +2,5 @@
 
 | ID | User Story | Effort | Priority | Validation Criteria | Owner |
 |----|------------|--------|----------|---------------------|-------|
-| 001 | As a player, I would like the Queen ant to stay at the nursery waypoint to spawn ants | 8 | 2 | The queen ant stays at the nursery waypoint or move between the multiple nursery waypoints | To Do |
+| 001 | As a player, I would like the Ants to have the ability to stay idle at a Waypoint | 8 | 2 | The Ants must stay within 5 meters of the Waypoint when in the "Idle" state | To Do |
 | 002 | As a player, I would like to have 1 queen per nursery | 2 | 2 | There may only be as many queens as there are nursery waypoints | To Do |
-| 003 | As a player, I would like to add different classes of ants that conduct different actions | 7 | 2 | The different classes will make the ant colony run more efficiently based on the needs | To Do |
