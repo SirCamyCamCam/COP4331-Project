@@ -30,6 +30,10 @@ public class AntManager : MonoBehaviour{
 
     [Header("Ant Settings")]
     public float spawnRate;
+    [SerializeField]
+    private float defaultAntSpeed;
+    [SerializeField]
+    private float defaultIdleNoise;
 
     #endregion
 
@@ -71,6 +75,18 @@ public class AntManager : MonoBehaviour{
     #endregion
 
     #region Public Methods
+
+    // Return the default ant speed
+    public float DefaultAntSpeed()
+    {
+        return defaultAntSpeed;
+    }
+
+    // Return the default ant idle noice
+    public float DefaultAntIdleNoise()
+    {
+        return defaultIdleNoise;
+    }
 
     // Changes the current view
     public void SwitchLevelView(SceneView view)

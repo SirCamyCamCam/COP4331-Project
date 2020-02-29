@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+// using NUnit.Framework;
+// using UnityEngine.TestTools;
 
 public class TestWaypoints {
 
-
+    /*
     [Test]
     public void TestSpawnWaypoint()
     {
@@ -60,4 +60,5 @@ public class TestWaypoints {
         Assert.False(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, null));
         Assert.True(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, waypoint2));
     }
+    */
 }

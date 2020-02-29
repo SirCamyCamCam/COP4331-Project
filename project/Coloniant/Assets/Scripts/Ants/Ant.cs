@@ -20,12 +20,6 @@ public class Ant : MonoBehaviour {
         JOB
     }
 
-    public enum AntLevel
-    {
-        UNDER_GROUND,
-        ABOVE_GROUND
-    };
-
     public enum AntType
     {
         GARDENER,
@@ -44,13 +38,16 @@ public class Ant : MonoBehaviour {
     private SpriteRenderer antSpriteRenderer;
     [SerializeField]
     private int lifeSeconds;
+    [SerializeField]
+    private GameObject antGameObject;
 
     #endregion
 
     #region Run-Time fields
 
+    // Basic
     private AntState antState;
-    private AntLevel antLevel;
+    private AntManager.SceneView antLevel;
     [HideInInspector]
     public AntType antType;
     private GameObject previousWaypoint;
@@ -58,8 +55,12 @@ public class Ant : MonoBehaviour {
     private GameObject targetWaypoint;
     private GameObject[] waypointPath;
     private int currentWaypoint;
-    private int currentSpeed;
+    private float currentSpeed;
     private int foodConsumptionRate;
+    // Idle Actions
+    private float xDirection;
+    private float yDirection;
+    private float idleNoise;
 
     #endregion
 
@@ -93,38 +94,55 @@ public class Ant : MonoBehaviour {
                 break;
         }
 
-        antLevel = AntLevel.UNDER_GROUND;
+        antLevel = AntManager.SceneView.UNDER_GROUND;
         ChangeView(AntManager.main.currentView);
         antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
+        xDirection = 0;
+        yDirection = 0;
+        currentSpeed = AntManager.main.DefaultAntSpeed();
+        idleNoise = AntManager.main.DefaultAntIdleNoise();
 	}
 
     // No update for effeciency
     // Update is called once per frame
-    /*void Update () {
-		
-	}*/
+    void Update () {
+        if (targetWaypoint == null)
+        {
+            return;
+        }
+        if (antState == AntState.IDLE)
+        {
+            IdleAnt();
+        }
+	}
 
     #endregion
 
     #region Public Methods
 
+    // Used to assign the current target
+    public void AssignTargetWaypoint(GameObject target)
+    {
+        targetWaypoint = target;
+    }
+
     // Switches between above ground a below ground
     public void ChangeView(AntManager.SceneView view)
     {
-        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntManager.SceneView.UNDER_GROUND)
         {
             antSpriteRenderer.enabled = false;
         }
-        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntManager.SceneView.ABOVE_GROUND)
         {
             antSpriteRenderer.enabled = true;
         }
-        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.UNDER_GROUND)
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntManager.SceneView.UNDER_GROUND)
         {
             antSpriteRenderer.enabled = true;
         }
-        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.ABOVE_GROUND)
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntManager.SceneView.ABOVE_GROUND)
         {
             antSpriteRenderer.enabled = false;
         }
@@ -137,6 +155,27 @@ public class Ant : MonoBehaviour {
     #endregion
 
     #region Private Methods
+
+    // Called when the Ant is idle
+    private void IdleAnt()
+    {
+        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < 5f)
+        {
+            float randomVal = Mathf.PerlinNoise(
+                antGameObject.transform.position.x * idleNoise,
+                antGameObject.transform.position.y * idleNoise);
+            float angle = Mathf.Lerp(-360, 360, randomVal);
+            antGameObject.transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        }
+        else
+        {
+            antGameObject.transform.LookAt(targetWaypoint.transform);
+        }
+        antGameObject.transform.position +=
+            antGameObject.transform.up
+            * Time.deltaTime
+            * currentSpeed;
+    }
 
     // Kills the ant
     private void Die()
