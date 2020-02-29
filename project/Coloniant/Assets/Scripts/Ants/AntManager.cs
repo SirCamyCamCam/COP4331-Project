@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - Ant Manager                              2/16/2020
+// Coloniant - Ant Manager                              2/29/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -69,11 +69,6 @@ public class AntManager : MonoBehaviour{
         }
 
         antList = new List<Ant>();
-    }
-
-    private void Start()
-    {
-
     }
 
     #endregion

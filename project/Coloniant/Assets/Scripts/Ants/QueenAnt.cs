@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - QueenAnt                                 2/16/2020
+// Coloniant - QueenAnt                                 2/29/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -71,7 +71,9 @@ public class QueenAnt : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spawnWaitTime = AntManager.main.spawnRate;
-	}
+        AddAntToSpawn(Ants.SOLIDER, 100);
+
+    }
 
     // Update is called once per frame
     /*void Update () {
@@ -90,6 +92,7 @@ public class QueenAnt : MonoBehaviour {
     // Adds an ant which should spawn
     public bool AddAntToSpawn(Ants type, int count)
     {
+        //Debug.Log("Called");
         if (count <= 0)
         {
             return false;
@@ -202,6 +205,7 @@ public class QueenAnt : MonoBehaviour {
                 yield break;
             }
         }
+        spawnTimer = null;
     }
 
     #endregion
