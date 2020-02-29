@@ -15,7 +15,7 @@ public class QueenAnt : MonoBehaviour {
     public enum Ants
     {
         QUEEN = 0,
-        SOLDIER = 1,
+        Soldier = 1,
         FORAGER = 2,
         GARDENER = 3,
         TRASH_HANDLER = 4,
@@ -32,7 +32,7 @@ public class QueenAnt : MonoBehaviour {
     [SerializeField]
     private GameObject queenPrefab;
     [SerializeField]
-    private GameObject soldierPrefab;
+    private GameObject SoldierPrefab;
     [SerializeField]
     private GameObject foragerPrefab;
     [SerializeField]
@@ -71,7 +71,7 @@ public class QueenAnt : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spawnWaitTime = AntManager.main.spawnRate;
-        AddAntToSpawn(Ants.SOLDIER, 100);
+        AddAntToSpawn(Ants.SOLIDER, 100);
 
     }
 
@@ -158,9 +158,12 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a Soldier
     private void SpawnSoldier()
     {
-        Instantiate(soldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
-        GameObject newAnt = Instantiate(soldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+<<<<<<< HEAD
+        Instantiate(SoldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+=======
+        GameObject newAnt = Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+>>>>>>> ffd4e101be156e318e365bcc8f22623ea74660e2
     }
 
     #endregion
@@ -183,7 +186,7 @@ public class QueenAnt : MonoBehaviour {
                     case (int)Ants.QUEEN:
                         SpawnQueen();
                         break;
-                    case (int)Ants.SOLDIER:
+                    case (int)Ants.Soldier:
                         SpawnSoldier();
                         break;
                     case (int)Ants.FORAGER:

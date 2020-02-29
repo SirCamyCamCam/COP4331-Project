@@ -6,6 +6,6 @@ public class SpawnSoldierButton : MonoBehaviour {
 
     public void SpawnAnt()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.SOLDIER, 1);
+        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.Soldier, 1);
     }
 }
