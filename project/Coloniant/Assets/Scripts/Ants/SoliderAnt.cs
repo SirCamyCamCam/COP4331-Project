@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - SoldierAnt                               2/16/2020
+// Coloniant - SoliderAnt                               2/16/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierAnt : MonoBehaviour {
+public class SoliderAnt : MonoBehaviour {
 
     #region Inpesctor Fields
 

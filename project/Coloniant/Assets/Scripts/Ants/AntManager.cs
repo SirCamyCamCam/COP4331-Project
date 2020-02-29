@@ -43,7 +43,7 @@ public class AntManager : MonoBehaviour{
 
     #region Run-Time Fields
 
-    private int SoldierAntCount = 0;
+    private int soliderAntCount = 0;
     private int queenAntCount = 0;
     private int trashHandlersAntCount = 0;
     private int excavatorsAntCount = 0;
@@ -109,15 +109,15 @@ public class AntManager : MonoBehaviour{
         }
     }
 
-    // Adds to Soldier count
+    // Adds to solider count
     public void AddToSoldierCount(Ant antToAdd)
     {
         if (antToAdd == null)
         {
-            Debug.LogError("Attempted to add a null Soldier ant!");
+            Debug.LogError("Attempted to add a null solider ant!");
             return;
         }
-        SoldierAntCount++;
+        soliderAntCount++;
         antList.Add(antToAdd);
     }
 
@@ -181,7 +181,7 @@ public class AntManager : MonoBehaviour{
         antList.Add(antToAdd);
     }
 
-    // Removes from Soldier count
+    // Removes from solider count
     public void RemoveFromSoldierCount(Ant antToRemove)
     {
         if (antToRemove == null)
@@ -190,13 +190,13 @@ public class AntManager : MonoBehaviour{
             return;
         }
         antList.Remove(antToRemove);
-        if (SoldierAntCount > 0)
+        if (soliderAntCount > 0)
         {
-            SoldierAntCount--;
+            soliderAntCount--;
         }
         else
         {
-            SoldierAntCount = 0;
+            soliderAntCount = 0;
         }
     }
 
@@ -290,10 +290,10 @@ public class AntManager : MonoBehaviour{
         }
     }
 
-    // Returns Soldier count
-    public int GetSoldierCount()
+    // Returns Solider count
+    public int GetSoliderCount()
     {
-        return SoldierAntCount;
+        return soliderAntCount;
     }
 
     // Returns Queen count

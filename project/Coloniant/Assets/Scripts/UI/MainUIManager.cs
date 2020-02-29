@@ -46,7 +46,7 @@ public class MainUIManager : MonoBehaviour {
 
     [Header("Protection")]
     [SerializeField]
-    private Text protectionSoldierTextNumber;
+    private Text protectionSoliderTextNumber;
     [SerializeField]
     private Text protectionTotalTextNumber;
     [SerializeField]

@@ -1,13 +1,8 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
-using  NUnit.Framework;
-using UnityEngine.TestTools;
-=======
 // using NUnit.Framework;
 // using UnityEngine.TestTools;
->>>>>>> ffd4e101be156e318e365bcc8f22623ea74660e2
 
 public class TestWaypoints {
 
@@ -67,4 +62,3 @@ public class TestWaypoints {
     }
     */
 }
- */

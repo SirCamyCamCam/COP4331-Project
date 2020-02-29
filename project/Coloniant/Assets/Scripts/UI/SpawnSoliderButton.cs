@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnSoldierButton : MonoBehaviour {
+public class SpawnSoliderButton : MonoBehaviour {
 
     public void SpawnAnt()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.Soldier, 1);
+        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);
     }
 }
