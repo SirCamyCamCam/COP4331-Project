@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - Ant                                      2/29/2020
+// Coloniant - Ant                                      2/16/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -20,6 +20,12 @@ public class Ant : MonoBehaviour {
         JOB
     }
 
+    public enum AntLevel
+    {
+        UNDER_GROUND,
+        ABOVE_GROUND
+    };
+
     public enum AntType
     {
         GARDENER,
@@ -38,16 +44,13 @@ public class Ant : MonoBehaviour {
     private SpriteRenderer antSpriteRenderer;
     [SerializeField]
     private int lifeSeconds;
-    [SerializeField]
-    private GameObject antGameObject;
 
     #endregion
 
     #region Run-Time fields
 
-    // Basic
     private AntState antState;
-    private AntManager.SceneView antLevel;
+    private AntLevel antLevel;
     [HideInInspector]
     public AntType antType;
     private GameObject previousWaypoint;
@@ -55,15 +58,8 @@ public class Ant : MonoBehaviour {
     private GameObject targetWaypoint;
     private GameObject[] waypointPath;
     private int currentWaypoint;
-    private float currentSpeed;
+    private int currentSpeed;
     private int foodConsumptionRate;
-    // Idle Actions
-    private float xDirection;
-    private float yDirection;
-    private float idleNoise;
-    private float rotationSpeed;
-    private float idleDistance;
-    private bool isReturningToWaypoint;
 
     #endregion
 
@@ -97,58 +93,38 @@ public class Ant : MonoBehaviour {
                 break;
         }
 
-        antLevel = AntManager.SceneView.UNDER_GROUND;
+        antLevel = AntLevel.UNDER_GROUND;
         ChangeView(AntManager.main.currentView);
         antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
-        xDirection = 500000;
-        yDirection = 500000;
-        currentSpeed = AntManager.main.DefaultAntSpeed();
-        idleNoise = AntManager.main.DefaultAntIdleNoise();
-        rotationSpeed = AntManager.main.DefaultRotationSpeed();
-        idleDistance = AntManager.main.DefaultIdleDistance();
-        isReturningToWaypoint = false;
 	}
 
     // No update for effeciency
     // Update is called once per frame
-    void Update () {
-        if (targetWaypoint == null)
-        {
-            return;
-        }
-        if (antState == AntState.IDLE)
-        {
-            IdleAnt();
-        }
-	}
+    /*void Update () {
+		
+	}*/
 
     #endregion
 
     #region Public Methods
 
-    // Used to assign the current target
-    public void AssignTargetWaypoint(GameObject target)
-    {
-        targetWaypoint = target;
-    }
-
     // Switches between above ground a below ground
     public void ChangeView(AntManager.SceneView view)
     {
-        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntManager.SceneView.UNDER_GROUND)
+        if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.UNDER_GROUND)
         {
             antSpriteRenderer.enabled = false;
         }
-        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntManager.SceneView.ABOVE_GROUND)
+        else if (view == AntManager.SceneView.ABOVE_GROUND && antLevel == AntLevel.ABOVE_GROUND)
         {
             antSpriteRenderer.enabled = true;
         }
-        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntManager.SceneView.UNDER_GROUND)
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.UNDER_GROUND)
         {
             antSpriteRenderer.enabled = true;
         }
-        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntManager.SceneView.ABOVE_GROUND)
+        else if (view == AntManager.SceneView.UNDER_GROUND && antLevel == AntLevel.ABOVE_GROUND)
         {
             antSpriteRenderer.enabled = false;
         }
@@ -161,49 +137,6 @@ public class Ant : MonoBehaviour {
     #endregion
 
     #region Private Methods
-
-    // Called when the Ant is idle
-    private void IdleAnt()
-    {
-        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) > idleDistance && isReturningToWaypoint == false)
-        {
-            isReturningToWaypoint = true;
-        }
-        else if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < idleDistance - 1 && isReturningToWaypoint == true)
-        {
-            isReturningToWaypoint = false;
-        }
-
-        xDirection += 1 * Random.value;
-        yDirection += 1 * Random.value;
-
-        if (xDirection == int.MaxValue || yDirection == int.MaxValue)
-        {
-            xDirection = 0;
-            yDirection = 0;
-        }
-
-        if (isReturningToWaypoint == false)
-        {
-            float randomVal = Mathf.PerlinNoise(
-                xDirection * idleNoise,
-                yDirection * idleNoise);
-            float angle = Mathf.Lerp(-10, 10, randomVal);
-            antGameObject.transform.eulerAngles = new Vector3(0,0, antGameObject.transform.eulerAngles.z + angle);
-        }
-        else
-        {
-            Vector3 direction = (targetWaypoint.transform.position - antGameObject.transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.back);
-            antGameObject.transform.rotation = Quaternion.Slerp(antGameObject.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-            antGameObject.transform.eulerAngles = new Vector3(0, 0, antGameObject.transform.eulerAngles.z);
-
-        }
-        antGameObject.transform.position +=
-            antGameObject.transform.up
-            * Time.deltaTime
-            * currentSpeed;
-    }
 
     // Kills the ant
     private void Die()
