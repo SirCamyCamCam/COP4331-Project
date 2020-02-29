@@ -2,7 +2,7 @@
 
 public class CameraMovement : MonoBehaviour
 {
-    public float panSpeed = 1f;
+    public float panSpeed;
     public Vector2 panLimit;
     public float scrollSpeed = 20f;
 
@@ -12,6 +12,17 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
+
+        //If the player wants to move the camera faster
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            panSpeed = 4f;
+        }
+        else 
+        {
+            panSpeed = 1f;
+        }
+
         if (Input.GetKey("w"))
         {
             pos.y -= panSpeed * Time.deltaTime;
