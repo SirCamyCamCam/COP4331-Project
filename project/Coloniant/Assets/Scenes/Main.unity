@@ -5896,6 +5896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1477167263}
   - component: {fileID: 1477167262}
+  - component: {fileID: 1477167264}
   - component: {fileID: 1477167261}
   m_Layer: 0
   m_Name: Main Camera
@@ -5920,7 +5921,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -5933,10 +5934,14 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
+<<<<<<< HEAD
+  field of view: 57.2
+=======
   field of view: 75
+>>>>>>> ffd4e101be156e318e365bcc8f22623ea74660e2
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5945,7 +5950,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -5964,6 +5969,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1477167264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477167260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02e1dc9460f0c549ae1384a2a2de718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panSpeed: 1
+  panLimit: {x: 100, y: 100}
+  scrollSpeed: 20
+  minZ: -10
+  maxZ: -0.3
 --- !u!1001 &1490233194
 Prefab:
   m_ObjectHideFlags: 0
@@ -7471,7 +7492,7 @@ MonoBehaviour:
   foodRatioSlider: {fileID: 2035718242}
   foodDropDownButton: {fileID: 1026939889}
   foodPanel: {fileID: 1297706757}
-  protectionSoliderTextNumber: {fileID: 258041742}
+  protectionSoldierTextNumber: {fileID: 0}
   protectionTotalTextNumber: {fileID: 779967173}
   protectionRatioSlider: {fileID: 1132651044}
   protectionDropDownButton: {fileID: 913237794}
