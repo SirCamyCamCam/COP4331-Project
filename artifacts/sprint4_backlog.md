@@ -8,4 +8,3 @@
 | 004 | As a player, I would like to designate waypoints as a farming waypoint | 5 | 1 | The player must be able to set a waypoint's function as "farming" | Amin | 
 | 005 | As a player, I would like to designate waypoints as a trash site | 5 | 1 | The player must be able to set a waypoint function to "trash site" | Amin | 
 | 006 | As a player, I would like to have 1 queen per nursery | 2 | 2 | There may only be as many queens as there are nursery waypoints | To Do |
-| 007 | As a player, I would like to add different classes of ants that conduct different actions | 7 | 2 | The different classes will make the ant colony run more efficiently based on the needs | To Do |
