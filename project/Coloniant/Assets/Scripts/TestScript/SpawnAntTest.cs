@@ -24,6 +24,6 @@ public class SpawnAntTest {
         Assert.False(QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.QUEEN, -100));
         Assert.False(QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.Soldier, -300000));
         Assert.False(QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.TRASH_HANDLER, 0));
-    }*/
+    }
 
 }*/
