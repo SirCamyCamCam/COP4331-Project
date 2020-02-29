@@ -14,7 +14,6 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 0
     y: 42.666668
     width: 1280
@@ -24,8 +23,6 @@ MonoBehaviour:
   m_RootView: {fileID: 2}
   m_MinSize: {x: 950, y: 521}
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 135
     y: 157
     width: 1131
@@ -34,9 +31,6 @@ MonoBehaviour:
   m_Title: 
   m_RootView: {fileID: 2}
   m_MinSize: {x: 950, y: 392}
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
@@ -59,15 +53,9 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 1280
     height: 637
   m_MinSize: {x: 950, y: 521}
-=======
-    width: 1131
-    height: 980
-  m_MinSize: {x: 950, y: 392}
->>>>>>> parent of de3cd4b... misc
 =======
     width: 1131
     height: 980
@@ -91,11 +79,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 1280
-=======
-    width: 1131
->>>>>>> parent of de3cd4b... misc
 =======
     width: 1131
 >>>>>>> parent of de3cd4b... misc
@@ -119,13 +103,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     y: 617
     width: 1280
-=======
-    y: 960
-    width: 1131
->>>>>>> parent of de3cd4b... misc
 =======
     y: 960
     width: 1131
@@ -152,7 +131,6 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 1280
     height: 587
   m_MinSize: {x: 679, y: 471}
@@ -160,17 +138,12 @@ MonoBehaviour:
   vertical: 0
   controlID: 413
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     width: 1131
     height: 930
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
   controlID: 22
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
 --- !u!114 &6
 MonoBehaviour:
@@ -191,7 +164,6 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 1000
     height: 587
   m_MinSize: {x: 404, y: 471}
@@ -199,17 +171,12 @@ MonoBehaviour:
   vertical: 1
   controlID: 368
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     width: 805
     height: 930
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
   controlID: 23
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
 --- !u!114 &7
 MonoBehaviour:
@@ -230,7 +197,6 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 1000
     height: 309
   m_MinSize: {x: 404, y: 221}
@@ -238,17 +204,12 @@ MonoBehaviour:
   vertical: 0
   controlID: 337
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     width: 805
     height: 659
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 68
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
 --- !u!114 &8
 MonoBehaviour:
@@ -267,13 +228,8 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     width: 247
     height: 309
-=======
-    width: 244
-    height: 659
->>>>>>> parent of de3cd4b... misc
 =======
     width: 244
     height: 659
@@ -300,21 +256,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 247
     y: 0
     width: 753
     height: 309
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 244
     y: 0
     width: 561
     height: 659
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
@@ -343,7 +293,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     y: 309
     width: 1000
     height: 278
@@ -356,8 +305,6 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     y: 659
     width: 805
     height: 271
@@ -369,9 +316,6 @@ MonoBehaviour:
   - {fileID: 19}
   m_Selected: 1
   m_LastSelected: 0
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
 --- !u!114 &11
 MonoBehaviour:
@@ -388,21 +332,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 1000
     y: 0
     width: 280
     height: 587
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 805
     y: 0
     width: 326
     height: 930
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -432,32 +370,22 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 249.33334
     y: 92
     width: 749
     height: 288
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 246
     y: 19
     width: 557
     height: 638
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-=======
-  m_SelectedSizes: 0700000000000000000000000c000000000000000000000000000000000000000000000000000000
->>>>>>> parent of de3cd4b... misc
 =======
   m_SelectedSizes: 0700000000000000000000000c000000000000000000000000000000000000000000000000000000
 >>>>>>> parent of de3cd4b... misc
@@ -468,21 +396,15 @@ MonoBehaviour:
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_HBaseRangeMin: -249.66667
     m_HBaseRangeMax: 249.66667
     m_VBaseRangeMin: -90.333336
     m_VBaseRangeMax: 90.333336
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     m_HBaseRangeMin: -950
     m_HBaseRangeMax: 950
     m_VBaseRangeMin: -540
     m_VBaseRangeMax: 540
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
@@ -490,11 +412,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_HSlider: 0
-=======
-    m_HSlider: 1
->>>>>>> parent of de3cd4b... misc
 =======
     m_HSlider: 1
 >>>>>>> parent of de3cd4b... misc
@@ -510,21 +428,15 @@ MonoBehaviour:
       x: 0
       y: 17
 <<<<<<< HEAD
-<<<<<<< HEAD
       width: 749
       height: 271
     m_Scale: {x: 1.5, y: 1.5}
     m_Translation: {x: 374.5, y: 135.5}
 =======
-=======
->>>>>>> parent of de3cd4b... misc
       width: 557
       height: 621
     m_Scale: {x: 0.45673016, y: 0.4567302}
     m_Translation: {x: 278.5, y: 310.5}
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -532,7 +444,6 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
 <<<<<<< HEAD
       x: -249.66667
       y: -90.333336
@@ -544,8 +455,6 @@ MonoBehaviour:
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 1123.5, y: 432}
 =======
-=======
->>>>>>> parent of de3cd4b... misc
       x: -609.7692
       y: -679.83246
       width: 1219.5385
@@ -555,9 +464,6 @@ MonoBehaviour:
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 557, y: 638}
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -585,7 +491,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     y: 92
     width: 245
     height: 288
@@ -596,8 +501,6 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: 52fbffff00000000
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     y: 19
     width: 242
     height: 638
@@ -607,9 +510,6 @@ MonoBehaviour:
     m_SelectedIDs: 78350000
     m_LastClickedID: 13688
     m_ExpandedIDs: bce3fffffae4ffffd2e5ffff80e7ffffe0e8ffff8af7ffff000000004a2f0000602f0000
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -655,7 +555,6 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 253.33334
     y: 99.333336
     width: 740
@@ -664,8 +563,6 @@ MonoBehaviour:
   m_SceneLighting: 1
   lastFramingTime: 4462.4472898145505
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 416
     y: 92
     width: 949
@@ -673,24 +570,15 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
   lastFramingTime: 3157.010933438915
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_Target: {x: 1.846798, y: -3.197301, z: -10.599322}
     speed: 2
     m_Value: {x: 1.846798, y: -3.197301, z: -10.599322}
-=======
-    m_Target: {x: 0, y: 0, z: 0}
-    speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
->>>>>>> parent of de3cd4b... misc
 =======
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
@@ -704,7 +592,6 @@ MonoBehaviour:
   m_ValidateTrueMetals: 0
   m_SceneViewState:
 <<<<<<< HEAD
-<<<<<<< HEAD
     showFog: 1
     showMaterialUpdate: 0
     showSkybox: 1
@@ -712,17 +599,12 @@ MonoBehaviour:
     showImageEffects: 1
     showParticleSystems: 1
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     showFog: 0
     showMaterialUpdate: 0
     showSkybox: 0
     showFlares: 0
     showImageEffects: 0
     showParticleSystems: 0
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   grid:
     xGrid:
@@ -743,15 +625,9 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_Target: 82.39701
     speed: 2
     m_Value: 82.39701
-=======
-    m_Target: 10
-    speed: 2
-    m_Value: 10
->>>>>>> parent of de3cd4b... misc
 =======
     m_Target: 10
     speed: 2
@@ -814,15 +690,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 250
     y: 92
     width: 751
-=======
-    x: 306
-    y: 92
-    width: 695
->>>>>>> parent of de3cd4b... misc
 =======
     x: 306
     y: 92
@@ -859,11 +729,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 250
-=======
-    x: 204
->>>>>>> parent of de3cd4b... misc
     y: 92
     width: 751
     height: 359
@@ -874,7 +740,6 @@ MonoBehaviour:
   - https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_RegisteredViewInstances:
   - {fileID: 0}
-<<<<<<< HEAD
 =======
     x: 204
     y: 92
@@ -888,9 +753,6 @@ MonoBehaviour:
   - https://public-cdn.cloud.unity3d.com/editor/production/cloud/ads
   m_RegisteredViewInstances:
   - {fileID: 0}
-  - {fileID: 0}
->>>>>>> parent of de3cd4b... misc
-=======
   - {fileID: 0}
 >>>>>>> parent of de3cd4b... misc
 --- !u!114 &18
@@ -914,21 +776,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 0
     y: 401.33334
     width: 998
     height: 257
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 35
     y: 852
     width: 803
     height: 250
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -943,7 +799,6 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
 <<<<<<< HEAD
     - Assets/Scripts/Player
   m_ViewMode: 1
@@ -961,8 +816,6 @@ MonoBehaviour:
     m_LastClickedID: 11044
     m_ExpandedIDs: 00000000ec2a0000242b0000ae2c0000a82e000000ca9a3b
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     - Assets/Scripts/TestScript
   m_ViewMode: 1
   m_StartGridSize: 57
@@ -977,9 +830,6 @@ MonoBehaviour:
     m_SelectedIDs: da2c0000
     m_LastClickedID: 11482
     m_ExpandedIDs: 000000006c2c0000e22c0000982d0000de2d0000f62f000000ca9a3b
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -997,11 +847,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
-=======
-      m_ClientGUIView: {fileID: 10}
->>>>>>> parent of de3cd4b... misc
 =======
       m_ClientGUIView: {fileID: 10}
 >>>>>>> parent of de3cd4b... misc
@@ -1017,11 +863,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_ExpandedIDs: 00000000ec2a0000242b0000ae2c0000a82e000000ca9a3b
-=======
-    m_ExpandedIDs: 000000006c2c0000e22c0000982d0000de2d0000f62f0000
->>>>>>> parent of de3cd4b... misc
 =======
     m_ExpandedIDs: 000000006c2c0000e22c0000982d0000de2d0000f62f0000
 >>>>>>> parent of de3cd4b... misc
@@ -1050,21 +892,15 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000096290000
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     m_SelectedInstanceIDs: 78350000
     m_LastClickedInstanceID: 13688
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009629000000000000
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1091,11 +927,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_GridSize: 64
-=======
-    m_GridSize: 57
->>>>>>> parent of de3cd4b... misc
 =======
     m_GridSize: 57
 >>>>>>> parent of de3cd4b... misc
@@ -1121,21 +953,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 0
     y: 472
     width: 1001
     height: 186
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 135
     y: 865
     width: 803
     height: 250
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
@@ -1159,21 +985,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
     x: 1002
     y: 92
     width: 278
     height: 566
 =======
-=======
->>>>>>> parent of de3cd4b... misc
     x: 807
     y: 19
     width: 324
     height: 909
-<<<<<<< HEAD
->>>>>>> parent of de3cd4b... misc
-=======
 >>>>>>> parent of de3cd4b... misc
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -1182,11 +1002,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_PreviewResizer:
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_CachedPref: 1
-=======
-    m_CachedPref: 250
->>>>>>> parent of de3cd4b... misc
 =======
     m_CachedPref: 250
 >>>>>>> parent of de3cd4b... misc

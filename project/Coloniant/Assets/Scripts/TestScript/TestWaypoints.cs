@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< HEAD
-<<<<<<< HEAD
 // using NUnit.Framework;
 // using UnityEngine.TestTools;
-=======
-using  NUnit.Framework;
-using UnityEngine.TestTools;
->>>>>>> parent of de3cd4b... misc
 =======
 using  NUnit.Framework;
 using UnityEngine.TestTools;

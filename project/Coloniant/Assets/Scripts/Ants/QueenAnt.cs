@@ -146,12 +146,8 @@ public class QueenAnt : MonoBehaviour {
     private void SpawnSolider()
     {
 <<<<<<< HEAD
-<<<<<<< HEAD
         GameObject newAnt = Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
-=======
-        Instantiate(SoldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
->>>>>>> parent of de3cd4b... misc
 =======
         Instantiate(SoldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
 >>>>>>> parent of de3cd4b... misc
