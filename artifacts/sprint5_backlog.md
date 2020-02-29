@@ -4,4 +4,3 @@
 |----|------------|--------|----------|---------------------|-------|
 | 001 | As a player, I would like the Ants to have the ability to stay idle at a Waypoint | 8 | 2 | The Ants must stay within 5 meters of the Waypoint when in the "Idle" state | Cameron |
 | 002 | As a player, I would like to have 1 queen per nursery | 2 | 2 | There may only be as many queens as there are nursery waypoints | To Do |
-| 003 | As a player, I would like to increase the speed of the camera by holding left shift | 2 | 5 | The camera goes faster then left shift is held | Henry | 

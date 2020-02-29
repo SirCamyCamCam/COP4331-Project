@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - QueenAnt                                 2/29/2020
+// Coloniant - QueenAnt                                 2/16/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
@@ -43,7 +43,8 @@ public class QueenAnt : MonoBehaviour {
     private GameObject excavatorPrefab;
 
     [Header("Dependencies")]
-    public Ant ant;
+    [SerializeField]
+    private Ant ant;
     [SerializeField]
     private GameObject spawn;
 
@@ -54,7 +55,6 @@ public class QueenAnt : MonoBehaviour {
     private int[] antsToSpawn;
     private float spawnWaitTime;
     private Coroutine spawnTimer;
-    private GameObject nurery;
 
     #endregion
 
@@ -71,9 +71,7 @@ public class QueenAnt : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spawnWaitTime = AntManager.main.spawnRate;
-        AddAntToSpawn(Ants.SOLIDER, 100);
-
-    }
+	}
 
     // Update is called once per frame
     /*void Update () {
@@ -84,15 +82,9 @@ public class QueenAnt : MonoBehaviour {
 
     #region Public Methods
 
-    public void SetNursery(GameObject nur)
-    {
-        nurery = nur;
-    }
-
     // Adds an ant which should spawn
     public bool AddAntToSpawn(Ants type, int count)
     {
-        //Debug.Log("Called");
         if (count <= 0)
         {
             return false;
@@ -123,43 +115,42 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a queen ant
     private void SpawnQueen()
     {
-        GameObject newAnt = Instantiate(queenPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
-        newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        Instantiate(queenPrefab, spawn.transform.position, new Quaternion(0,0,0,0));
     }
 
     // Spawns a forager ant
     private void SpawnForager()
     {
-        GameObject newAnt = Instantiate(foragerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
-        newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        Instantiate(foragerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a gardener ant
     private void SpawnGardener()
     {
-        GameObject newAnt = Instantiate(gardenerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
-        newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        Instantiate(gardenerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
     
     // Spawns a excavator
     private void SpawnExcavator()
     {
-        GameObject newAnt = Instantiate(excavatorPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
-        newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        Instantiate(excavatorPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a trash handeler
     private void SpawnTrashHandler()
     {
-        GameObject  newAnt = Instantiate(trashHandlerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
-        newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        Instantiate(trashHandlerPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
     }
 
     // Spawns a solider
     private void SpawnSolider()
     {
+<<<<<<< HEAD
         GameObject newAnt = Instantiate(soliderPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+=======
+        Instantiate(SoldierPrefab, spawn.transform.position, new Quaternion(0, 0, 0, 0));
+>>>>>>> parent of de3cd4b... misc
     }
 
     #endregion
@@ -205,7 +196,6 @@ public class QueenAnt : MonoBehaviour {
                 yield break;
             }
         }
-        spawnTimer = null;
     }
 
     #endregion
