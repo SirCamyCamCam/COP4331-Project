@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+// --------------------------------------------------------------
+// Coloniant - Camera Movement                              2/29/2020
+// Author(s): Henry Alvarez
+// Contact: henryalvarez5798@knights.ucf.edu
+// --------------------------------------------------------------
+
+using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
