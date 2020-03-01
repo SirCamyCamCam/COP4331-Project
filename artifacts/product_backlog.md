@@ -11,5 +11,5 @@
 | 007 | ~~As a player, I would like to be able to change the volume within my game~~ | 4 | 3 | Given a game with audio, when I open the audo settings, then the audio should change based on how much the player changes it | Done |
 | 008 | ~~As a player, I would like to create waypoints for my ants to travel to and from~~ | 7 | 1 | Given many ants, when I want the ants to move from one place to another, then we can control the movement of the ants through waypoints | Done | 
 | 009 | ~~As a player, I would like to hear sound effects to make the game more immersive and give me feedback~~ | 8 | 2 | Given a game, When I do certain actions in the game, then unique sounds should be played based on what the player did | Done |
-| 0010 | ~~As a player, I would like to see the path of travel for ants~~ | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Done | 
+| 010 | ~~As a player, I would like to see the path of travel for ants~~ | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Done | 
 | 011 | ~~As a player, I would like the Ants to have the ability to stay idle at a Waypoint~~ | 8 | 2 | Given the Ants, when they are in an idle state, then they will stay within 5 meters of the waypoint | Done |
