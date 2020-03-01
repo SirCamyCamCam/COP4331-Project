@@ -93,7 +93,7 @@ Ants do not have a long lifespan and will sacrifice themselves for the greater g
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
 - [Burndown Chart]
-- [Velocity Chart]
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1j6sikJHcW3rIfNJAafYf-Lq_KI1qhfvqXbBuPORxzX4/edit#gid=0)
 - Design Documents
   - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
   - [Class Diagrams](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
