@@ -7,3 +7,4 @@
 | 003 | As a player, I would like the forager to travel to and from the leaf and farm site | 10 | 1 | Given the forager ant's job is collect leaves, when it collects a leaf an places it in the farm, then it's job is complete | To Do |
 | 004 | As a player, I would like to see the path of travel for ants | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Cameron | 
 | 005 | As a player, I would like to increase the speed of the camera if needed | 2 | 5 | The camera goes faster when left shift is held | Henry | 
+| 006 | As a player, I would like to restrict the area in which I can zoom | 3 | 2 | The zoom only allows you to look at whats needed | Henry | 
