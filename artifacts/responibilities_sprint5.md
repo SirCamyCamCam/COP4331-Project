@@ -7,6 +7,7 @@
  - Added user stories to the sprint backlog
  - Restricted the zoom functionality
  - Added the ability to make camera move faster
+ - Updated validation criteria's to fit specific regulations
 
  
  ## Amin Kavehzadeh 
