@@ -8,6 +8,7 @@
  - Restricted the zoom functionality
  - Added the ability to make camera move faster
  - Updated validation criteria's to fit specific regulations
+ - Completely updated the trello to fit the format listed on the sample trello
 
  
  ## Amin Kavehzadeh 
