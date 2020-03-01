@@ -5978,7 +5978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 0
   panLimit: {x: 100, y: 100}
-  zoomSpeed: 20
+  scrollSpeed: 20
   minZ: -10
   maxZ: -0.3
 --- !u!1001 &1490233194
