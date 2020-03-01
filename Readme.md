@@ -6,7 +6,7 @@ As the player you will be tasked to manage a leaf cutter ant colony. By managing
 1. Queen - Tasked with laying eggs for selected ant types chosen by the player
 2. Soldier - Able to protect the colony from foreign colony invasions and other insects munching on your colony 
 3. Foragers- Collects leaves from the outside world and leaves them to be farmed by the Gardener ant 
-4. Gardener - Farms said leaves for fungus which is the Leaf Cutter ant's main source of  food 
+4. Gardener - Farms leaves for fungus which is the Leaf Cutter ant's main source of  food 
 5. Trash Handlers - Removes dead ants and mold which grows from un maintained leaves 
 6. Excavators - Creates "roads" and rooms for the colony which allow for movement through the colony
 
