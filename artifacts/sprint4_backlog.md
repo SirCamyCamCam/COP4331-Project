@@ -7,4 +7,4 @@
 | 003 | As player, I would like designate waypoints as nursery waypoints for my ants to spawn | 5 | 1 | Given the game, when I create a waypoint, then I will be able to designate it as a nursery waypoint | Amin |
 | 004 | As a player, I would like to designate waypoints as a farming waypoint | 5 | 1 | Given the game, when I create a waypoint, then I will be able to designate it as a farming waypoint | Amin | 
 | 005 | As a player, I would like to designate waypoints as a trash site | 5 | 1 | Given the game, when I create a waypoint, then I will be able to designate it as a trash site waypoint | Amin | 
-| 006 | As a player, I would like to have 1 queen per nursery | 2 | 2 | There may only be as many queens as there are nursery waypoints | To Do |
+| 006 | As a player, I would like to have 1 queen per nursery | 2 | 2 | Given nursery waypoints, when I click a button, then I will be able to leave a queen at a nursery waypoint | To Do |
