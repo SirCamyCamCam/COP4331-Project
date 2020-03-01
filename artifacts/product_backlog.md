@@ -12,4 +12,4 @@
 | 008 | ~~As a player, I would like to create waypoints for my ants to travel to and from~~ | 7 | 1 | It is vital that we can control the movement of ants throughout the game | Done | 
 | 009 | ~~As a player, I would like to hear sound effects to make the game more immersive and give me feedback~~ | 8 | 2 | Sound design is a vital aspect to making a game feel more interactive | Done |
 | 0010 | ~~As a player, I would like to see the path of travel for ants~~ | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Done | 
-| 011 | ~~As a player, I would like the Ants to have the ability to stay idle at a Waypoint~~ | 8 | 2 | Given the Ants have an idle, they stay within 5 meters of the Waypoint when in the "Idle" state | Done |
+| 011 | ~~As a player, I would like the Ants to have the ability to stay idle at a Waypoint~~ | 8 | 2 | Given the Ants, when they are in an idle state, then they will stay within 5 meters of the waypoint | Done |
