@@ -56,6 +56,8 @@ public class QueenAnt : MonoBehaviour {
     private Coroutine spawnTimer;
     private GameObject nurery;
 
+    //counts the number of Queens per nursery 
+    private int QueenC = 0; 
     #endregion
 
     #region Monobehaviors
@@ -123,8 +125,14 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a queen ant
     private void SpawnQueen()
     {
+        
+        if(QueenC == 0){
         GameObject newAnt = Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
+        QueenC++; 
+        }
+        else {return;}
+        
     }
 
     // Spawns a forager ant
