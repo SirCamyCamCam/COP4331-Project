@@ -4,7 +4,7 @@ For the gamers, real time strategist’s and the general public, this game cater
 
 As the player you will be tasked to manage a leaf cutter ant colony. By managing the population of different types of ants, you will be able to maintain a healthy colony. There are 6 categories of ants as listed:
 1. Queen - Tasked with laying eggs for selected ant types chosen by the player
-2. Solider - Able to protect the colony from foreign colony invasions and other insects munching on your colony 
+2. Soldier - Able to protect the colony from foreign colony invasions and other insects munching on your colony 
 3. Foragers- Collects leaves from the outside world and leaves them to be farmed by the Gardener ant 
 4. Gardener - Farms said leaves for fungus which is the Leaf Cutter ant's main source of  food 
 5. Trash Handlers - Removes dead ants and mold which grows from un maintained leaves 
@@ -17,7 +17,7 @@ There are 5 objectives. It will be the responsibility of the player to choose wh
 4. Manage space/roads - Not enough room in your colony and you can't lay enough eggs or grow enough fungus. If the roads aren't big enough then you have slowed movement and reduced productivity. 
 5. Manage populations - Having not enough or too many of one ant can negatively impact your progress. This is the player's main way to keep the colony happy and healthy and progress over time.
 
-Ants do not have a long lifespan and will sacarfice themselves for the greater good of the colony. It is the player's task to keep and eye out on which populations are dying off and be able to replace them as needed.
+Ants do not have a long lifespan and will sacrifice themselves for the greater good of the colony. It is the player's task to keep and eye out on which populations are dying off and be able to replace them as needed.
 
 # Team Members
 
