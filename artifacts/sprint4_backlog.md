@@ -2,7 +2,7 @@
 
 | ID | User Story | Effort | Priority | Validation Criteria | Owner |
 |----|------------|--------|----------|---------------------|-------|
-| 001 | As a player, I would like to create waypoints for my ants to travel to and from | 7 | 1 | It is vital that we can control the movement of ants throughout the game | Cameron | 
+| 001 | As a player, I would like to create waypoints for my ants to travel to and from | 7 | 1 | Given ants, when I want my ants to travel, then I will be able to create waypoints  | Cameron | 
 | 002 | As a player, I would like the Queen ant to stay at the nursery waypoint to spawn ants | 8 | 2 | The queen ant stays at the nursery waypoint or move between the multiple nursery waypoints | To Do |
 | 003 | As player, I would like designate waypoints as nursery waypoints for my ants to spawn | 5 | 1 | The player must be able to set a waypoint's function as "nursery" | Amin |
 | 004 | As a player, I would like to designate waypoints as a farming waypoint | 5 | 1 | The player must be able to set a waypoint's function as "farming" | Amin | 
