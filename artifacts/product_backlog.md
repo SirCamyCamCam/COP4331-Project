@@ -13,3 +13,5 @@
 | 009 | ~~As a player, I would like to hear sound effects to make the game more immersive and give me feedback~~ | 8 | 2 | Given a game, When I do certain actions in the game, then unique sounds should be played based on what the player did | Done |
 | 010 | ~~As a player, I would like to see the path of travel for ants~~ | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Done | 
 | 011 | ~~As a player, I would like the Ants to have the ability to stay idle at a Waypoint~~ | 8 | 2 | Given the Ants, when they are in an idle state, then they will stay within 5 meters of the waypoint | Done |
+| 012 | ~~As a player, I would like to increase the speed of the camera if needed~~ | 2 | 5 | Given a camera, when I want the camera to go faster, I click left shift and it will do so | Done | 
+| 013 | ~~As a player, I would like to restrict the area in which I can zoom~~ | 3 | 2 | Given a camera, when I zoom in and out, then I will only be able to see my current location's (surface, underground) objects | Done | 
