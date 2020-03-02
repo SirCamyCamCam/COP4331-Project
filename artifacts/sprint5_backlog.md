@@ -8,4 +8,4 @@
 | 004 | As a player, I would like to see the path of travel for ants | 3 | 2 | Given the colony may expand, when the player creates a new waypoint, then there must be a line between the waypoints | Cameron | 
 | 005 | As a player, I would like to increase the speed of the camera if needed | 2 | 5 | Given a camera, when I want the camera to go faster, I click left shift and it will do so | Henry | 
 | 006 | As a player, I would like to restrict the area in which I can zoom | 3 | 2 | Given a camera, when I zoom in and out, then I will only be able to see my current location's (surface, underground) objects | Henry | 
-| 006 | As a player, I would like to change my video settings  | 3 | 5 | Given a game, when I go to the video settings, then I will be able to change things such as resolution, quality, etc | Henry | 
+| 006 | As a player, I would like to change my video settings  | 3 | 5 | Given a game, when I go to the video settings, then I will be able to change things such as resolution, quality, etc | To Do | 
