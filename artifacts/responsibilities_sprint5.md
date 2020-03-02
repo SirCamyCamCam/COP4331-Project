@@ -1,6 +1,15 @@
-rrr ## Cameron Carstens:
+ ## Cameron Carstens:
 
-- 
+- Created dynamic line renderers for waypoint bridges so that the player can see waypoint connections
+- Created line renderer updator which turns on and off renderer depending on the current view
+- Created the idle state for ants using perilin noise to create a natural movement effect
+- Created defaults for the idle state which can later be edited in the inspector for easy modification
+- Updated user stories
+- Updated user interface documents to include user stories
+- Updated architecture documents to include user stories
+- Created tests for all public methods called within the application
+- Updated product backlog
+- Created product demonstration
 
  ## Henry Alvarez:
  
