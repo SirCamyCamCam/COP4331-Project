@@ -1,4 +1,4 @@
- ## Cameron Carstens:
+rrr ## Cameron Carstens:
 
 - 
 
@@ -11,7 +11,6 @@
  - Completely updated the trello to fit the format listed on the sample trello
  - Updated gitignore with various files to improve source control
  - Created backup branch in case of bad push/commits
- - Added "Audio Settings" button
  
  ## Amin Kavehzadeh 
 
