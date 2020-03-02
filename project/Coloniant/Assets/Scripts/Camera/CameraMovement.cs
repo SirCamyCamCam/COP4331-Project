@@ -7,33 +7,50 @@
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
-{   
-    #region Declarations
+{
+
+    //z must be greater than 70 and less than maxHeight
+
+    #region Run-Time Fields
+
     public float panSpeed;
     public Vector2 panLimit;
     public float scrollSpeed = 20f;
     public float minHeight = -70;
     public float maxHeight = -10;
-     
+
     #endregion
+
+    #region Monobehaviors
+
     void Update()
     {
-        cameraMovement();
+        CameraControl();
+        CameraSpeed();
+        CameraScroll();
     }
 
-    #region Public Methods
-    public void cameraMovement(){
-        Vector3 pos = transform.position;
+    #endregion
 
+    #region Public Methods
+
+    public bool CameraSpeed()
+    {
         //If the player wants to move the camera faster
         if (Input.GetKey(KeyCode.LeftShift))
         {
             panSpeed = 4f;
         }
-        else 
+        else
         {
             panSpeed = 1f;
         }
+
+        return true;
+    }
+
+    public bool CameraControl(){
+        Vector3 pos = transform.position;
 
         if (Input.GetKey("w"))
         {
@@ -52,6 +69,15 @@ public class CameraMovement : MonoBehaviour
             pos.x += -panSpeed * Time.deltaTime;
         }
 
+        transform.position = pos;
+
+        return true;
+    }
+
+    public bool CameraScroll()
+    {
+        Vector3 pos = transform.position;
+
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
         if (pos.z >= minHeight && pos.z <= maxHeight)
@@ -69,7 +95,9 @@ public class CameraMovement : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, -panLimit.y, panLimit.y);
 
         transform.position = pos;
+
+        return true;
     }
+
     #endregion
 }
-//z must be greater than 70 and less than maxHeight

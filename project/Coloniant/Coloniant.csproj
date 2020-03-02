@@ -253,6 +253,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -324,7 +327,14 @@
     <Compile Include="Assets\Scripts\TestScript\TestCamera.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestGameManager.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestLineRenderer.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestMainUIManager.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestQueenAnt.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnExcavatorButton.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnForagerButton.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnGardenerButton.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnQueenButton.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnSoliderButton.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestSpawnTrashHandlerButton.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestWaypoint.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestWaypointManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
