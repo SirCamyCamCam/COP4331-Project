@@ -319,7 +319,14 @@
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\TestScript\SpawnAntTest.cs" />
-    <Compile Include="Assets\Scripts\TestScript\TestWaypoints.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestAnt.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestAntManager.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestCamera.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestGameManager.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestLineRenderer.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestQueenAnt.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestWaypoint.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestWaypointManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnExcavatorButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnForagerButton.cs" />

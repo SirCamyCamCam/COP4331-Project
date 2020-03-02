@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// using NUnit.Framework;
-// using UnityEngine.TestTools;
+using NUnit.Framework;
+using UnityEngine.TestTools;
 
-public class TestWaypoints {
+public class TestWaypointManager {
 
-    /*
+    
     [Test]
     public void TestSpawnWaypoint()
     {
@@ -60,5 +60,17 @@ public class TestWaypoints {
         Assert.False(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, null));
         Assert.True(WaypointManager.main.RemoveAntFromBridgeCount(waypoint, waypoint2));
     }
-    */
+
+    [Test]
+    public void SwitchLevelTest()
+    {
+        Waypoint waypoint = new Waypoint();
+        Vector3 spawn = new Vector3(0, 0, 0);
+        List<Waypoint> fakeList = new List<Waypoint>();
+        Waypoint waypoint2 = new Waypoint();
+        fakeList.Add(waypoint2);
+        WaypointManager.main.SpawnWaypoint(WaypointManager.WaypointType.TRANSITION, WaypointManager.Level.UNDER_GROUND, fakeList, spawn);
+        WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
+        AssertTrue(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
+    }
 }
