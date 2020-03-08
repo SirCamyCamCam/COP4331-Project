@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+//using NUnit.Framework;
+//using UnityEngine.TestTools;
 
 public class TestQueenAnt {
 
-    [Test]
+    /*[Test]
 	public void TestSetNursery()
     {
         GameObject newGameObject = new GameObject();
@@ -20,5 +20,5 @@ public class TestQueenAnt {
     {
         QueenAnt ant = new QueenAnt();
         AssertTrue(ant.AddAntToSpawn(QueenAnt.Ants.EXCAVATOR, 100));
-    }
+    }*/
 }

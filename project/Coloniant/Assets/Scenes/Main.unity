@@ -5979,8 +5979,8 @@ MonoBehaviour:
   panSpeed: 0
   panLimit: {x: 100, y: 100}
   scrollSpeed: 20
-  minZ: -10
-  maxZ: -0.3
+  minHeight: -70
+  maxHeight: -10
 --- !u!1001 &1490233194
 Prefab:
   m_ObjectHideFlags: 0
@@ -7705,7 +7705,7 @@ MonoBehaviour:
   startEntrancePosition: {fileID: 1230897717}
   startExitPostion: {fileID: 675243823}
   startLeafPostion: {fileID: 925357854}
-  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 3}
+  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   lineWidth: 0.3
   waypointPrefab: {fileID: 1059635954423062, guid: 13c6f02efa19a79458d2ea7e5dd598e1,
     type: 2}

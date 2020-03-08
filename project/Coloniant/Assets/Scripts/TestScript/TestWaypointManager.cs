@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
@@ -74,3 +74,4 @@ public class TestWaypointManager {
         AssertTrue(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
@@ -25,4 +25,4 @@ public class SpawnAntTest {
         Assert.False(QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.TRASH_HANDLER, 0));
     }
 
-}
+}*/

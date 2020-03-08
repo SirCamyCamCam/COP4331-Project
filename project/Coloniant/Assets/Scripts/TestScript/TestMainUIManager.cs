@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+//using NUnit.Framework;
+//using UnityEngine.TestTools;
 
 public class TestMainUIManager {
 
-	[Test]
+	/*[Test]
     public void TestFoodButton()
     {
         MainUIManager newM = new MainUIManager();
@@ -36,5 +36,5 @@ public class TestMainUIManager {
         MainUIManager newM = new MainUIManager();
         newM.ProtectionButton();
         AssertTrue(newM.currentPanel == ShowingPanel.PROTECTION);
-    }
+    }*/
 }
