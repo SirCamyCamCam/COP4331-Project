@@ -6,6 +6,6 @@ public class SpawnGardenerButton : MonoBehaviour {
 
     public void SpawnButton()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.GARDENER, 1);
+        AntManager.main.AddAntsToSpawn(Ant.AntType.GARDENER);
     }
 }

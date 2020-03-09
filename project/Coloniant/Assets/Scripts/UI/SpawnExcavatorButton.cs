@@ -6,6 +6,6 @@ public class SpawnExcavatorButton : MonoBehaviour {
 
     public void SpawnButton()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.EXCAVATOR, 1);
+        AntManager.main.AddAntsToSpawn(Ant.AntType.EXCAVATOR);
     }
 }

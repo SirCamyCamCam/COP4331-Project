@@ -6,6 +6,6 @@ public class SpawnTrashHandlerButton : MonoBehaviour {
 
     public void SpawnButton()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.TRASH_HANDLER, 1);
+        AntManager.main.AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
     }
 }
