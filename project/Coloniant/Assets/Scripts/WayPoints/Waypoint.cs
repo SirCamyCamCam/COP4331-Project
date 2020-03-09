@@ -17,6 +17,8 @@ public class Waypoint : MonoBehaviour {
     private GameObject attachedGameObject;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private bool easterEgg;
 
     #endregion
 
@@ -34,11 +36,23 @@ public class Waypoint : MonoBehaviour {
     private void Awake()
     {
         connectedWaypoints = new List<Waypoint>();
+        if (spriteRenderer == null)
+        {
+            gameObject.GetComponent<SpriteRenderer>();
+        }
+        if (attachedGameObject == null)
+        {
+            attachedGameObject = gameObject;
+        }
     }
 
     // Use this for initialization
     void Start()
     {
+        if (easterEgg == true)
+        {
+            return;
+        }
         switch (type)
         {
             case WaypointManager.WaypointType.FARM_SITE:
