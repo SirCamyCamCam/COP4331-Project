@@ -11,5 +11,8 @@
 - Created new user stories
 - Created Product Demonstration
 ## Henry
-
+- Worked on spawning set amount of ants with text box
+- Updated Velocity chart
 ## Amin
+- Worked on spawning of player created waypoints
+- Updated Burndown chart
