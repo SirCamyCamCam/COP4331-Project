@@ -14,3 +14,7 @@
 ## Henry
 
 ## Amin
+-changed the UI overlay for all of the waypoints utilized for our ants
+- created a script for the farming waypoints that enabels the user to click anywhere and spawn a waypoint
+-modified a script to allow the farming waypoints to connect to other waypoints
+-created the burndown chart for sprint 6
