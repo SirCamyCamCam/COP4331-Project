@@ -7,3 +7,4 @@
 | 004 | As a player, when I start the game, the queen should not be static | 2 | 1 | Given a queen, the queen should not be static and have a connected nursery | Cameron | 
 | 005 | As a player, when I spawn ants, they should be randomly assigned throughout the queens in the scene to spawn | 3 | 2 | Given spawning an ant, it should be randomly assigned between the queens in the scene | Cameron | 
 | 006 | As a player, I would like to have 1 of every time of ant exist at start | 1 | 1 | Given the game's start, there should exist one of every type of ant to begin the colony's functionality | Cameron | 
+| 007 | As a player, I would like to type a specific amount of ants to spawn instead of having to press a button once to spawn an ant | 4 | 2 |  Given the ability to spawn ants, when the player enters a specific amount to spawn a certain type of ant, then they will spawn appropriately | Henry |
