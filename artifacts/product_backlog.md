@@ -15,3 +15,7 @@
 | 011 | ~~As a player, I would like the Ants to have the ability to stay idle at a Waypoint~~ | 8 | 2 | Given the Ants, when they are in an idle state, then they will stay within 5 meters of the waypoint | Done |
 | 012 | ~~As a player, I would like to increase the speed of the camera if needed~~ | 2 | 5 | Given a camera, when I want the camera to go faster, I click left shift and it will do so | Done | 
 | 013 | ~~As a player, I would like to restrict the area in which I can zoom~~ | 3 | 2 | Given a camera, when I zoom in and out, then I will only be able to see my current location's (surface, underground) objects | Done | 
+| 014 | ~~As a player, I would like the forager to travel to and from the leaf and farm site~~ | 10 | 1 | Given the forager ant's job is collect leaves, when it collects a leaf an places it in the farm, then it's job is complete | Done |
+| 015 | ~~As a player, when I start the game, the queen should not be static~~ | 2 | 1 | Given a queen, the queen should not be static and have a connected nursery | Done | 
+| 016 | ~~As a player, when I spawn ants, they should be randomly assigned throughout the queens in the scene to spawn~~ | 3 | 2 | Given spawning an ant, it should be randomly assigned between the queens in the scene | Done | 
+| 017 | ~~As a player, I would like to have 1 of every time of ant exist at start~~ | 1 | 1 | Given the game's start, there should exist one of every type of ant to begin the colony's functionality | Done | 
