@@ -56,7 +56,8 @@ public class AntManager : MonoBehaviour{
     private int excavatorsAntCount = 0;
     private int foragerAntCount = 0;
     private int gardenerAntCount = 0;
-    private List<Ant> antList;
+    [HideInInspector]
+    public List<Ant> antList;
     [HideInInspector]
     public SceneView currentView;
     private List<Ant> queenAnts;
@@ -102,6 +103,11 @@ public class AntManager : MonoBehaviour{
         AddAntsToSpawn(Ant.AntType.GARDENER);
         AddAntsToSpawn(Ant.AntType.SOLDIER);
         AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
+
+        /*for (int i = 0; i < 5000; i++)
+        {
+            AddAntsToSpawn(Ant.AntType.FORAGER);
+        }*/
     }
 
     #endregion

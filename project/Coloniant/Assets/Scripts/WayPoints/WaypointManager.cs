@@ -512,6 +512,11 @@ public class WaypointManager : MonoBehaviour {
             }
         }*/
 
+        if (EasterEgg.main.itSASecret == true)
+        {
+            return null;
+        }
+
         path.Add(initalWaypoint.ReturnWaypointGameObject());
         visited.Add(initalWaypoint);
         path = SearchWaypointPathRecursive(initalWaypoint, waypointTypeToFind, path, visited);
