@@ -308,6 +308,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ants\Ant.cs" />
     <Compile Include="Assets\Scripts\Ants\AntManager.cs" />
+    <Compile Include="Assets\Scripts\Ants\EasterEgg.cs" />
     <Compile Include="Assets\Scripts\Ants\ExcavatorAnt.cs" />
     <Compile Include="Assets\Scripts\Ants\ForagerAnt.cs" />
     <Compile Include="Assets\Scripts\Ants\GardenerAnt.cs" />
