@@ -1,3 +1,4 @@
+# Sprint 6 Backlog
 | ID | User Story | Effort | Priority | Validation Criteria | Owner |
 |----|------------|--------|----------|---------------------|-------|
 | 001 | As a player, I would like to have 1 queen per nursery | 2 | 2 | Given waypoints, when a nursery waypoint is established, then only one queen will be at the waypoint | To Do |
