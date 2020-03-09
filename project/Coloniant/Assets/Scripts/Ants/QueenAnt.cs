@@ -24,7 +24,7 @@ public class QueenAnt : MonoBehaviour {
 
     #endregion
 
-    public static QueenAnt main;
+    //public static QueenAnt main;
 
     #region Inspector Fields
 
@@ -66,15 +66,11 @@ public class QueenAnt : MonoBehaviour {
     {
         ant.antType = Ant.AntType.QUEEN;
         antsToSpawn = new int[6];
-
-        main = this;
     }
 
     // Use this for initialization
     void Start () {
         spawnWaitTime = AntManager.main.spawnRate;
-        AddAntToSpawn(Ants.SOLIDER, 100);
-
     }
 
     // Update is called once per frame

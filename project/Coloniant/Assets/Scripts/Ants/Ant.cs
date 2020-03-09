@@ -12,7 +12,7 @@ public class Ant : MonoBehaviour {
 
     #region enum
 
-    private enum AntState
+    public enum AntState
     {
         WALKING,
         IDLE,
@@ -53,21 +53,30 @@ public class Ant : MonoBehaviour {
     private GameObject previousWaypoint;
     private GameObject nextWaypoint;
     private GameObject targetWaypoint;
-    private GameObject[] waypointPath;
+    private List<GameObject> waypointPath;
     private int currentWaypoint;
     private float currentSpeed;
     private int foodConsumptionRate;
-    // Idle Actions
+    // Noise
     private float xDirection;
     private float yDirection;
+    // Idle Actions
     private float idleNoise;
     private float rotationSpeed;
     private float idleDistance;
     private bool isReturningToWaypoint;
+    // Walking Actions
+    private float walkingNoise;
+    private float walkingWaypointDistance;
 
     #endregion
 
     #region Monobehaviors
+
+    private void Awake()
+    {
+        antState = AntState.IDLE;
+    }
 
     // Use this for initialization
     void Start ()
@@ -99,7 +108,6 @@ public class Ant : MonoBehaviour {
 
         antLevel = AntManager.SceneView.UNDER_GROUND;
         ChangeView(AntManager.main.currentView);
-        antState = AntState.IDLE;
         StartCoroutine(waitToKillAnt());
         xDirection = 500000;
         yDirection = 500000;
@@ -107,6 +115,8 @@ public class Ant : MonoBehaviour {
         idleNoise = AntManager.main.DefaultAntIdleNoise();
         rotationSpeed = AntManager.main.DefaultRotationSpeed();
         idleDistance = AntManager.main.DefaultIdleDistance();
+        walkingNoise = AntManager.main.DefaultWalkingNoise();
+        walkingWaypointDistance = AntManager.main.DefaultWalkingWaypointDistance();
         isReturningToWaypoint = false;
 	}
 
@@ -120,6 +130,11 @@ public class Ant : MonoBehaviour {
         if (antState == AntState.IDLE)
         {
             IdleAnt();
+        }
+        else if (antState == AntState.WALKING)
+        {
+            WalkingAnt();
+            CheckWaypointDistance();
         }
 	}
 
@@ -158,6 +173,35 @@ public class Ant : MonoBehaviour {
         }
     }
 
+    public void ChangeAntLevel(AntManager.SceneView view)
+    {
+        antLevel = view;
+        ChangeView(AntManager.main.currentView);
+    }
+
+    public AntState ReturnAntState()
+    {
+        return antState;
+    }
+
+    public void AssignWaypointList(List<GameObject> list)
+    {
+        waypointPath = list;
+        AssignAntState(AntState.WALKING);
+        AssignTargetWaypoint(waypointPath[0]);
+        currentWaypoint = 0;
+    }
+
+    public GameObject ReturnCurrentWaypoint()
+    {
+        return targetWaypoint;
+    }
+
+    public void AssignAntState(AntState setToState)
+    {
+        antState = setToState;
+    }
+
     #endregion
 
     #region Private Methods
@@ -165,6 +209,7 @@ public class Ant : MonoBehaviour {
     // Called when the Ant is idle
     private void IdleAnt()
     {
+        // Determine whether to turn around
         if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) > idleDistance && isReturningToWaypoint == false)
         {
             isReturningToWaypoint = true;
@@ -174,6 +219,7 @@ public class Ant : MonoBehaviour {
             isReturningToWaypoint = false;
         }
 
+        // Noise stuff
         xDirection += 1 * Random.value;
         yDirection += 1 * Random.value;
 
@@ -185,6 +231,7 @@ public class Ant : MonoBehaviour {
 
         if (isReturningToWaypoint == false)
         {
+            // Apply noise
             float randomVal = Mathf.PerlinNoise(
                 xDirection * idleNoise,
                 yDirection * idleNoise);
@@ -193,16 +240,57 @@ public class Ant : MonoBehaviour {
         }
         else
         {
+            // Turn to waypoint
             Vector3 direction = (targetWaypoint.transform.position - antGameObject.transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.back);
             antGameObject.transform.rotation = Quaternion.Slerp(antGameObject.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
             antGameObject.transform.eulerAngles = new Vector3(0, 0, antGameObject.transform.eulerAngles.z);
 
         }
+        // Go forward
         antGameObject.transform.position +=
             antGameObject.transform.up
             * Time.deltaTime
             * currentSpeed;
+    }
+
+    // Called when the Ant is walking
+    private void WalkingAnt()
+    {
+        // Face direction of target waypoint
+        Vector3 direction = (targetWaypoint.transform.position - antGameObject.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.back);
+        antGameObject.transform.rotation = Quaternion.Slerp(antGameObject.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+        // Noise
+        // Noise stuff
+        xDirection += 1 * Random.value;
+        yDirection += 1 * Random.value;
+
+        if (xDirection == int.MaxValue || yDirection == int.MaxValue)
+        {
+            xDirection = 0;
+            yDirection = 0;
+        }
+
+        float randomVal = Mathf.PerlinNoise(
+                xDirection * walkingNoise,
+                yDirection * walkingNoise);
+        float angle = Mathf.Lerp(-2, 2, randomVal);
+        antGameObject.transform.eulerAngles = new Vector3(0, 0, antGameObject.transform.eulerAngles.z + angle);
+
+        antGameObject.transform.position +=
+            antGameObject.transform.up
+            * Time.deltaTime
+            * currentSpeed;
+    }
+
+    // Checks the distance between the ant and the waypoint
+    private void CheckWaypointDistance()
+    {
+        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < walkingWaypointDistance)
+        {
+            FindNextWayPoint();
+        }
     }
 
     // Kills the ant
@@ -214,13 +302,52 @@ public class Ant : MonoBehaviour {
     // Finds the next Waypoint in the path
     private void FindNextWayPoint()
     {
+        // If this is the last waypoint, find next task
+        if (targetWaypoint == waypointPath[waypointPath.Count - 1])
+        {
+            FindNextWayPointTask();
+            return;
+        }
 
+        // Assign target to the next waypoint
+        currentWaypoint++;
+        targetWaypoint = waypointPath[currentWaypoint];
+
+        if (targetWaypoint.GetComponent<Waypoint>().CurrentLevel() == WaypointManager.Level.ABOVE_GROUND)
+        {
+            ChangeAntLevel(AntManager.SceneView.ABOVE_GROUND);
+            if (GameManager.main.currentView == GameManager.CurrentView.SURFACE)
+            {
+                antSpriteRenderer.enabled = true;
+            }
+            else
+            {
+                antSpriteRenderer.enabled = false;
+            }
+        }
+        else
+        {
+            ChangeAntLevel(AntManager.SceneView.UNDER_GROUND);
+            if (GameManager.main.currentView == GameManager.CurrentView.UNDER_GROUND)
+            {
+                antSpriteRenderer.enabled = true;
+            }
+            else
+            {
+                antSpriteRenderer.enabled = false;
+            }
+        }
     }
 
     // Finds the waypoint which we need to go to for it's task
     private void FindNextWayPointTask()
     {
-
+        switch (antType)
+        {
+            case AntType.FORAGER:
+                gameObject.GetComponent<ForagerAnt>().DecideNextMove();
+                break;
+        }
     }
 
     #endregion

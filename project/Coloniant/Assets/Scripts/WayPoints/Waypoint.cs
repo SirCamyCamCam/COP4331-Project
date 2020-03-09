@@ -23,7 +23,8 @@ public class Waypoint : MonoBehaviour {
     #region Runt-Time Fields
 
     private WaypointManager.WaypointType type;
-    private List<Waypoint> connectedWaypoints;
+    [HideInInspector]
+    public List<Waypoint> connectedWaypoints;
     private WaypointManager.Level level;
 
     #endregion
@@ -89,11 +90,10 @@ public class Waypoint : MonoBehaviour {
     #region Public methods
 
     // Sets the types for the waypoint and connected waypoints
-    public void SetUpWaypointTypes(WaypointManager.WaypointType typeToSet, WaypointManager.Level levelToSet, List<Waypoint> connected)
+    public void SetUpWaypointTypes(WaypointManager.WaypointType typeToSet, WaypointManager.Level levelToSet)
     {
         type = typeToSet;
         level = levelToSet;
-        connectedWaypoints = connected;
     }
 
     // Adds a new waypoint
@@ -133,6 +133,18 @@ public class Waypoint : MonoBehaviour {
         {
             spriteRenderer.enabled = false;
         }
+    }
+
+    // Returns the type
+    public WaypointManager.WaypointType ReturnWaypointType()
+    {
+        return type;
+    }
+
+    // Returns the gameobject
+    public GameObject ReturnWaypointGameObject()
+    {
+        return attachedGameObject;
     }
 
     #endregion

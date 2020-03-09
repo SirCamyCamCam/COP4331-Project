@@ -1145,7 +1145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265885044
 GameObject:
@@ -2306,7 +2306,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 423913a330bba954da51237a77b76448, type: 3}
   m_Color: {r: 0.509434, g: 0.30456364, b: 0.13333334, a: 1}
   m_FlipX: 0
@@ -3203,7 +3203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859389687
 GameObject:
@@ -3425,7 +3425,7 @@ Transform:
   - {fileID: 1498368312}
   - {fileID: 925357855}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885619424
 GameObject:
@@ -5981,58 +5981,6 @@ MonoBehaviour:
   scrollSpeed: 20
   minHeight: -70
   maxHeight: -10
---- !u!1001 &1490233194
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -16.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -15.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318171452197146, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114602168266510262, guid: 2e9bd40a961d24a419adde3bb2808b38,
-        type: 2}
-      propertyPath: spawn
-      value: 
-      objectReference: {fileID: 265188253}
-    - target: {fileID: 212279560602015710, guid: 2e9bd40a961d24a419adde3bb2808b38,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2e9bd40a961d24a419adde3bb2808b38, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1498368311
 GameObject:
   m_ObjectHideFlags: 0
@@ -6515,7 +6463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596119171
 GameObject:
@@ -7080,7 +7028,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 423913a330bba954da51237a77b76448, type: 3}
   m_Color: {r: 0.19379672, g: 0.6320754, b: 0.22135445, a: 1}
   m_FlipX: 0
@@ -7685,7 +7633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901109182
 MonoBehaviour:
@@ -8667,10 +8615,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 0
-  defaultAntSpeed: 2
+  defaultAntSpeed: 3
   defaultIdleNoise: 0.1
   defaultRotationSpeed: 3
   defaultIdleDistance: 3
+  defaultWalkingNoise: 0.05
+  defaultWalkingWaypointDistance: 1
+  queenPrefab: {fileID: 1886451855588212, guid: 2e9bd40a961d24a419adde3bb2808b38,
+    type: 2}
+  nursery: {fileID: 0}
   currentView: 0
 --- !u!1 &2142544822
 GameObject:

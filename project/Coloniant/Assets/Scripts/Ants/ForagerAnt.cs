@@ -14,6 +14,8 @@ public class ForagerAnt : MonoBehaviour {
 
     [SerializeField]
     private Ant ant;
+    [SerializeField]
+    private float idleWaitTime;
 
     #endregion
 
@@ -26,7 +28,7 @@ public class ForagerAnt : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        StartCoroutine(waitToGoToLeafSite());
 	}
 	
 	// Update is called once per frame
@@ -38,15 +40,71 @@ public class ForagerAnt : MonoBehaviour {
 
     #region Public Methods
 
-    public void PickUpLeaf()
+    public void DecideNextMove()
     {
-
-    }
-
-    public void DropOffLeaf()
-    {
-
+        if (ant.ReturnCurrentWaypoint().GetComponent<Waypoint>().ReturnWaypointType() == WaypointManager.WaypointType.LEAF_SITE)
+        {
+            AtLeafSite();
+        }
+        else if (ant.ReturnCurrentWaypoint().GetComponent<Waypoint>().ReturnWaypointType() == WaypointManager.WaypointType.FARM_SITE)
+        {
+            AtFarmSite();
+        }
     }
 
     #endregion
+
+    #region Private Methods
+
+
+    private void AtLeafSite()
+    {
+        ant.AssignAntState(Ant.AntState.IDLE);
+        StartCoroutine(waitToGoToFarmSite());
+    }
+
+    private void AtFarmSite()
+    {
+        ant.AssignAntState(Ant.AntState.IDLE);
+        StartCoroutine(waitToGoToLeafSite());
+    }
+
+    private void GoToLeafSite()
+    {
+        List<GameObject> waypointList = WaypointManager.main.ReturnWaypointPath(
+            ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
+            WaypointManager.WaypointType.LEAF_SITE
+            );
+
+        ant.AssignWaypointList(waypointList);
+    }
+
+    private void GoToFarmSite()
+    {
+        List<GameObject> waypointList = WaypointManager.main.ReturnWaypointPath(
+            ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
+            WaypointManager.WaypointType.FARM_SITE
+            );
+
+        ant.AssignWaypointList(waypointList);
+    }
+
+
+    #endregion
+
+    #region Coroutine
+
+    private IEnumerator waitToGoToLeafSite()
+    {
+        yield return new WaitForSeconds(idleWaitTime);
+        GoToLeafSite();
+    }
+
+    private IEnumerator waitToGoToFarmSite()
+    {
+        yield return new WaitForSeconds(idleWaitTime);
+        GoToFarmSite();
+    }
+
+#endregion
 }

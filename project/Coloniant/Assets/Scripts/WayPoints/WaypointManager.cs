@@ -137,8 +137,6 @@ public class WaypointManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         SpawnAllOriginalWaypoints();
-        QueenAnt.main.SetNursery(nurseryWaypoints[0].gameObject);
-        QueenAnt.main.ant.AssignTargetWaypoint(nurseryWaypoints[0].gameObject);
         currentOverallFlow = 1;
         flowUpdateTime = GameManager.main.FlowUpdateSeconds();
         StartCoroutine(waitToUpdateOverallFlow());
@@ -180,7 +178,8 @@ public class WaypointManager : MonoBehaviour {
         transitionWaypoint.Add(
             SpawnWaypoint(
                 WaypointType.TRANSITION,
-                Level.UNDER_GROUND, transitionWaypoints,
+                Level.UNDER_GROUND, 
+                transitionWaypoint,
                 startTransitionPosition.transform.position
                 )
             );
@@ -233,6 +232,43 @@ public class WaypointManager : MonoBehaviour {
 
         Destroy(startNurseryPosition.transform.parent.gameObject);
     }
+    
+    private List<GameObject> SearchWaypointPathRecursive(
+        Waypoint currentWaypoint, 
+        WaypointType waypointTypeToFind, 
+        List<GameObject> list,
+        List<Waypoint> visited)
+    {
+        // Check for base case
+        if (currentWaypoint.ReturnWaypointType() == waypointTypeToFind)
+        {
+            return list;
+        }
+
+        // int i = 0;
+
+        // check for other posibilties
+        foreach (Waypoint w in currentWaypoint.connectedWaypoints)
+        {
+            //Debug.Log(i);
+            //i++;
+            if (visited.Contains(w) == false)
+            {
+                visited.Add(w);
+                list.Add(w.ReturnWaypointGameObject());
+                SearchWaypointPathRecursive(w, waypointTypeToFind, list, visited);
+
+                if (list[list.Count - 1].GetComponent<Waypoint>().ReturnWaypointType() == waypointTypeToFind)
+                {
+                    return list;
+                }
+
+                list.Remove(w.ReturnWaypointGameObject());
+            }
+        }
+
+        return list;
+    }
 
     #endregion
 
@@ -264,7 +300,7 @@ public class WaypointManager : MonoBehaviour {
         }
 
         // Assign connected waypoints
-        newWaypointClass.SetUpWaypointTypes(waypointType, waypointLevel, connectedWaypoints);
+        newWaypointClass.SetUpWaypointTypes(waypointType, waypointLevel);
 
         // Connect everything else
         if (connectedWaypoints.Count > 0)
@@ -277,6 +313,7 @@ public class WaypointManager : MonoBehaviour {
                     return null;
                 }
                 w.AddAConnectedWaypoint(newWaypointClass);
+                newWaypointClass.AddAConnectedWaypoint(w);
                 WaypointBridge newBridge = new WaypointBridge(w, newWaypointClass);
                 if (newBridge == null)
                 {
@@ -295,7 +332,7 @@ public class WaypointManager : MonoBehaviour {
                 newLine.numCapVertices = 5;
                 newLine.SetPosition(0, w.GetComponent<Transform>().position);
                 newLine.SetPosition(1, newWaypointGameObject.transform.position);
-                newLine.sortingOrder = 5;
+                newLine.sortingOrder = -1;
                 if (waypointLevel == Level.ABOVE_GROUND && w.CurrentLevel() == Level.ABOVE_GROUND && GameManager.main.currentView == GameManager.CurrentView.UNDER_GROUND)
                 {
                     newLine.enabled = false;
@@ -440,6 +477,51 @@ public class WaypointManager : MonoBehaviour {
                 waypointLines[w].enabled = false;
             }
         }
+    }
+
+    public List<GameObject> ReturnWaypointPath(Waypoint initalWaypoint, WaypointType waypointTypeToFind)
+    {
+        List<GameObject> path = new List<GameObject>();
+        List<Waypoint> visited = new List<Waypoint>();
+
+        // BFS Style
+
+        /*List<Waypoint> visited = new List<Waypoint>();
+        Queue<Waypoint> q = new Queue<Waypoint>();
+
+        q.Enqueue(initalWaypoint);
+        visited.Add(initalWaypoint);
+
+        while (q.Count != 0)
+        {
+            Waypoint waypoint = q.Dequeue();
+
+            if (waypoint.ReturnWaypointType() == waypointTypeToFind)
+            {
+                path.Add(waypoint.ReturnWaypointGameObject());
+                return path;
+            }
+
+            foreach (Waypoint w in waypoint.connectedWaypoints)
+            {
+                if (!visited.Contains(w))
+                {
+                    visited.Add(w);
+                    q.Enqueue(w);
+                }
+            }
+        }*/
+
+        path.Add(initalWaypoint.ReturnWaypointGameObject());
+        visited.Add(initalWaypoint);
+        path = SearchWaypointPathRecursive(initalWaypoint, waypointTypeToFind, path, visited);
+
+        return path;
+    }
+
+    public GameObject ReturnNursery()
+    {
+        return nurseryWaypoints[0].gameObject;
     }
 
     #endregion

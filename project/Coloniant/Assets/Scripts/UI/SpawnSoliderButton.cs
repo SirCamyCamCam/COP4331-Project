@@ -6,6 +6,6 @@ public class SpawnSoliderButton : MonoBehaviour {
 
     public void SpawnAnt()
     {
-        QueenAnt.main.AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);
+        AntManager.main.AddAntsToSpawn(Ant.AntType.SOLDIER);
     }
 }

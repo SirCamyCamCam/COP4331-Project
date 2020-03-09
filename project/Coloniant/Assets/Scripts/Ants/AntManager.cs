@@ -38,6 +38,13 @@ public class AntManager : MonoBehaviour{
     private float defaultRotationSpeed;
     [SerializeField]
     private float defaultIdleDistance;
+    [SerializeField]
+    private float defaultWalkingNoise;
+    [SerializeField]
+    private float defaultWalkingWaypointDistance;
+
+    [SerializeField]
+    private GameObject queenPrefab;
 
     #endregion
 
@@ -52,6 +59,12 @@ public class AntManager : MonoBehaviour{
     private List<Ant> antList;
     [HideInInspector]
     public SceneView currentView;
+    private List<Ant> queenAnts;
+    private List<Ant> soliderAnts;
+    private List<Ant> gardenerAnts;
+    private List<Ant> excavatorAnts;
+    private List<Ant> trashHandlerAnts;
+    private List<Ant> foragerAnts;
 
     #endregion
 
@@ -69,6 +82,26 @@ public class AntManager : MonoBehaviour{
         }
 
         antList = new List<Ant>();
+        queenAnts = new List<Ant>();
+        soliderAnts = new List<Ant>();
+        gardenerAnts = new List<Ant>();
+        excavatorAnts = new List<Ant>();
+        trashHandlerAnts = new List<Ant>();
+        foragerAnts = new List<Ant>();
+    }
+
+    private void Start()
+    {
+        GameObject nursery = WaypointManager.main.ReturnNursery();
+        GameObject newAnt = Instantiate(queenPrefab, nursery.transform.position, new Quaternion(0, 0, 0, 0));
+        queenAnts.Add(newAnt.GetComponent<Ant>());
+        queenAnts[0].GetComponent<QueenAnt>().SetNursery(nursery);
+        queenAnts[0].gameObject.GetComponent<Ant>().AssignTargetWaypoint(nursery);
+        AddAntsToSpawn(Ant.AntType.EXCAVATOR);
+        AddAntsToSpawn(Ant.AntType.FORAGER);
+        AddAntsToSpawn(Ant.AntType.GARDENER);
+        AddAntsToSpawn(Ant.AntType.SOLDIER);
+        AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
     }
 
     #endregion
@@ -97,6 +130,18 @@ public class AntManager : MonoBehaviour{
     public float DefaultIdleDistance()
     {
         return defaultIdleDistance;
+    }
+
+    // Returns the default walking noise
+    public float DefaultWalkingNoise()
+    {
+        return defaultWalkingNoise;
+    }
+
+    // Returns the default walking waypoint distance to switch waypoints
+    public float DefaultWalkingWaypointDistance()
+    {
+        return defaultWalkingWaypointDistance;
     }
 
     // Changes the current view
@@ -330,6 +375,35 @@ public class AntManager : MonoBehaviour{
     public int GetTotalAntCount()
     {
         return trashHandlersAntCount + foragerAntCount + gardenerAntCount + excavatorsAntCount + queenAntCount + soliderAntCount;
+    }
+
+    // Adds an Ant to the spawn counter
+    public void AddAntsToSpawn(Ant.AntType type)
+    {
+        int randomQueen = Random.Range(0, queenAntCount - 1);
+
+        switch(type)
+        {
+            case Ant.AntType.EXCAVATOR:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.EXCAVATOR, 1);
+                break;
+            case Ant.AntType.FORAGER:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.FORAGER, 1);
+                break;
+            case Ant.AntType.GARDENER:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.GARDENER, 1);
+                break;
+            case Ant.AntType.TRASH_HANDLER:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.TRASH_HANDLER, 1);
+                break;
+            case Ant.AntType.QUEEN:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.QUEEN, 1);
+                break;
+            case Ant.AntType.SOLDIER:
+                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);
+                break;
+        }
+
     }
 
     #endregion
