@@ -186,10 +186,6 @@ public class Ant : MonoBehaviour {
 
     public void AssignWaypointList(List<GameObject> list)
     {
-        if (list == null || list.Count == 0)
-        {
-            return;
-        }
         waypointPath = list;
         AssignAntState(AntState.WALKING);
         AssignTargetWaypoint(waypointPath[0]);
@@ -206,20 +202,6 @@ public class Ant : MonoBehaviour {
         antState = setToState;
     }
 
-    public void ChangeTurningRadius(float num)
-    {
-        rotationSpeed = num;
-    }
-
-    public void ChangeIdleDistance(float num)
-    {
-        idleDistance = num;
-    }
-
-    public void AssignCurrentWaypoint(int num)
-    {
-        currentWaypoint = 0;
-    }
     #endregion
 
     #region Private Methods
