@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using NUnit.Framework;
-//using UnityEngine.TestTools;
+using NUnit.Framework;
+using UnityEngine.TestTools;
 
 public class TestCamera {
 
-  /*  [Test]
+    [Test]
     public void TestCameraSpeed()
     {
         CameraMovement cameraMovement = new CameraMovement();
@@ -26,5 +26,5 @@ public class TestCamera {
     {
         CameraMovement cameraMovement = new CameraMovement();
         AssertTrue(cameraMovement.CameraScroll());
-    }*/
+    }
 }

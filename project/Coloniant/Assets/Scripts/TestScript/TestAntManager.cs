@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using NUnit.Framework;
-//using UnityEngine.TestTools;
+using NUnit.Framework;
+using UnityEngine.TestTools;
 
 public class TestAntManager {
 
-  /*  [Test]
+    [Test]
     public void TestDefaultAntSpeed()
     {
         AntManager antManager = new AntManager();
@@ -205,5 +205,5 @@ public class TestAntManager {
     {
         AntManager antManager = new AntManager();
         AssertTrue(antManager.GetTotalAntCount() == 0);
-    }*/
+    }
 }

@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using NUnit.Framework;
-//using UnityEngine.TestTools;
+using NUnit.Framework;
+using UnityEngine.TestTools;
 
 public class TestWaypoint {
 
-    /*[Test]
+    [Test]
     public void TestSetUpWaypointTypes()
     {
         AssertTrue(SetUpWaypointTypes(WaypointManager.WaypointType.ENTRANCE, WaypointManager.Level.UNDER_GROUND, null));
@@ -45,5 +45,4 @@ public class TestWaypoint {
         w1.SwitchLevel(WaypointManager.Level.ABOVE_GROUND);
         AssertTrue(w1.CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
     }
-    */
 }
