@@ -9,10 +9,12 @@ public class ButtonPress : MonoBehaviour {
 
 	public GameObject start;
 	public GameObject option; 
+	
 
 	void Start () {
 		start.SetActive(true);
 		option.SetActive(false); 
+
 	}
 	
 	public void Playpressed(){
@@ -22,12 +24,15 @@ public class ButtonPress : MonoBehaviour {
 	public void OptionPressed(){
 		start.SetActive(false);
 		option.SetActive(true);
+		
 	}
 
 	public void OptionsExotPressed(){
 		start.SetActive(true);
 		option.SetActive(false);
 	}
+
+	
 	public void ExitPressd(){
 		Application.Quit(); 
 	}
