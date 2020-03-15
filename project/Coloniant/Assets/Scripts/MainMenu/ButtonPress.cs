@@ -7,10 +7,6 @@ public class ButtonPress : MonoBehaviour {
 
 	// Use this for initialization
 
-	public bool isStart;
-	public bool isOption;
-	public bool isQuit; 
-	public bool isOptionE;
 	public GameObject start;
 	public GameObject option; 
 

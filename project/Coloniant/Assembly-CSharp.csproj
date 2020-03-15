@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\TestScript\TestAnt.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestAntManager.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestCamera.cs" />
+     <Compile Include="Assets\Scripts\TestScript\TestForagerAnt.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestGameManager.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestLineRenderer.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestMainUIManager.cs" />
@@ -300,14 +301,8 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Users/amink/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/amink/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/amink/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/amink/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
