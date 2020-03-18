@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
@@ -22,3 +23,4 @@ public class TestQueenAnt {
         AssertTrue(ant.AddAntToSpawn(QueenAnt.Ants.EXCAVATOR, 100));
     }
 }
+*/

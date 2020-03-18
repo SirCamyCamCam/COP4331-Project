@@ -11,5 +11,12 @@
 - Created new user stories
 - Created Product Demonstration
 ## Henry
-
+- Worked on spawning set amount of ants with text box
+- Updated Velocity chart
+- Updated trello board 
+- Created new user stories
+- Added "Change Views" button
+- Worked on main menu appearance
 ## Amin
+- Worked on spawning of player created waypoints
+- Updated Burndown chart

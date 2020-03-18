@@ -26,4 +26,3 @@
 - reorganized the burndown chart to accurately describe our efforts within Sprint 5
 - remodeled the main menu page 
 - Created A garbage branch to place our work into to make sure they merge together successfully before uploading them into the main branch.
-- Continued working on spawning waypoints
