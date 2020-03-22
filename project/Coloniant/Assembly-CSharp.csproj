@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\Ants\SoliderAnt.cs" />
      <Compile Include="Assets\Scripts\Ants\TrashHandlerAnt.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
-     <Compile Include="Assets\Scripts\Audio\VolumeValue.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Core\GameManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
