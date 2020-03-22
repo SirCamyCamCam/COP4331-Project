@@ -3165,46 +3165,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822566777}
   m_CullTransparentMesh: 0
---- !u!1 &853474888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 853474890}
-  - component: {fileID: 853474889}
-  m_Layer: 0
-  m_Name: AntTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &853474889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 853474888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11e844d05f9434438d5f783d699a02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &853474890
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 853474888}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.54402125, y: 0.08467986, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859389687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3385,7 @@ Transform:
   - {fileID: 1498368312}
   - {fileID: 925357855}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885619424
 GameObject:
@@ -6463,7 +6423,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596119171
 GameObject:
@@ -7633,7 +7593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901109182
 MonoBehaviour:
@@ -7657,6 +7617,7 @@ MonoBehaviour:
   lineWidth: 0.3
   waypointPrefab: {fileID: 1059635954423062, guid: 13c6f02efa19a79458d2ea7e5dd598e1,
     type: 2}
+  trashPrefab: {fileID: 0}
   maxAntsOnStart: 10
 --- !u!1 &1917380549
 GameObject:
@@ -8623,7 +8584,6 @@ MonoBehaviour:
   defaultWalkingWaypointDistance: 1
   queenPrefab: {fileID: 1886451855588212, guid: 2e9bd40a961d24a419adde3bb2808b38,
     type: 2}
-  nursery: {fileID: 0}
   currentView: 0
 --- !u!1 &2142544822
 GameObject:
