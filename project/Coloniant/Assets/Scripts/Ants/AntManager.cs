@@ -397,7 +397,10 @@ public class AntManager : MonoBehaviour{
                 queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.TRASH_HANDLER, 1);
                 break;
             case Ant.AntType.QUEEN:
-                queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.QUEEN, 1);
+                if (WaypointManager.main.ReturnNurseryCount() > queenAntCount)
+                {
+                    queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.QUEEN, 1);
+                }
                 break;
             case Ant.AntType.SOLDIER:
                 queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);

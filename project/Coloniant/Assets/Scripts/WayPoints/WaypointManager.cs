@@ -80,6 +80,8 @@ public class WaypointManager : MonoBehaviour {
     [Header("Prefabs")]
     [SerializeField]
     private GameObject waypointPrefab;
+    [SerializeField]
+    private GameObject trashPrefab;
 
     [Header("Settings")]
     [SerializeField]
@@ -391,6 +393,40 @@ public class WaypointManager : MonoBehaviour {
         return newWaypointClass;
     }
 
+    // Spawns a trash waypoint
+    public Waypoint SpawnTrash(WaypointManager.Level waypointLevel, Waypoint connected1, Waypoint connected2, Vector3 spawnLocation)
+    {
+        // Spawn
+        GameObject newWaypointGameObject = Instantiate(trashPrefab, spawnLocation, new Quaternion(0, 0, 0, 0));
+        if (newWaypointGameObject == null)
+        {
+            Debug.Log("Failed to soawn trash waypoint");
+            return null;
+        }
+
+        newWaypointGameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        // Get Waypoint object
+        Waypoint newWaypointClass = newWaypointGameObject.GetComponent<Waypoint>();
+        if (newWaypointClass == null)
+        {
+            Debug.Log("Failed to get waypoint class");
+            return null;
+        }
+
+        newWaypointClass.SetUpWaypointTypes(WaypointType.TRASH, waypointLevel);
+
+        List<Waypoint> connectedList = new List<Waypoint>();
+        connectedList.Add(connected1);
+        if (connected2 != null)
+        {
+            connectedList.Add(connected2);
+        }
+
+        trashWaypoint.Add(newWaypointClass);
+
+        return newWaypointClass;
+    }
+
     public bool RemoveWaypoint(Waypoint waypointToRemove)
     {
         bool foundBridge = false;
@@ -519,9 +555,19 @@ public class WaypointManager : MonoBehaviour {
         return path;
     }
 
+    public List<GameObject> ReturnTrashPath()
+    {
+        return null;
+    }
+
     public GameObject ReturnNursery()
     {
         return nurseryWaypoints[0].gameObject;
+    }
+
+    public int ReturnNurseryCount()
+    {
+        return nurseryWaypoints.Count;
     }
 
     #endregion

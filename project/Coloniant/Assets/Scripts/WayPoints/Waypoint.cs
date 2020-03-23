@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------
-// Coloniant - WaypointManager                          2/23/2020
+// Coloniant - Waypoint                                 2/23/2020
 // Author(s): Cameron Carstens
 // Contact: cameroncarstens@knights.ucf.edu
 // --------------------------------------------------------------
