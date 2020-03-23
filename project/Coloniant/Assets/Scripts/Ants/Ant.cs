@@ -296,30 +296,6 @@ public class Ant : MonoBehaviour {
     // Kills the ant
     private void Die()
     {
-        WaypointManager.Level level;
-        Waypoint w1;
-        Waypoint w2;
-
-        if (antLevel == AntManager.SceneView.ABOVE_GROUND)
-        {
-            level = WaypointManager.Level.ABOVE_GROUND;
-        }
-        else
-        {
-            level = WaypointManager.Level.UNDER_GROUND;
-        }
-
-        w1 = targetWaypoint.GetComponent<Waypoint>();
-
-        if (previousWaypoint == null)
-        {
-            WaypointManager.main.SpawnTrash(level, w1, null, antGameObject.transform.position);
-        }
-        else
-        {
-            w2 = previousWaypoint.GetComponent<Waypoint>();
-            WaypointManager.main.SpawnTrash(level, w1, w2, antGameObject.transform.position);
-        }
         Destroy(gameObject);
     }
 

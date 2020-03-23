@@ -74,24 +74,5 @@ public class TestWaypointManager {
         WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
         AssertTrue(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
     }
-
-    [Test]
-    public void SpawnTrash()
-    {
-        Waypoint waypoint = new Waypoint();
-        Vector3 spawn = new Vector3(0,0,0);
-        Assert.IsNotNull(WaypointManager.main.SpawnTrash(WaypointManager.Level.UNDER_GROUND, waypoint, null, spawn));
-    }
-
-    [Test]
-    public void ReturnTrashPath()
-    {
-        Waypoint waypoint;
-        Waypoint trash;
-        Vector3 spawn = new Vector3(0,0,0);
-        waypoint = WaypointManager.main.SpawnWaypoint(WaypointManager.WaypointType.TRANSITION, WaypointManager.Level.UNDER_GROUND, null, spawn);
-        trash = WaypointManager.main.SpawnTrash(WaypointManager.Level.UNDER_GROUND, waypoint, null, spawn);
-        Assert.IsNotNull(ReturnTrashPath(trash));
-    }
 }
 */
