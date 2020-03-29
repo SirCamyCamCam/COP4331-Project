@@ -169,7 +169,7 @@ public class WaypointManager : MonoBehaviour {
     }
 
     // Spawns all the original waypoints to start the game
-    private void SpawnAllOriginalWaypoints()
+    public void SpawnAllOriginalWaypoints()
     {
         List<Waypoint> transitionWaypoint = new List<Waypoint>();
         List<Waypoint> entranceWaypoint = new List<Waypoint>();
