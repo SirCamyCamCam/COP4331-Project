@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NUnit.Framework;
+/*using NUnit.Framework;
 using UnityEngine.TestTools;
 
 public class TestWaypointManager {
@@ -73,4 +73,4 @@ public class TestWaypointManager {
         WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
         AssertTrue(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
     }
-}
+}*/
