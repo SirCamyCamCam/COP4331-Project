@@ -135,9 +135,9 @@ Ants do not have a long lifespan and will sacrifice themselves for the greater g
 - [Product Demonstration](https://youtu.be/i-vw2C6_QME)
 
 # Sprint 8
-- [Responsibilities]
+- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities_sprint8.md)
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
-- [Sprint Backlog]
+- [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint8_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
 - [Burndown Chart]
