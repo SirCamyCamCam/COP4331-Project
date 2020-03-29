@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\UI\SpawnQueenButton.cs" />
      <Compile Include="Assets\Scripts\UI\SpawnSoliderButton.cs" />
      <Compile Include="Assets\Scripts\UI\SpawnTrashHandlerButton.cs" />
+     <Compile Include="Assets\Scripts\WayPoints\FarmWaypoint.cs" />
      <Compile Include="Assets\Scripts\WayPoints\Waypoint.cs" />
      <Compile Include="Assets\Scripts\WayPoints\WaypointManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

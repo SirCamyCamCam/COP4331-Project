@@ -119,7 +119,7 @@ Ants do not have a long lifespan and will sacrifice themselves for the greater g
 - [Product Demonstration](https://www.youtube.com/watch?v=0JHyJ-1bleg)
 
 # Sprint 7
-- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities_sprint6.md)
+- [Responsibilities](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/responsibilities_sprint7.md)
 - [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
 - [Sprint Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/sprint7_backlog.md)
 - [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
@@ -133,3 +133,19 @@ Ants do not have a long lifespan and will sacrifice themselves for the greater g
 - [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
 - [Automated Tests](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts/TestScript)
 - [Product Demonstration](https://youtu.be/i-vw2C6_QME)
+
+# Sprint 8
+- [Responsibilities]
+- [Product Backlog](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/product_backlog.md)
+- [Sprint Backlog]
+- [Requirements](https://github.com/SirCamyCamCam/COP4331-Project/blob/master/artifacts/requirements.md)
+- [Trello Board](https://trello.com/b/gFsbQ9w7/coloniant)
+- [Burndown Chart]
+- [Velocity Chart]
+- Design Documents
+  - [System Architecture](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/artifacts/architecture.md)
+  - [Class Diagrams](https://drive.google.com/file/d/1PpFmCsUxAFgKxv27XWKySDtos1Y4dXyZ/view?usp=sharing)
+  - [Sequence Diagrams](https://drive.google.com/file/d/1DPfTDrNnx3BaVli-0-dYk4q9yvBbI2TQ/view?usp=sharing)
+- [Source Code](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts)
+- [Automated Tests](https://github.com/SirCamyCamCam/COP4331-Project/tree/master/project/Coloniant/Assets/Scripts/TestScript)
+- [Product Demonstration]
