@@ -54,6 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ant: {fileID: 114473263264853488}
+  idleWaitTime: 3
+  decayNeeded: 0.7
 --- !u!114 &114473263264853488
 MonoBehaviour:
   m_ObjectHideFlags: 1

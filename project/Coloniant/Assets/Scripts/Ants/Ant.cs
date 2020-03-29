@@ -347,6 +347,9 @@ public class Ant : MonoBehaviour {
             case AntType.FORAGER:
                 gameObject.GetComponent<ForagerAnt>().DecideNextMove();
                 break;
+            case AntType.GARDENER:
+                gameObject.GetComponent<GardenerAnt>().DecideNextMove();
+                break;
         }
     }
 

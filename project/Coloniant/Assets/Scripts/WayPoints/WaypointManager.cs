@@ -169,7 +169,7 @@ public class WaypointManager : MonoBehaviour {
     }
 
     // Spawns all the original waypoints to start the game
-    public void SpawnAllOriginalWaypoints()
+    private void SpawnAllOriginalWaypoints()
     {
         List<Waypoint> transitionWaypoint = new List<Waypoint>();
         List<Waypoint> entranceWaypoint = new List<Waypoint>();
@@ -233,7 +233,7 @@ public class WaypointManager : MonoBehaviour {
         Destroy(startNurseryPosition.transform.parent.gameObject);
     }
     
-    private List<GameObject> SearchWaypointPathRecursive(
+    private List<GameObject> SearchWaypointPathRecursiveType(
         Waypoint currentWaypoint, 
         WaypointType waypointTypeToFind, 
         List<GameObject> list,
@@ -256,9 +256,44 @@ public class WaypointManager : MonoBehaviour {
             {
                 visited.Add(w);
                 list.Add(w.ReturnWaypointGameObject());
-                SearchWaypointPathRecursive(w, waypointTypeToFind, list, visited);
+                SearchWaypointPathRecursiveType(w, waypointTypeToFind, list, visited);
 
                 if (list[list.Count - 1].GetComponent<Waypoint>().ReturnWaypointType() == waypointTypeToFind)
+                {
+                    return list;
+                }
+
+                list.Remove(w.ReturnWaypointGameObject());
+            }
+        }
+
+        return list;
+    }
+
+    private List<GameObject> SearchWaypointPathRecursiveTarget(
+        Waypoint currentWaypoint, 
+        Waypoint targetWaypoint, 
+        List<GameObject> list, 
+        List<Waypoint> visited)
+    {
+        // Base Case
+        if (currentWaypoint == targetWaypoint)
+        {
+            return list;
+        }
+
+        // check for other posibilties
+        foreach (Waypoint w in currentWaypoint.connectedWaypoints)
+        {
+            //Debug.Log(i);
+            //i++;
+            if (visited.Contains(w) == false)
+            {
+                visited.Add(w);
+                list.Add(w.ReturnWaypointGameObject());
+                SearchWaypointPathRecursiveTarget(w, targetWaypoint, list, visited);
+
+                if (list[list.Count - 1].GetComponent<Waypoint>() == targetWaypoint)
                 {
                     return list;
                 }
@@ -282,7 +317,7 @@ public class WaypointManager : MonoBehaviour {
         Vector3 spawnLocation)
     {
         // Spawn it
-        GameObject newWaypointGameObject = Instantiate(waypointPrefab, spawnLocation, new Quaternion(0, 0, 0, 0));
+        GameObject newWaypointGameObject = Instantiate(waypointPrefab, spawnLocation, new Quaternion(0, 0, 0, 0), transform);
         if (newWaypointGameObject == null)
         {
             Debug.Log("Failed to spawn a " + waypointType);
@@ -326,6 +361,8 @@ public class WaypointManager : MonoBehaviour {
                 flowBetweenWaypoints.Add(newBridge, 0);
 
                 LineRenderer newLine = new GameObject().AddComponent<LineRenderer>();
+                newLine.transform.parent = transform;
+                newLine.gameObject.name = "LineRenderer";
                 newLine.material = main.lineMaterial;
                 newLine.startWidth = lineWidth;
                 newLine.endWidth = lineWidth;
@@ -358,12 +395,14 @@ public class WaypointManager : MonoBehaviour {
         {
             case WaypointType.FARM_SITE:
                 farmWaypoints.Add(newWaypointClass);
+                LeafManager.main.NewFarmWaypoint(newWaypointClass);
                 break;
             case WaypointType.ENTRANCE:
                 entranceWaypoints.Add(newWaypointClass);
                 break;
             case WaypointType.LEAF_SITE:
                 leafWaypoints.Add(newWaypointClass);
+                LeafManager.main.NewLeafSite(newWaypointClass);
                 break;
             case WaypointType.NURSERY_SITE:
                 nurseryWaypoints.Add(newWaypointClass);
@@ -479,7 +518,7 @@ public class WaypointManager : MonoBehaviour {
         }
     }
 
-    public List<GameObject> ReturnWaypointPath(Waypoint initalWaypoint, WaypointType waypointTypeToFind)
+    public List<GameObject> SearchPathUnknownTarget(Waypoint initalWaypoint, WaypointType waypointTypeToFind)
     {
         List<GameObject> path = new List<GameObject>();
         List<Waypoint> visited = new List<Waypoint>();
@@ -514,14 +553,37 @@ public class WaypointManager : MonoBehaviour {
 
         path.Add(initalWaypoint.ReturnWaypointGameObject());
         visited.Add(initalWaypoint);
-        path = SearchWaypointPathRecursive(initalWaypoint, waypointTypeToFind, path, visited);
+        path = SearchWaypointPathRecursiveType(initalWaypoint, waypointTypeToFind, path, visited);
 
         return path;
     }
 
-    public GameObject ReturnNursery()
+    public List<GameObject> SearchPathKnownTarget(Waypoint initalWaypoint, Waypoint targetWaypoint)
+    {
+        List<GameObject> path = new List<GameObject>();
+        List<Waypoint> visited = new List<Waypoint>();
+
+        path.Add(initalWaypoint.ReturnWaypointGameObject());
+        visited.Add(initalWaypoint);
+
+        path = SearchWaypointPathRecursiveTarget(initalWaypoint, targetWaypoint, path, visited);
+
+        return path;
+    }
+
+    public GameObject ReturnNurseryGameObject()
     {
         return nurseryWaypoints[0].gameObject;
+    }
+
+    public List<Waypoint> ReturnFarmList()
+    {
+        return farmWaypoints;
+    }
+
+    public List<Waypoint> ReturnLeafList()
+    {
+        return leafWaypoints;
     }
 
     #endregion

@@ -123,7 +123,7 @@ public class QueenAnt : MonoBehaviour {
     {
         
         if(QueenC == 0){
-        GameObject newAnt = Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0));
+        GameObject newAnt = Instantiate(queenPrefab, gameObject.transform.position, new Quaternion(0,0,0,0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
         QueenC++; 
         }
@@ -134,35 +134,35 @@ public class QueenAnt : MonoBehaviour {
     // Spawns a forager ant
     private void SpawnForager()
     {
-        GameObject newAnt = Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject newAnt = Instantiate(foragerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
     }
 
     // Spawns a gardener ant
     private void SpawnGardener()
     {
-        GameObject newAnt = Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject newAnt = Instantiate(gardenerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
     }
     
     // Spawns a excavator
     private void SpawnExcavator()
     {
-        GameObject newAnt = Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject newAnt = Instantiate(excavatorPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
     }
 
     // Spawns a trash handeler
     private void SpawnTrashHandler()
     {
-        GameObject  newAnt = Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject  newAnt = Instantiate(trashHandlerPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
     }
 
     // Spawns a solider
     private void SpawnSolider()
     {
-        GameObject newAnt = Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject newAnt = Instantiate(soliderPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0), AntManager.main.transform);
         newAnt.GetComponent<Ant>().AssignTargetWaypoint(nurery);
     }
 

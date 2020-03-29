@@ -115,8 +115,8 @@ public class AntManager : MonoBehaviour{
     private void Start()
     {
         currentFood = defaultFoodProduction;
-        GameObject nursery = WaypointManager.main.ReturnNursery();
-        GameObject newAnt = Instantiate(queenPrefab, nursery.transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject nursery = WaypointManager.main.ReturnNurseryGameObject();
+        GameObject newAnt = Instantiate(queenPrefab, nursery.transform.position, new Quaternion(0, 0, 0, 0), transform);
         queenAnts.Add(newAnt.GetComponent<Ant>());
         queenAnts[0].GetComponent<QueenAnt>().SetNursery(nursery);
         queenAnts[0].gameObject.GetComponent<Ant>().AssignTargetWaypoint(nursery);

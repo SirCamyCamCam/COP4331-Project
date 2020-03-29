@@ -19,6 +19,12 @@ public class ForagerAnt : MonoBehaviour {
 
     #endregion
 
+    #region Run-Time Fields
+
+    private Leaf transportingLeaf;
+
+    #endregion
+
     #region Monobehaviors
 
     private void Awake()
@@ -59,19 +65,29 @@ public class ForagerAnt : MonoBehaviour {
 
     private void AtLeafSite()
     {
+        transportingLeaf = LeafManager.main.CollectedALeaf(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>());
+
+        if (transportingLeaf == null)
+        {
+            // PANIC!! NO MORE LEAVES AT SITE FIND ANOTHER
+        }
+
         ant.AssignAntState(Ant.AntState.IDLE);
         StartCoroutine(waitToGoToFarmSite());
     }
 
     private void AtFarmSite()
     {
+        LeafManager.main.AddLeafToFarm(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(), transportingLeaf);
+        transportingLeaf = null;
+
         ant.AssignAntState(Ant.AntState.IDLE);
         StartCoroutine(waitToGoToLeafSite());
     }
 
     private void GoToLeafSite()
     {
-        List<GameObject> waypointList = WaypointManager.main.ReturnWaypointPath(
+        List<GameObject> waypointList = WaypointManager.main.SearchPathUnknownTarget(
             ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
             WaypointManager.WaypointType.LEAF_SITE
             );
@@ -81,7 +97,7 @@ public class ForagerAnt : MonoBehaviour {
 
     private void GoToFarmSite()
     {
-        List<GameObject> waypointList = WaypointManager.main.ReturnWaypointPath(
+        List<GameObject> waypointList = WaypointManager.main.SearchPathUnknownTarget(
             ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
             WaypointManager.WaypointType.FARM_SITE
             );

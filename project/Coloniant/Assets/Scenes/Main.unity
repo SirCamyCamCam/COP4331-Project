@@ -10338,9 +10338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de32d652f376be349ab181613f7196d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leafLife: 0
-  decayRate: 0
-  defaultSpawnNum: 0
+  leafLife: 200
+  decayRate: 1
+  decayMultiplyer: 0.001
+  defaultSpawnNum: 30
+  leafPrefab: {fileID: 1602369423475822, guid: 93583ba5787856045a666ec6bf8554cc, type: 2}
 --- !u!4 &1997388096
 Transform:
   m_ObjectHideFlags: 0

@@ -13,7 +13,10 @@ public class Leaf : MonoBehaviour {
 
     private float decay;
     private float decayRate;
+    private float decayMultiplyer;
+    private int leafLife;
     private LeafManager.State leafState;
+    private Coroutine decayCoroutine;
 
     #endregion
 
@@ -21,12 +24,8 @@ public class Leaf : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        ResetDecay();
+        decayCoroutine = null;
 	}
 
     #endregion
@@ -36,14 +35,85 @@ public class Leaf : MonoBehaviour {
     // Resets the decay
     public void ResetDecay()
     {
+        decay = 0;
+    }
 
+    public void SetLeafState(LeafManager.State newState)
+    {
+        leafState = newState;
+    }
+
+    public void SetDecayRate(float rate)
+    {
+        decayRate = rate;
+    }
+
+    public void SetDecayMultiplyer(float rate)
+    {
+        decayMultiplyer = rate;
+    }
+
+    public void StartDecay()
+    {
+        if (decayCoroutine == null)
+        {
+            decayCoroutine = StartCoroutine(DecayLeaf());
+        }
+    }
+
+    public void SetLeafLife(int life)
+    {
+        leafLife = life;
+    }
+
+    public void StartLeafLife()
+    {
+        StartCoroutine(LeafLifeTimer());
+    }
+
+    public LeafManager.State ReturnLeafState()
+    {
+        return leafState;
+    }
+
+    public float ReturnDecayLevel()
+    {
+        return decay;
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private void SetToTrash()
+    {
+        // To Do
+        Debug.Log("A leaf was killed");
     }
 
     #endregion
 
     #region Coroutines
 
+    private IEnumerator DecayLeaf()
+    {
+        yield return new WaitForSeconds(decayRate);
+        decay += decayMultiplyer;
 
+        if (decay >= 1)
+        {
+            SetToTrash();
+        }
+
+        decayCoroutine = null;
+        StartDecay();
+    }
+
+    private IEnumerator LeafLifeTimer()
+    {
+        yield return new WaitForSeconds(leafLife);
+        SetToTrash();
+    }
 
     #endregion
 }
