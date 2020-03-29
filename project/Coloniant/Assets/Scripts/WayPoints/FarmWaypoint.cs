@@ -34,7 +34,7 @@ public class FarmWaypoint : MonoBehaviour {
  // Update is called once per frame
  void Update () {
      
-	 if(Input.GetKeyDown(KeyCode.Mouse0))
+	 /*if(Input.GetKeyDown(KeyCode.Mouse0))
 	 {
 		 Vector3 worldview = Camera.main.ScreenToWorldPoint(Input.mousePosition, Camera.MonoOrStereoscopicEye.Mono);
 	 	 Vector3 adjust = new Vector3(worldview.x,worldview.y,farm.transform.position.z); 
@@ -63,7 +63,7 @@ public class FarmWaypoint : MonoBehaviour {
 		
 	 	}
 
-	 }
+	 }*/
 	 
 
 	     

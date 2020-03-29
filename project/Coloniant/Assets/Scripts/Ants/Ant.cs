@@ -202,6 +202,12 @@ public class Ant : MonoBehaviour {
         antState = setToState;
     }
 
+    // Kills the ant
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
     #endregion
 
     #region Private Methods
@@ -291,12 +297,6 @@ public class Ant : MonoBehaviour {
         {
             FindNextWayPoint();
         }
-    }
-
-    // Kills the ant
-    private void Die()
-    {
-        Destroy(gameObject);
     }
 
     // Finds the next Waypoint in the path

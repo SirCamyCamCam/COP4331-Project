@@ -153,6 +153,7 @@ public class MainUIManager : MonoBehaviour {
 
         // Top Bars
         totalAntsTextNumber.text = AntManager.main.GetTotalAntCount().ToString();
+        UpdateFoodSlider();
     }
 
     #endregion
@@ -268,7 +269,27 @@ public class MainUIManager : MonoBehaviour {
     // Updates all the values on the food panel when needed
     private void UpdateFoodPanel()
     {
-        // To Do
+        foodConsumptionTextNumber.text = AntManager.main.ReturnCurrentFoodConsumption().ToString();
+        foodProducionTextNumber.text = AntManager.main.ReturnCurrentFoodProduction().ToString();
+    }
+
+    // Updates the food slider
+    private void UpdateFoodSlider()
+    {
+        float consumption = AntManager.main.ReturnCurrentFoodConsumption();
+        float production = AntManager.main.ReturnCurrentFoodProduction();
+        float ratio = consumption / production;
+
+        if (ratio > 1)
+        {
+            ratio = 1;
+        }
+        else if (ratio < 0)
+        {
+            ratio = 0;
+        }
+
+        foodRatioSlider.value = ratio;
     }
 
     // Updates all the values on the ant panel when needed

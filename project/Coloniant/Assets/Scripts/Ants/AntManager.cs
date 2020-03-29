@@ -43,6 +43,25 @@ public class AntManager : MonoBehaviour{
     [SerializeField]
     private float defaultWalkingWaypointDistance;
 
+    [Header("Ant Consumption Settings")]
+    [SerializeField]
+    private float queenAntConsumptionRate;
+    [SerializeField]
+    private float foragerAntConsumptionRate;
+    [SerializeField]
+    private float trashHandlerConsumptionRate;
+    [SerializeField]
+    private float soldierConsumptionRate;
+    [SerializeField]
+    private float gardenerConsumptionRate;
+    [SerializeField]
+    private float excavatorConsumptionRate;
+    [SerializeField]
+    private float defaultFoodProduction;
+    [SerializeField]
+    private float consumptionWaitTime;
+
+    [Header("Dependencies")]
     [SerializeField]
     private GameObject queenPrefab;
 
@@ -65,6 +84,9 @@ public class AntManager : MonoBehaviour{
     private List<Ant> excavatorAnts;
     private List<Ant> trashHandlerAnts;
     private List<Ant> foragerAnts;
+    // Food
+    private float currentFood;
+    private float currentConsumption;
 
     #endregion
 
@@ -92,6 +114,7 @@ public class AntManager : MonoBehaviour{
 
     private void Start()
     {
+        currentFood = defaultFoodProduction;
         GameObject nursery = WaypointManager.main.ReturnNursery();
         GameObject newAnt = Instantiate(queenPrefab, nursery.transform.position, new Quaternion(0, 0, 0, 0));
         queenAnts.Add(newAnt.GetComponent<Ant>());
@@ -102,6 +125,7 @@ public class AntManager : MonoBehaviour{
         AddAntsToSpawn(Ant.AntType.GARDENER);
         AddAntsToSpawn(Ant.AntType.SOLDIER);
         AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
+        UpdateFoodStatus();
     }
 
     #endregion
@@ -403,13 +427,111 @@ public class AntManager : MonoBehaviour{
                 queenAnts[randomQueen].GetComponent<QueenAnt>().AddAntToSpawn(QueenAnt.Ants.SOLIDER, 1);
                 break;
         }
+    }
 
+    // Increases the current food supply
+    public void AddToFood(float ammount)
+    {
+        if (ammount < 0)
+        {
+            return;
+        }
+        currentFood += ammount;
+    }
+
+    // Decreases the current food supply
+    public void RemoveFromFood(float ammount)
+    {
+        if (ammount > 0)
+        {
+            return;
+        }
+        currentFood -= ammount;
+    }
+
+    // Returns the current food
+    public float ReturnCurrentFoodProduction()
+    {
+        return currentFood;
+    }
+
+    // Returns the current food consumption
+    public float ReturnCurrentFoodConsumption()
+    {
+        return currentConsumption;
     }
 
     #endregion
 
     #region Private Methods
 
+    private void UpdateFoodStatus()
+    {
+        float tempConsumption = 0;
+        // Tally up consumption
+        foreach (Ant a in antList)
+        {
+            switch (a.antType)
+            {
+                case Ant.AntType.EXCAVATOR:
+                    tempConsumption += excavatorConsumptionRate;
+                    break;
+                case Ant.AntType.FORAGER:
+                    tempConsumption += foragerAntConsumptionRate;
+                    break;
+                case Ant.AntType.GARDENER:
+                    tempConsumption += gardenerConsumptionRate;
+                    break;
+                case Ant.AntType.QUEEN:
+                    tempConsumption += queenAntConsumptionRate;
+                    break;
+                case Ant.AntType.SOLDIER:
+                    tempConsumption += soldierConsumptionRate;
+                    break;
+                case Ant.AntType.TRASH_HANDLER:
+                    tempConsumption += trashHandlerConsumptionRate;
+                    break;
+                default:
+                    Debug.Log("No type found for tempConsumption tally!");
+                    break;
+            }
+        }
+        currentConsumption = tempConsumption;
+
+        // Kill any ants if we're over the limit
+        if (currentConsumption > currentFood)
+        {
+            StarveRandomAnt();
+        }
+
+        StartCoroutine(WaitToCountConsumption());
+    }
+
+    // Kills a random ant(queens excluded)
+    private void StarveRandomAnt()
+    {
+        int randomNum = Random.Range(0, antList.Count - 1);
+
+        // Don't kill any queens so we can always spawn more ants
+        if (antList[randomNum].antType == Ant.AntType.QUEEN)
+        {
+            StarveRandomAnt();
+        }
+        else
+        {
+            antList[randomNum].Die();
+        }
+    }
+
+    #endregion
+
+    #region Coroutine
+
+    private IEnumerator WaitToCountConsumption()
+    {
+        yield return new WaitForSeconds(consumptionWaitTime);
+        UpdateFoodStatus();
+    }
 
     #endregion
 }

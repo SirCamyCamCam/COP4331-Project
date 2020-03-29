@@ -253,9 +253,6 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -320,6 +317,8 @@
     <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Leaves\Leaf.cs" />
+    <Compile Include="Assets\Scripts\Leaves\LeafManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\MainMenu\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\TestScript\SpawnAntTest.cs" />
@@ -346,6 +345,7 @@
     <Compile Include="Assets\Scripts\UI\SpawnQueenButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnSoliderButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnTrashHandlerButton.cs" />
+    <Compile Include="Assets\Scripts\WayPoints\FarmWaypoint.cs" />
     <Compile Include="Assets\Scripts\WayPoints\Waypoint.cs" />
     <Compile Include="Assets\Scripts\WayPoints\WaypointManager.cs" />
   </ItemGroup>
