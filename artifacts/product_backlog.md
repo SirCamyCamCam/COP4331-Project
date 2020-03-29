@@ -20,3 +20,6 @@
 | 016 | ~~As a player, when I spawn ants, they should be randomly assigned throughout the queens in the scene to spawn~~ | 3 | 2 | Given spawning an ant, it should be randomly assigned between the queens in the scene | Done | 
 | 017 | ~~As a player, I would like to have 1 of every time of ant exist at start~~ | 1 | 1 | Given the game's start, there should exist one of every type of ant to begin the colony's functionality | Done | 
 | 018 | ~~As a player, I would like to have 1 queen per nursery~~ | 2 | 2 | Given waypoints, when a nursery waypoint is established, then only one queen will be at the waypoint | Done |
+| 019 | ~~As a player, I would like every ant to have it's own food consumption rate and effect the game's food meter~~ | 8 | 1 | Given an ant, it should have a consumption rate and die if it cannot eat any food | Done |
+| 020 | ~~As a player, I would like to have leaves for the foragers to transport back to the farm for gardners to farm~~ | 6 | 1 | Given an leaf, it should be able to be transported to the farm site to be farmed | Done | 
+| 021 | ~~As a player, I would like the forager to be able to start the production of fungus and prevent decay~~ | 7 | 1 | Given a forager ant, it should begin the process to farm a leaf and reset decay | Done | 
