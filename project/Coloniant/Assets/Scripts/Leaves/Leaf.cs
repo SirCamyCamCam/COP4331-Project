@@ -13,6 +13,7 @@ public class Leaf : MonoBehaviour {
 
     private float decay;
     private float decayRate;
+    private LeafManager.State leafState;
 
     #endregion
 

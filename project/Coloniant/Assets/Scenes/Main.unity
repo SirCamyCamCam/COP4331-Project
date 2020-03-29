@@ -8008,7 +8008,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 75
-  orthographic: 1
+  orthographic: 0
   orthographic size: 128.5313
   m_Depth: -1
   m_CullingMask:
@@ -10340,6 +10340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leafLife: 0
   decayRate: 0
+  defaultSpawnNum: 0
 --- !u!4 &1997388096
 Transform:
   m_ObjectHideFlags: 0

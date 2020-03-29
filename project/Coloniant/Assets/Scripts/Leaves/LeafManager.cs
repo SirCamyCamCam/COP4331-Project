@@ -13,9 +13,11 @@ public class LeafManager : MonoBehaviour {
 
     public enum State
     {
-        DEFAULT,
+        TRANSPORT,
         TRASH,
-        FUNGUS
+        FUNGUS,
+        LEAF,
+        WAIT
     }
 
     #endregion
@@ -24,9 +26,11 @@ public class LeafManager : MonoBehaviour {
 
     [Header("Settings")]
     [SerializeField]
-    private float leafLife;
+    private int leafLife;
     [SerializeField]
     private float decayRate;
+    [SerializeField]
+    private int defaultSpawnNum;
 
     #endregion
 
