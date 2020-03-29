@@ -19,3 +19,4 @@
 | 015 | ~~As a player, when I start the game, the queen should not be static~~ | 2 | 1 | Given a queen, the queen should not be static and have a connected nursery | Done | 
 | 016 | ~~As a player, when I spawn ants, they should be randomly assigned throughout the queens in the scene to spawn~~ | 3 | 2 | Given spawning an ant, it should be randomly assigned between the queens in the scene | Done | 
 | 017 | ~~As a player, I would like to have 1 of every time of ant exist at start~~ | 1 | 1 | Given the game's start, there should exist one of every type of ant to begin the colony's functionality | Done | 
+| 018 | ~~As a player, I would like to have 1 queen per nursery~~ | 2 | 2 | Given waypoints, when a nursery waypoint is established, then only one queen will be at the waypoint | Done |

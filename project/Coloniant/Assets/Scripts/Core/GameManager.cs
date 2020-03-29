@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         surface.enabled = false;
+        ground.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        SwitchViews();
 	}
 
     #endregion
@@ -77,32 +77,29 @@ public class GameManager : MonoBehaviour {
         return flowUpdateSeconds;
     }
 
+    public void SwitchViews()
+    {
+        if (currentView == CurrentView.UNDER_GROUND)
+        {
+            currentView = CurrentView.SURFACE;
+            AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
+            WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
+            surface.enabled = !surface.enabled;
+            ground.enabled = !ground.enabled;
+        }
+        else
+        {
+            currentView = CurrentView.UNDER_GROUND;
+            AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
+            WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
+            surface.enabled = !surface.enabled;
+            ground.enabled = !ground.enabled;
+        }
+    }
+
     #endregion
 
     #region Private Methods
 
-    private void SwitchViews()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (currentView == CurrentView.UNDER_GROUND)
-            {
-                currentView = CurrentView.SURFACE;
-                AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
-                WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
-                surface.enabled = true;
-                ground.enabled = false;
-            }
-            else
-            {
-                currentView = CurrentView.UNDER_GROUND;
-                AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
-                WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
-                surface.enabled = false;
-                ground.enabled = true;
-            }
-        }
-    }
-
-#endregion
+    #endregion
 }
