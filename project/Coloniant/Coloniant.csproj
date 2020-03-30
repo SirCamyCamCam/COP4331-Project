@@ -327,6 +327,9 @@
     <Compile Include="Assets\Scripts\TestScript\TestCamera.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestForagerAnt.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestGameManager.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestGardenerAnt.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestLeaf.cs" />
+    <Compile Include="Assets\Scripts\TestScript\TestLeafManager.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestLineRenderer.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestMainUIManager.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestQueenAnt.cs" />

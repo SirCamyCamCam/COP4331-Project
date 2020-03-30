@@ -71,6 +71,6 @@ public class TestWaypointManager {
         fakeList.Add(waypoint2);
         WaypointManager.main.SpawnWaypoint(WaypointManager.WaypointType.TRANSITION, WaypointManager.Level.UNDER_GROUND, fakeList, spawn);
         WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
-        AssertTrue(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
+        Assert.True(fakeList[0].CurrentLevel() == WaypointManager.Level.ABOVE_GROUND);
     }
 }*/

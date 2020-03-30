@@ -9,3 +9,4 @@
 - Implimented starvation of ants
 - Updated User stories
 - Updated requierments
+- Created new tests
