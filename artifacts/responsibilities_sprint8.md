@@ -10,3 +10,6 @@
 - Updated User stories
 - Updated requierments
 - Created new tests
+
+#Henry Alvarez
+- Adde
