@@ -12,4 +12,10 @@
 - Created new tests
 
 #Henry Alvarez
-- Adde
+- Created Update classes for every SpawnButtons so the AntsToSpawn counter decrements after every game frame
+- Limited queen ant to only be able to spawn once
+- Modified the Ant Count to update after every ant is spawned
+- Updated User Stories
+- Updated Trello Board
+- Worked on Burndown Chart
+- Worked on Velocity Chart
