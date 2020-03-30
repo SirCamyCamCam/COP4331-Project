@@ -43,7 +43,7 @@ public class FarmWaypoint : MonoBehaviour {
 	 	{
 			 
 			 manager.SpawnWaypoint(WaypointManager.WaypointType.FARM_SITE,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
-		
+			
 
 			farmT = false; 
 	 	}
@@ -65,8 +65,8 @@ public class FarmWaypoint : MonoBehaviour {
 
 	 }
 	 
-
-	*/     
+	*/
+	    
 }
 
 
