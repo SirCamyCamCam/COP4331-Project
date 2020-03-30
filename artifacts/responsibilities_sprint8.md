@@ -12,7 +12,9 @@
 - Created new tests
 
 # Henry Alvarez
-- Adde
+- Created Update classes for every SpawnButtons so the AntsToSpawn counter decrements after every game frame
+- Limited queen ant to only be able to spawn once
+- Modified the Ant Count to update after every ant is spawned
 
 # Amin Kavehzadeh
 - created a script that will zoom through our scene, dynamically changing scale depending on the size of our ant farm and will work with our orthographic camera 
