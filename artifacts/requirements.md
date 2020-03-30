@@ -18,9 +18,15 @@
 |            014 |           009 | The Audio Controller must have the ability to have different channels for different types of effects | Different sounds are heard from different actions | 4 | Necessary | Satisfied |
 |            015 |           008 | The player must be able to create waypoints by clicking on a location for ants to travel | A marker can be placed to set a waypoint | 7 | Important | Planned |
 |            016 |           009 | The audio should be able to be changed at any point throughout the game | When the audio can be adjusted throughout the game | 4 | Necessary | Satisfied | 
-|            017 |           010 | The queen ant should stay at nursery waypoints to spawn ants | The queen can spawn ants consistently at the waypoints | 8 | Important | Planned |
-|            018 |           011 | Waypoints should be able to become nursery waypoints | The waypoints can turn into nursery waypoints | 5 | Necessary | Working | 
-|            019 |           012 | Waypoints should be able to become farming waypoints | The waypoints can turn into farming waypoints | 5 | Necessary | Working |
-|            020 |           013 | Waypoints should be able to become trash sites | The waypoints can turn into trash sites | 5 | Necessary | Working |
-|            021 |           014 | Nurseries should have one queen each | One queen can be assigned to one nursery | 2 | Important | Planned | 
-|            022 |           015 | Different ants should have different classes that can conduct various actions | Ants can be assigned roles | 6 | Necessary | Planned |
+|            017 |           010 | The queen ant should stay at nursery waypoints to spawn ants | The queen can spawn ants consistently at the waypoints | 8 | Important | v |
+|            018 |           011 | Waypoints should be able to become nursery waypoints | The waypoints can turn into nursery waypoints | 5 | Necessary | Satisfied | 
+|            019 |           012 | Waypoints should be able to become farming waypoints | The waypoints can turn into farming waypoints | 5 | Necessary | Satisfied |
+|            020 |           013 | Waypoints should be able to become trash sites | The waypoints can turn into trash sites | 5 | Necessary | Satisfied |
+|            021 |           014 | Nurseries should have one queen each | One queen can be assigned to one nursery | 2 | Important | Satisfied | 
+|            022 |           015 | Different ants should have different classes that can conduct various actions | Ants can be assigned roles | 6 | Necessary | Satisfied |
+|            021 |           016 | Spawned ants must be randomly asigned to different queens | When mutliple queens are in the scene, spawned ants atr split | 2 | 2 | Necessary | 
+|            022 |           017 | Ther must be1 of every time of ant exist at start | There should exist one of every type of ant to begin the colony's functionality | 1 | 1 | Satisfied | 
+|            023 |           018 | There must only be 1 queen per nursery | When a nursery waypoint is established, then only one queen will be at the waypoint | 2 | 2 | Satisfied |
+|            024 |           019 | Every ant must have it's own food consumption rate and effect the game's food meter | Ants should have a consumption rate and die if it cannot eat any food | 8 | 1 | Satisfied |
+|            025 |           020 | Leaves must exists for the foragers to transport back to the farm for gardners to farm | A leaf is the source of food and must be present | 6 | 1 | Satisfied | 
+|            026 |           021 | Forager must be able to start the production of fungus and prevent decay | Forager ants should begin the process to farm a leaf and reset decay | 7 | 1 | Satisfied | 
