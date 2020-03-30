@@ -16,9 +16,9 @@
 |            012 |           002 | The Camera system must have the ability to move omidirectional using the mouse to drag | The camera can be moved in every direction | 7 | Necessary | Satisfied |
 |            013 |           009 | The Audio Controller must be able to be called from anywhere in the project | The audio settings can be accessed at any point | 4 | Important | Satisfied | 
 |            014 |           009 | The Audio Controller must have the ability to have different channels for different types of effects | Different sounds are heard from different actions | 4 | Necessary | Satisfied |
-|            015 |           008 | The player must be able to create waypoints by clicking on a location for ants to travel | A marker can be placed to set a waypoint | 7 | Important | Planned |
+|            015 |           008 | The player must be able to create waypoints by clicking on a location for ants to travel | A marker can be placed to set a waypoint | 7 | Important | Working |
 |            016 |           009 | The audio should be able to be changed at any point throughout the game | When the audio can be adjusted throughout the game | 4 | Necessary | Satisfied | 
-|            017 |           010 | The queen ant should stay at nursery waypoints to spawn ants | The queen can spawn ants consistently at the waypoints | 8 | Important | Necessary |
+|            017 |           010 | The queen ant should stay at nursery waypoints to spawn ants | The queen can spawn ants consistently at the waypoints | 8 | Important | Satisfied |
 |            018 |           011 | Waypoints should be able to become nursery waypoints | The waypoints can turn into nursery waypoints | 5 | Necessary | Satisfied | 
 |            019 |           012 | Waypoints should be able to become farming waypoints | The waypoints can turn into farming waypoints | 5 | Necessary | Satisfied |
 |            020 |           013 | Waypoints should be able to become trash sites | The waypoints can turn into trash sites | 5 | Necessary | Satisfied |
