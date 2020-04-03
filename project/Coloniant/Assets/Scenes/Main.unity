@@ -1938,6 +1938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2bc1c296445e3489d54bfc6f74365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!114 &310533577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3266,6 +3268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081848b315ac27642b5328425e5b5cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!114 &606539520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6425,6 +6429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d6bec1620ebd746a9afe075851c961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!1 &1190810777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,7 +6515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e19e2a25fb98b4ba9b11a61c365c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farm: {fileID: 1462573485607346, guid: 2e51330caabe40d469d0db8067497841, type: 2}
+  farm: {fileID: 0}
 --- !u!1 &1230897717
 GameObject:
   m_ObjectHideFlags: 0
@@ -7971,6 +7977,7 @@ GameObject:
   - component: {fileID: 1477167262}
   - component: {fileID: 1477167261}
   - component: {fileID: 1477167264}
+  - component: {fileID: 1477167265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8008,8 +8015,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 75
-  orthographic: 0
-  orthographic size: 128.5313
+  orthographic: 1
+  orthographic size: 50
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8054,6 +8061,19 @@ MonoBehaviour:
   scrollSpeed: 20
   minHeight: -70
   maxHeight: -10
+--- !u!114 &1477167265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477167260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edda424d154efb479b6d92e81392d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomFactor: 100
+  zoomLerpSpeed: 30
 --- !u!1 &1498368311
 GameObject:
   m_ObjectHideFlags: 0
@@ -9175,6 +9195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416a884f56bf69444b6769c9616cd785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!1 &1789863070
 GameObject:
   m_ObjectHideFlags: 0
@@ -9542,6 +9564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0162430fe7489ca45bd9cd0d5a764b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!1 &1820872525
 GameObject:
   m_ObjectHideFlags: 0
@@ -9908,7 +9932,7 @@ MonoBehaviour:
   startEntrancePosition: {fileID: 1230897717}
   startExitPostion: {fileID: 675243823}
   startLeafPostion: {fileID: 925357854}
-  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 3}
   lineWidth: 0.3
   waypointPrefab: {fileID: 1059635954423062, guid: 13c6f02efa19a79458d2ea7e5dd598e1,
     type: 2}
@@ -10551,6 +10575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a3209f1e36de143892bbacb25ac288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningAnts: 0
+  antsToSpawn: 0
 --- !u!1 &2035718240
 GameObject:
   m_ObjectHideFlags: 0

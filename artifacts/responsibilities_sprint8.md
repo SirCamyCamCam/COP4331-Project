@@ -10,3 +10,17 @@
 - Updated User stories
 - Updated requierments
 - Created new tests
+
+# Henry Alvarez
+- Created Update classes for every SpawnButtons so the AntsToSpawn counter decrements after every game frame
+- Limited queen ant to only be able to spawn once
+- Modified the Ant Count to update after every ant is spawned
+- Updated User Stories
+- Updated Trello Board
+- Worked on Burndown Chart
+- Worked on Velocity Chart
+
+# Amin Kavehzadeh
+- created a script that will zoom through our scene, dynamically changing scale depending on the size of our ant farm and will work with our orthographic camera 
+- creating a script that will draw a line bridge between our instantiated waypoints 
+- shot the product demo 
