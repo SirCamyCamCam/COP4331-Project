@@ -62,7 +62,6 @@ public class ForagerAnt : MonoBehaviour {
 
     #region Private Methods
 
-
     private void AtLeafSite()
     {
         transportingLeaf = LeafManager.main.CollectedALeaf(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>());

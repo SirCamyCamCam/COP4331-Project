@@ -9,7 +9,9 @@ public class ButtonPress : MonoBehaviour {
 	// Use this for initialization
 
 	public GameObject start;
-	public GameObject option; 
+	public GameObject option;
+    [SerializeField]
+    private FadeTransition fadeTransitionScript;
 	
 
 	void Start () {
@@ -19,7 +21,7 @@ public class ButtonPress : MonoBehaviour {
 	}
 	
 	public void Playpressed(){
-		SceneManager.LoadScene("Main",LoadSceneMode.Single);
+        fadeTransitionScript.FadeIn("Main");
 	}
 
 	public void OptionPressed(){

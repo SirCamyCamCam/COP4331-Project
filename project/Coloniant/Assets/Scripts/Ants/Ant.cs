@@ -350,6 +350,9 @@ public class Ant : MonoBehaviour {
             case AntType.GARDENER:
                 gameObject.GetComponent<GardenerAnt>().DecideNextMove();
                 break;
+            case AntType.TRASH_HANDLER:
+                gameObject.GetComponent<TrashHandlerAnt>().DecideNextMove();
+                break;
         }
     }
 

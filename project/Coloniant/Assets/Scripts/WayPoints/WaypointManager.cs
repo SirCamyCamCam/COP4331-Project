@@ -94,7 +94,6 @@ public class WaypointManager : MonoBehaviour {
     private List<Waypoint> nurseryWaypoints;
     private List<Waypoint> farmWaypoints;
     private List<Waypoint> trashSitesWaypoint;
-    private List<Waypoint> trashWaypoint;
     private List<Waypoint> entranceWaypoints;
     private List<Waypoint> transitionWaypoints;
     private List<Waypoint> exitWaypoints;
@@ -128,7 +127,6 @@ public class WaypointManager : MonoBehaviour {
         nurseryWaypoints = new List<Waypoint>();
         farmWaypoints = new List<Waypoint>();
         trashSitesWaypoint = new List<Waypoint>();
-        trashWaypoint =  new List<Waypoint>();
         entranceWaypoints =  new List<Waypoint>();
         transitionWaypoints = new List<Waypoint>();
         exitWaypoints = new List<Waypoint>();
@@ -409,9 +407,6 @@ public class WaypointManager : MonoBehaviour {
                 break;
             case WaypointType.TRANSITION:
                 transitionWaypoints.Add(newWaypointClass);
-                break;
-            case WaypointType.TRASH:
-                trashWaypoint.Add(newWaypointClass);
                 break;
             case WaypointType.TRASH_SITE:
                 trashSitesWaypoint.Add(newWaypointClass);
