@@ -87,8 +87,17 @@ public class Leaf : MonoBehaviour {
 
     private void SetToTrash()
     {
-        // To Do
-        Debug.Log("A leaf was killed");
+        GameObject trashGameObject = Instantiate(
+            TrashManager.main.TrashPrefab(),
+            gameObject.transform.position,
+            new Quaternion(0, 0, 0, 0),
+            TrashManager.main.gameObject.transform
+            );
+
+        Trash trash = trashGameObject.GetComponent<Trash>();
+        TrashManager.main.CreatedNewTrash(trash);
+        TrashManager.main.AddTrashToWaypoints(trash, LeafManager.main.ReturnWaypointLeafIsAt(this));
+        Destroy(gameObject);
     }
 
     #endregion

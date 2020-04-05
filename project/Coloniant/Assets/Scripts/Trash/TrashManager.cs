@@ -27,6 +27,9 @@ public class TrashManager : MonoBehaviour {
 
     #region Inspector Fields
 
+    [Header("Dependencies")]
+    [SerializeField]
+    private GameObject trashPrefab;
     [Header("Settings")]
     [SerializeField]
     private float trashWeight;
@@ -261,6 +264,12 @@ public class TrashManager : MonoBehaviour {
         }
 
         return null;
+    }
+
+    // Returns the trash prefab
+    public GameObject TrashPrefab()
+    {
+        return trashPrefab;
     }
 
     #endregion

@@ -52,6 +52,7 @@ public class LeafManager : MonoBehaviour {
     private List<Leaf> selectedLeaves;
     private Dictionary<Waypoint, List<Leaf>> leavesAtLeafSites;
     private Dictionary<Waypoint, List<Leaf>> leavesAtFarmSites;
+    private Dictionary<Leaf, Waypoint> leavesAtFarmWaypoint;
 
     #endregion
 
@@ -63,6 +64,7 @@ public class LeafManager : MonoBehaviour {
 
         leavesAtLeafSites = new Dictionary<Waypoint, List<Leaf>>();
         leavesAtFarmSites = new Dictionary<Waypoint, List<Leaf>>();
+        leavesAtFarmWaypoint = new Dictionary<Leaf, Waypoint>();
         leafList = new List<Leaf>();
         selectedLeaves = new List<Leaf>();
     }
@@ -105,6 +107,7 @@ public class LeafManager : MonoBehaviour {
         l.SetLeafState(State.WAIT);
         l.StartDecay();
         leavesAtFarmSites[w].Add(l);
+        leavesAtFarmWaypoint.Add(l, w);
     }
 
     public void NewFarmWaypoint(Waypoint w)
@@ -166,6 +169,7 @@ public class LeafManager : MonoBehaviour {
         if (l == null)
         {
             Debug.Log("Null Leaf in 'AssignSelectedLeaf' in LeafManager");
+            return;
         }
 
         selectedLeaves.Add(l);
@@ -176,6 +180,7 @@ public class LeafManager : MonoBehaviour {
         if (l == null)
         {
             Debug.Log("Null Leaf in 'RemoveSelectedLeaf' in LeafManager");
+            return;
         }
         selectedLeaves.Remove(l);
     }
@@ -185,8 +190,38 @@ public class LeafManager : MonoBehaviour {
         if (l == null)
         {
             Debug.Log("Null Leaf in 'IsLeafSelected' in LeafManager");
+            return false;
         }
         return selectedLeaves.Contains(l);
+    }
+
+    public Waypoint ReturnWaypointLeafIsAt(Leaf leaf)
+    {
+        if (leaf == null)
+        {
+            Debug.Log("Null leaf in ReturnWaypointLeafIsAt in LeafManager");
+            return null;
+        }
+        
+        return leavesAtFarmWaypoint[leaf];
+    }
+
+    public void LeafDeath(Leaf l, Waypoint w)
+    {
+        if (l == null)
+        {
+            Debug.Log("Leaf is null at LeafDeath in LeafManager");
+            return;
+        }
+
+        if (w = null)
+        {
+            Debug.Log("Waypoint is null at LeafDeath in LeafManager");
+            return;
+        }
+
+        //leavesAtFarmSites[w].Remove(l);
+        //leavesAtFarmWaypoint[l].Remove(w);
     }
 
     #endregion

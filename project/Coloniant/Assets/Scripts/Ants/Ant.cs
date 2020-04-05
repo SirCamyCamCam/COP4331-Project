@@ -205,6 +205,40 @@ public class Ant : MonoBehaviour {
     // Kills the ant
     public void Die()
     {
+        if (previousWaypoint == null && targetWaypoint.GetComponent<Waypoint>() == null)
+        {
+            Destroy(gameObject);
+        }
+
+        GameObject trashGameObject = Instantiate(
+            TrashManager.main.TrashPrefab(), 
+            gameObject.transform.position, 
+            new Quaternion(0, 0, 0, 0), 
+            TrashManager.main.gameObject.transform
+            );
+
+        Trash trash = trashGameObject.GetComponent<Trash>();
+        TrashManager.main.CreatedNewTrash(trash);
+
+        if (previousWaypoint == null)
+        {
+            TrashManager.main.AddTrashToWaypoints(trash, targetWaypoint.GetComponent<Waypoint>());
+        }
+        else
+        {
+            float lastDistance = Vector2.Distance(transform.position, previousWaypoint.transform.position);
+            float targetDistance = Vector2.Distance(transform.position, targetWaypoint.transform.position);
+
+            if (targetDistance < lastDistance)
+            {
+                TrashManager.main.AddTrashToWaypoints(trash, targetWaypoint.GetComponent<Waypoint>());
+            }
+            else
+            {
+                TrashManager.main.AddTrashToWaypoints(trash, previousWaypoint.GetComponent<Waypoint>());
+            }
+        }
+        
         Destroy(gameObject);
     }
 

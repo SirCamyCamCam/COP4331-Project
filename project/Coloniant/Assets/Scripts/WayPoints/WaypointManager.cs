@@ -410,6 +410,7 @@ public class WaypointManager : MonoBehaviour {
                 break;
             case WaypointType.TRASH_SITE:
                 trashSitesWaypoint.Add(newWaypointClass);
+                TrashManager.main.AddTrashWaypoint(newWaypointClass);
                 break;
             case WaypointType.EXIT:
                 trashSitesWaypoint.Add(newWaypointClass);
