@@ -89,6 +89,9 @@
      <Compile Include="Assets\Scripts\TestScript\TestSpawnTrashHandlerButton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestWaypoint.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestWaypointManager.cs" />
+     <Compile Include="Assets\Scripts\Trash\Trash.cs" />
+     <Compile Include="Assets\Scripts\Trash\TrashManager.cs" />
+     <Compile Include="Assets\Scripts\UI\FadeTransition.cs" />
      <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
      <Compile Include="Assets\Scripts\UI\SpawnExcavatorButton.cs" />
      <Compile Include="Assets\Scripts\UI\SpawnForagerButton.cs" />
