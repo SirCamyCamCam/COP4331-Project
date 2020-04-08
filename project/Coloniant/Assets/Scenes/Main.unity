@@ -6561,6 +6561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1901109182}
   finder: {fileID: 1477167266}
+  text: {fileID: 0}
 --- !u!1 &1208637908
 GameObject:
   m_ObjectHideFlags: 0
