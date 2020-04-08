@@ -12,7 +12,7 @@ public class LineScript : MonoBehaviour
     public Material material;
     private int currLines = 0;
 	private bool iswaypoint = false; 
-	private FarmWaypoint waypoint; 
+	private WaypointSpawner waypoint; 
  
     void Start()
     {
