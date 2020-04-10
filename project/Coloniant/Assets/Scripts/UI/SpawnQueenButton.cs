@@ -45,7 +45,7 @@ public class SpawnQueenButton : MonoBehaviour {
             
             if (antsToSpawn > 0){
                 antsToSpawn--;
-                AntManager.main.AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
+                AntManager.main.AddAntsToSpawn(Ant.AntType.QUEEN);
                 stringval.text = antsToSpawn.ToString();
             }
             else

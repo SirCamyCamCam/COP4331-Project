@@ -45,7 +45,7 @@ public class SpawnExcavatorButton : MonoBehaviour {
             
             if (antsToSpawn > 0){
                 antsToSpawn--;
-                AntManager.main.AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
+                AntManager.main.AddAntsToSpawn(Ant.AntType.EXCAVATOR);
                 stringval.text = antsToSpawn.ToString();
             }
             else

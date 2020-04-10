@@ -91,6 +91,11 @@ public class ForagerAnt : MonoBehaviour {
             WaypointManager.WaypointType.LEAF_SITE
             );
 
+        if (waypointList == null)
+        {
+            Debug.Log("Waypoint list null in GoToLeafSite in ForagerAnt");
+        }
+
         ant.AssignWaypointList(waypointList);
     }
 
@@ -100,6 +105,11 @@ public class ForagerAnt : MonoBehaviour {
             ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
             WaypointManager.WaypointType.FARM_SITE
             );
+
+        if (waypointList == null)
+        {
+            Debug.Log("Waypoint list null in GoToFarmSite in ForagerAnt");
+        }
 
         ant.AssignWaypointList(waypointList);
     }
