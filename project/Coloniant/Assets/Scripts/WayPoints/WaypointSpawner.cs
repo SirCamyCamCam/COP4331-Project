@@ -37,7 +37,9 @@ public class WaypointSpawner : MonoBehaviour {
      {
          Vector3 worldview = Camera.main.ScreenToWorldPoint(Input.mousePosition, Camera.MonoOrStereoscopicEye.Mono);
          Vector3 adjust = new Vector3(worldview.x,worldview.y,-0.068f); 
+         bool tooClose = false; 
 
+        //for farming Waypoints 
         if (farmT == true )
         {   
              pickconnected = true; 
@@ -46,49 +48,89 @@ public class WaypointSpawner : MonoBehaviour {
         
                 if(pickspawnlocation == true)
                 {
-                    print("im about to spawn"); 
-                    manager.SpawnWaypoint(WaypointManager.WaypointType.FARM_SITE,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
-                    transitionwaypoint.Clear(); 
-                    pickspawnlocation = false;
-                    text.SetActive(false);
-                    farmT = false; 
+                    foreach(Waypoint way in manager.allWaypoints)
+                    {
+                        if(Vector3.Distance(way.transform.position,adjust)<10)
+                        {
+                            tooClose = true; 
+                        }
+                    }
+
+                    if(tooClose == false)
+                    {
+                            print("im about to spawn"); 
+                            manager.SpawnWaypoint(WaypointManager.WaypointType.FARM_SITE,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
+                            transitionwaypoint.Clear(); 
+                            pickspawnlocation = false;
+                            text.SetActive(false);
+                            farmT = false; 
+                    }else{print("Maybe Try another Spot?");tooClose = false;}
+                   
+                    
                 }
             
         }
 
         if (trashT == true )
         {
-        
-             pickconnected = true; 
-
+         pickconnected = true; 
+             
              if (pickconnected == true){Transitionadder();}   
         
                 if(pickspawnlocation == true)
                 {
+                    foreach(Waypoint way in manager.allWaypoints)
+                    {
+                        if(Vector3.Distance(way.transform.position,adjust)<10)
+                        {
+                            tooClose = true; 
+                        }
+                    }
+
+                    if(tooClose == false)
+                    {
                     manager.SpawnWaypoint(WaypointManager.WaypointType.TRASH_SITE,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
                     transitionwaypoint.Clear(); 
                     pickspawnlocation = false;
                     text.SetActive(false);
                     trashT = false; 
-                }  
-        
+                    }else{print("Maybe Try another Spot?");tooClose = false;}
+                   
+                    
+                }
         
         }
+
+        
+
         if (nurseT == true )
         {
         
-        pickconnected = true; 
-
+            pickconnected = true; 
+             
              if (pickconnected == true){Transitionadder();}   
         
                 if(pickspawnlocation == true)
                 {
+                    foreach(Waypoint way in manager.allWaypoints)
+                    {
+                        if(Vector3.Distance(way.transform.position,adjust)<10)
+                        {
+                            tooClose = true; 
+                        }
+                    }
+
+                    if(tooClose == false)
+                    {
                     manager.SpawnWaypoint(WaypointManager.WaypointType.NURSERY_SITE,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
                     transitionwaypoint.Clear(); 
                     pickspawnlocation = false;
                     text.SetActive(false);
                     nurseT = false; 
-                }  
+                    }else{print("Maybe Try another Spot?");tooClose = false;}
+                   
+                    
+                }
         
         }
 

@@ -106,7 +106,7 @@ public class WaypointManager : MonoBehaviour {
 
     #region Run-Time Fields
 
-    private List<Waypoint> allWaypoints;
+    public List<Waypoint> allWaypoints;
     private List<Waypoint> leafWaypoints;
     private List<Waypoint> nurseryWaypoints;
     private List<Waypoint> farmWaypoints;
