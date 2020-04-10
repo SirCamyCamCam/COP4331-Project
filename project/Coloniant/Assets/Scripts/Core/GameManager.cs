@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private SpriteRenderer surface;
     [SerializeField]
-    private SpriteRenderer ground;
+    private GameObject ground;
 
     [Header("Settings")]
     [SerializeField]
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         surface.enabled = false;
-        ground.enabled = true;
+        ground.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour {
             AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
             surface.enabled = !surface.enabled;
-            ground.enabled = !ground.enabled;
+            ground.SetActive(false);
         }
         else
         {
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
             AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
             surface.enabled = !surface.enabled;
-            ground.enabled = !ground.enabled;
+            ground.SetActive(true);
         }
     }
 

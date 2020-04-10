@@ -353,9 +353,10 @@
     <Compile Include="Assets\Scripts\UI\SpawnSoliderButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnTrashHandlerButton.cs" />
     <Compile Include="Assets\Scripts\WayPoints\BridgeCreate.cs" />
-    <Compile Include="Assets\Scripts\WayPoints\FarmWaypoint.cs" />
+    <Compile Include="Assets\Scripts\WayPoints\OBJFinder.cs" />
     <Compile Include="Assets\Scripts\WayPoints\Waypoint.cs" />
     <Compile Include="Assets\Scripts\WayPoints\WaypointManager.cs" />
+    <Compile Include="Assets\Scripts\WayPoints\WaypointSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

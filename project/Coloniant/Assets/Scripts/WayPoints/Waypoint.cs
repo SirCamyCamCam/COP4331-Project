@@ -17,6 +17,14 @@ public class Waypoint : MonoBehaviour {
     private GameObject attachedGameObject;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private AnimationCurve bounceCurve;
+
+    [Header("Settings")]
+    [SerializeField]
+    private float bounceRate;
+    [SerializeField]
+    private float bounceHeight;
 
     #endregion
 
@@ -26,6 +34,9 @@ public class Waypoint : MonoBehaviour {
     [HideInInspector]
     public List<Waypoint> connectedWaypoints;
     private WaypointManager.Level level;
+    private float originalHeight;
+    // Depreciated
+    private float bounceTime;
 
     #endregion
 
@@ -39,35 +50,9 @@ public class Waypoint : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        switch (type)
+        if (type == WaypointManager.WaypointType.TRANSITION)
         {
-            case WaypointManager.WaypointType.FARM_SITE:
-                spriteRenderer.color = Color.green;
-                break;
-            case WaypointManager.WaypointType.ENTRANCE:
-                spriteRenderer.color = Color.black;
-                break;
-            case WaypointManager.WaypointType.LEAF_SITE:
-                spriteRenderer.color = Color.cyan;
-                break;
-            case WaypointManager.WaypointType.NURSERY_SITE:
-                spriteRenderer.color = Color.red;
-                break;
-            case WaypointManager.WaypointType.TRANSITION:
-                spriteRenderer.color = Color.gray;
-                break;
-            case WaypointManager.WaypointType.TRASH:
-                spriteRenderer.color = Color.yellow;
-                break;
-            case WaypointManager.WaypointType.TRASH_SITE:
-                spriteRenderer.color = Color.blue;
-                break;
-            case WaypointManager.WaypointType.EXIT:
-                spriteRenderer.color = Color.black;
-                break;
-            default:
-                Debug.LogError("No type found for waypoint!");
-                break;
+            spriteRenderer.transform.localScale = new Vector3(0.65f, 0.65f, 0.65f);
         }
 
         if (GameManager.main.currentView == GameManager.CurrentView.SURFACE && level == WaypointManager.Level.UNDER_GROUND)
@@ -78,12 +63,21 @@ public class Waypoint : MonoBehaviour {
         {
             spriteRenderer.enabled = false;
         }
+
+        originalHeight = spriteRenderer.transform.position.y;
+
+        //StartCoroutine(BounceUp());
     }
 
     // Update is called once per frame
-    /*void Update () {
-		
-	}*/
+    void Update () {
+        spriteRenderer.transform.position = new Vector3
+            (
+            spriteRenderer.transform.position.x,
+            originalHeight + (Mathf.Sin(Time.time * bounceRate) * bounceHeight),
+            spriteRenderer.transform.position.z
+            );
+	}
 
     #endregion
 
@@ -147,9 +141,77 @@ public class Waypoint : MonoBehaviour {
         return attachedGameObject;
     }
 
+    // Assigns the sprite
+    public void AssignSprite(Sprite sprite)
+    {
+        spriteRenderer.sprite = sprite;
+    }
+
     #endregion
 
     #region Private Methods
+
+    private void CallDown()
+    {
+        StartCoroutine(BounceDown());
+    }
+
+    private void CallUp()
+    {
+        StartCoroutine(BounceUp());
+    }
+
+    #endregion
+
+    #region Coroutines
+
+    private IEnumerator BounceUp()
+    {
+        float startTime = Time.time;
+        Vector3 targetPos = new Vector3
+            (
+            spriteRenderer.transform.position.x,
+            originalHeight + (bounceHeight / 2),
+            spriteRenderer.transform.position.z
+            );
+        float randomAddition = Random.Range(0, 0.3f);
+        //randomAddition = 0;
+
+        while ((Time.time - startTime) < (bounceTime + randomAddition))
+        {
+            float t = bounceCurve.Evaluate((Time.time - startTime) / (bounceTime + randomAddition));
+
+            spriteRenderer.transform.position = Vector3.Lerp(spriteRenderer.transform.position, targetPos, t);
+        }
+
+        yield return new WaitForSeconds(0);
+
+        CallDown();
+    }
+
+    private IEnumerator BounceDown()
+    {
+        float startTime = Time.time;
+        Vector3 targetPos = new Vector3
+            (
+            spriteRenderer.transform.position.x,
+            originalHeight - (bounceHeight / 2),
+            spriteRenderer.transform.position.z
+            );
+        float randomAddition = Random.Range(0, 0.3f);
+        //randomAddition = 0;
+
+        while ((Time.time - startTime) < (bounceTime  + randomAddition))
+        {
+            float t = bounceCurve.Evaluate((Time.time - startTime) / (bounceTime + randomAddition));
+
+            spriteRenderer.transform.position = Vector3.Lerp(spriteRenderer.transform.position, targetPos, t);
+        }
+
+        yield return new WaitForSeconds(0);
+
+        CallUp();
+    }
 
     #endregion
 }

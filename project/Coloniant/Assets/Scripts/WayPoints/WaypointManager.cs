@@ -85,6 +85,23 @@ public class WaypointManager : MonoBehaviour {
     [SerializeField]
     private int maxAntsOnStart;
 
+    [Space(10)]
+    [Header("Sprite Renderers")]
+    [SerializeField]
+    private Sprite farmingSprite;
+    [SerializeField]
+    private Sprite transitionSprite;
+    [SerializeField]
+    private Sprite trashSprite;
+    [SerializeField]
+    private Sprite nurserySprite;
+    [SerializeField]
+    private Sprite exitSprite;
+    [SerializeField]
+    private Sprite enterSprite;
+    [SerializeField]
+    private Sprite leafSprite;
+
     #endregion
 
     #region Run-Time Fields
@@ -322,8 +339,6 @@ public class WaypointManager : MonoBehaviour {
             return null;
         }
 
-        newWaypointGameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
-
         // Get Waypoint object
         Waypoint newWaypointClass = newWaypointGameObject.GetComponent<Waypoint>();
         if (newWaypointClass == null)
@@ -394,26 +409,33 @@ public class WaypointManager : MonoBehaviour {
             case WaypointType.FARM_SITE:
                 farmWaypoints.Add(newWaypointClass);
                 LeafManager.main.NewFarmWaypoint(newWaypointClass);
+                newWaypointClass.AssignSprite(farmingSprite);
                 break;
             case WaypointType.ENTRANCE:
                 entranceWaypoints.Add(newWaypointClass);
+                newWaypointClass.AssignSprite(enterSprite);
                 break;
             case WaypointType.LEAF_SITE:
                 leafWaypoints.Add(newWaypointClass);
                 LeafManager.main.NewLeafSite(newWaypointClass);
+                newWaypointClass.AssignSprite(leafSprite);
                 break;
             case WaypointType.NURSERY_SITE:
                 nurseryWaypoints.Add(newWaypointClass);
+                newWaypointClass.AssignSprite(nurserySprite);
                 break;
             case WaypointType.TRANSITION:
                 transitionWaypoints.Add(newWaypointClass);
+                newWaypointClass.AssignSprite(transitionSprite);
                 break;
             case WaypointType.TRASH_SITE:
                 trashSitesWaypoint.Add(newWaypointClass);
                 TrashManager.main.AddTrashWaypoint(newWaypointClass);
+                newWaypointClass.AssignSprite(trashSprite);
                 break;
             case WaypointType.EXIT:
                 trashSitesWaypoint.Add(newWaypointClass);
+                newWaypointClass.AssignSprite(exitSprite);
                 break;
             default:
                 Debug.Log("Failed to assign waypoint type");
