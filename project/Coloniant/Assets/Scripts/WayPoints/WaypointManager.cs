@@ -607,6 +607,13 @@ public class WaypointManager : MonoBehaviour {
         return leafWaypoints;
     }
 
+    public Waypoint ReturnRandomWaypoint()
+    {
+        int random = Random.Range(0, allWaypoints.Count - 1);
+
+        return allWaypoints[random];
+    }
+
     #endregion
 
     #region Coroutines

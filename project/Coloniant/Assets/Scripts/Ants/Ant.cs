@@ -356,7 +356,10 @@ public class Ant : MonoBehaviour {
     // Finds the next Waypoint in the path
     private void FindNextWayPoint()
     {
-        FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+        if (targetWaypoint.GetComponent<Waypoint>() != null && previousWaypoint.GetComponent<Waypoint>() != null)
+        {
+            FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+        }
         // If this is the last waypoint, find next task
         if (targetWaypoint == waypointPath[waypointPath.Count - 1])
         {
@@ -416,6 +419,9 @@ public class Ant : MonoBehaviour {
                 break;
             case AntType.TRASH_HANDLER:
                 gameObject.GetComponent<TrashHandlerAnt>().DecideNextMove();
+                break;
+            case AntType.SOLDIER:
+                gameObject.GetComponent<SoliderAnt>().DecideNextMove();
                 break;
         }
     }

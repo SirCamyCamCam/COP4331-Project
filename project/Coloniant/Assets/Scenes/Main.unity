@@ -29210,8 +29210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aa544e40407674c972566e150dbfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaxAnts: 5
-  upgradeAnts: 2
+  defaultMaxAnts: 10
+  upgradeAnts: 10
   trashWeight: 0.5
 --- !u!4 &1695610038
 Transform:

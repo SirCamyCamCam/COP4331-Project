@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ant: {fileID: 114192994975298428}
+  patrolWaitTime: 2
 --- !u!212 &212820337528647844
 SpriteRenderer:
   m_ObjectHideFlags: 1

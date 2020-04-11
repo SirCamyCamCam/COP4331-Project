@@ -82,7 +82,6 @@ public class ProtectionManager : MonoBehaviour {
 
     private void CheckPercent()
     {
-        Debug.Log((float)AntManager.main.GetSoliderCount() / (float)AntManager.main.GetTotalAntCount());
         if ((float)AntManager.main.GetSoliderCount() / (float)AntManager.main.GetTotalAntCount() < requieredSoldierPecentage)
         {
             AntManager.main.KillPercenatgeAnt(percentThatGetKilled);
