@@ -17,18 +17,28 @@ public class SpawnQueenButton : MonoBehaviour {
         var InputGameObject = GameObject.Find("Spawn Queen - InputField");
         var stringval = InputGameObject.GetComponent<TMPro.TMP_InputField>();
         TextMeshProUGUI textMesh = stringval.GetComponent<TextMeshProUGUI>();
-        var value = Convert.ToInt32(stringval.text);
+        int value;
+        bool success = int.TryParse(stringval.text, out value);
+        if (success)
+        {
         
-        if (value == 0){
-            antsToSpawn = 0;
-            spawningAnts = false;
+            if (value == 0)
+            {
+                antsToSpawn = 0;
+                spawningAnts = false;
 
-        }
-        if (spawningAnts){
+            }
+            if (spawningAnts)
+            {
+                return;
+            }
+            antsToSpawn = 1;
+            spawningAnts = true;
+            }
+        else
+        {
             return;
         }
-        antsToSpawn = 1;
-        spawningAnts = true;
     }
     
     float timeSinceLastFrame = 0;
