@@ -443,7 +443,7 @@ public class Ant : MonoBehaviour {
 
     private IEnumerator CheckSpeedAntShouldGo()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.3f);
 
         if (previousWaypoint == null)
         {

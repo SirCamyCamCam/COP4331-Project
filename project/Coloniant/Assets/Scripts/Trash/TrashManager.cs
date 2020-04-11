@@ -280,6 +280,23 @@ public class TrashManager : MonoBehaviour {
         }
     }
 
+    public float ReturnTotalTrashCapacity()
+    {
+        return trashSiteList.Count;
+    }
+
+    public float ReturnTotalCurrentTrash()
+    {
+        float count = 0;
+
+        foreach (Waypoint w in trashSiteList)
+        {
+            count += trashCapacities[w];
+        }
+
+        return count;
+    }
+
     #endregion
 
     #region Private Methods

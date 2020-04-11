@@ -499,6 +499,16 @@ public class AntManager : MonoBehaviour{
         }
     }
 
+    public void KillPercenatgeAnt(float percent)
+    {
+        int numToKill = (int)(GetTotalAntCount() * percent);
+
+        for (int i = 0; i < numToKill; i++)
+        {
+            StarveRandomAnt();
+        }
+    }
+
     #endregion
 
     #region Private Methods
@@ -550,8 +560,8 @@ public class AntManager : MonoBehaviour{
     {
         int randomNum = Random.Range(0, antList.Count - 1);
 
-        // Don't kill any queens so we can always spawn more ants
-        if (antList[randomNum].antType == Ant.AntType.QUEEN)
+        // Don't kill 1 queen so we can always spawn more ants
+        if (antList[randomNum].antType == Ant.AntType.QUEEN && GetQueenCount() == 1)
         {
             if (GetTotalAntCount() == 1)
             {

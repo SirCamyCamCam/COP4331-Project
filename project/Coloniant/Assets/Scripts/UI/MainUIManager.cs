@@ -154,6 +154,9 @@ public class MainUIManager : MonoBehaviour {
         // Top Bars
         totalAntsTextNumber.text = AntManager.main.GetTotalAntCount().ToString();
         UpdateFoodSlider();
+        UpdateFlowSlider();
+        UpdateProtectionSlider();
+        UpdateTrashSlider();
     }
 
     #endregion
@@ -306,13 +309,40 @@ public class MainUIManager : MonoBehaviour {
     // Updates all the values on the protection panel when needed
     private void UpdateProtectionPanel()
     {
-        // To Do
+        protectionSoliderTextNumber.text = AntManager.main.GetSoliderCount().ToString();
+        protectionTotalTextNumber.text = AntManager.main.GetTotalAntCount().ToString();
+    }
+
+    // Updates the proteciton slider
+    private void UpdateProtectionSlider()
+    {
+        protectionRatioSlider.value =  ProtectionManager.main.ReturnCurrentPercentage();
     }
 
     // Updates all the values on the trash panel when needed
     private void UpdateTrashPanel()
     {
-        // To Do
+        trashSpaceTextNumber.text = TrashManager.main.ReturnTotalTrashCapacity().ToString();
+        trashTotalTextNumber.text = TrashManager.main.ReturnTotalCurrentTrash().ToString();
+    }
+
+    // Updates the Trash Slider
+    private void UpdateTrashSlider()
+    {
+        float ratio = TrashManager.main.ReturnTotalCurrentTrash() / TrashManager.main.ReturnTotalTrashCapacity();
+
+        if (ratio > 1)
+        {
+            ratio = 1;
+        }
+
+        trashRatioSlider.value = ratio;
+    }
+
+    // Updates the flow slider
+    private void UpdateFlowSlider()
+    {
+        flowSlider.value = FlowManager.main.ReturnTotalFlow();
     }
 
     #endregion
