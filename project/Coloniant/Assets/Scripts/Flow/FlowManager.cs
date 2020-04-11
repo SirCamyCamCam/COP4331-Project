@@ -377,12 +377,14 @@ public class FlowManager : MonoBehaviour {
             totalCapacity += r.ReturnMaxAnts();
         }
 
-        float flow = totalAnts / totalCapacity;
+        float flow = (float)totalAnts / (float)totalCapacity;
 
         if (flow > 1)
         {
             flow = 1;
         }
+
+        flow = 1 - flow;
 
         return flow;
     }

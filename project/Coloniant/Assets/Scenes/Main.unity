@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35933605, g: 0.72425526, b: 0.8018868, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8553,7 +8553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35933605, g: 0.72425526, b: 0.8018868, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -13226,7 +13226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0363385f51b43ef47ac9ef7f5f649692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requieredSoldierPecentage: 0.2
+  requieredSoldierPecentage: 0.15
   percentThatGetKilled: 0.4
 --- !u!1 &768353334
 GameObject:
@@ -24572,7 +24572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35933605, g: 0.72425526, b: 0.8018868, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -30762,7 +30762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35933605, g: 0.72425526, b: 0.8018868, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -31683,17 +31683,21 @@ MonoBehaviour:
   foodRatioSlider: {fileID: 2035718242}
   foodDropDownButton: {fileID: 1026939889}
   foodPanel: {fileID: 1297706757}
+  foodSliderImage: {fileID: 310688504}
   protectionSoliderTextNumber: {fileID: 258041742}
   protectionTotalTextNumber: {fileID: 779967173}
   protectionRatioSlider: {fileID: 1132651044}
   protectionDropDownButton: {fileID: 913237794}
   protectionPanel: {fileID: 161513571}
+  protectionSliderImage: {fileID: 1281010079}
   trashSpaceTextNumber: {fileID: 1443704045}
   trashTotalTextNumber: {fileID: 265885046}
   trashRatioSlider: {fileID: 198755177}
   trashDropDownButton: {fileID: 1380494108}
   trashPanel: {fileID: 78231004}
+  trashSliderImage: {fileID: 198355879}
   flowSlider: {fileID: 769989613}
+  flowSliderImage: {fileID: 1845241218}
   totalAntsTextNumber: {fileID: 393438727}
   totalSoldierTextNumber: {fileID: 1755745192}
   totalForagerTextNumber: {fileID: 1569087874}

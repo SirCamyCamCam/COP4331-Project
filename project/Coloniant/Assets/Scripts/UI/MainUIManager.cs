@@ -43,6 +43,8 @@ public class MainUIManager : MonoBehaviour {
     private Transform foodDropDownButton;
     [SerializeField]
     private GameObject foodPanel;
+    [SerializeField]
+    private Image foodSliderImage;
 
     [Header("Protection")]
     [SerializeField]
@@ -55,6 +57,8 @@ public class MainUIManager : MonoBehaviour {
     private Transform protectionDropDownButton;
     [SerializeField]
     private GameObject protectionPanel;
+    [SerializeField]
+    private Image protectionSliderImage;
 
     [Header("Trash")]
     [SerializeField]
@@ -67,9 +71,14 @@ public class MainUIManager : MonoBehaviour {
     private Transform trashDropDownButton;
     [SerializeField]
     private GameObject trashPanel;
+    [SerializeField]
+    private Image trashSliderImage;
 
     [Header("Flow")]
-    public Slider flowSlider;
+    [SerializeField]
+    private Slider flowSlider;
+    [SerializeField]
+    private Image flowSliderImage;
 
     [Header("Ants")]
     [SerializeField]
@@ -293,6 +302,8 @@ public class MainUIManager : MonoBehaviour {
         }
 
         foodRatioSlider.value = ratio;
+        Color c = new Color(ratio, 1 - ratio, 0, 1);
+        foodSliderImage.color = c;
     }
 
     // Updates all the values on the ant panel when needed
@@ -317,6 +328,8 @@ public class MainUIManager : MonoBehaviour {
     private void UpdateProtectionSlider()
     {
         protectionRatioSlider.value =  ProtectionManager.main.ReturnCurrentPercentage();
+        Color c = new Color(1 - ProtectionManager.main.ReturnCurrentPercentage(), ProtectionManager.main.ReturnCurrentPercentage(), 0, 1);
+        protectionSliderImage.color = c;
     }
 
     // Updates all the values on the trash panel when needed
@@ -336,13 +349,26 @@ public class MainUIManager : MonoBehaviour {
             ratio = 1;
         }
 
+        if (ratio <= 0)
+        {
+            trashRatioSlider.enabled = false;
+        }
+        else
+        {
+            trashRatioSlider.enabled = true;
+        }
         trashRatioSlider.value = ratio;
+
+        Color c = new Color(ratio, 1 - ratio, 0, 1);
+        trashSliderImage.color = c;
     }
 
     // Updates the flow slider
     private void UpdateFlowSlider()
     {
         flowSlider.value = FlowManager.main.ReturnTotalFlow();
+        Color c = new Color(1 - FlowManager.main.ReturnTotalFlow(), FlowManager.main.ReturnTotalFlow(), 0, 1);
+        flowSliderImage.color = c;
     }
 
     #endregion
