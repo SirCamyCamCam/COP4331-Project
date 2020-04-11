@@ -16,6 +16,8 @@ public class WaypointSpawner : MonoBehaviour {
     private bool farmT = false; 
     private bool trashT = false; 
     private bool nurseT = false; 
+    private bool leafT = false; 
+    private bool transitionT= false; 
 
     //waypoint stage flags
     private bool pickconnected = false; 
@@ -26,6 +28,8 @@ public class WaypointSpawner : MonoBehaviour {
     public void FarmT() {farmT = true;text.SetActive(true);}  
     public void TrashT(){ trashT = true;text.SetActive(true);}
     public void NurseT(){ nurseT = true;text.SetActive(true);}
+    public void LeafT(){ leafT = true;text.SetActive(true);}
+    public void TransitionT(){ transitionT = true;text.SetActive(true);}
     public void pickconnectedF(){ pickconnected = false;pickspawnlocation = true;}
 
 
@@ -133,6 +137,81 @@ public class WaypointSpawner : MonoBehaviour {
                 }
         
         }
+
+        if (leafT == true )
+        {   
+             pickconnected = true; 
+             
+             if (pickconnected == true){Transitionadder();}   
+        
+                if(pickspawnlocation == true)
+                {
+                    foreach(Waypoint way in manager.allWaypoints)
+                    {
+                        if(Vector3.Distance(way.transform.position,adjust)<10)
+                        {
+                            tooClose = true; 
+                        }
+                    }
+
+                    if(tooClose == false)
+                    {
+                            print("im about to spawn"); 
+                            manager.SpawnWaypoint(WaypointManager.WaypointType.LEAF_SITE,WaypointManager.Level.ABOVE_GROUND,transitionwaypoint,adjust); 
+                            transitionwaypoint.Clear(); 
+                            pickspawnlocation = false;
+                            text.SetActive(false);
+                            leafT = false; 
+                    }else{print("Maybe Try another Spot?");tooClose = false;}
+                   
+                    
+                }
+            
+        }
+
+        if (transitionT == true )
+        {   
+             pickconnected = true; 
+             
+             if (pickconnected == true){Transitionadder();}   
+        
+                if(pickspawnlocation == true)
+                {
+                    foreach(Waypoint way in manager.allWaypoints)
+                    {
+                        if(Vector3.Distance(way.transform.position,adjust)<10)
+                        {
+                            tooClose = true; 
+                        }
+                    }
+
+                    if(tooClose == false)
+                    {
+                            print("im about to spawn"); 
+                            manager.SpawnWaypoint(WaypointManager.WaypointType.TRANSITION,WaypointManager.Level.UNDER_GROUND,transitionwaypoint,adjust); 
+                            transitionwaypoint.Clear(); 
+                            pickspawnlocation = false;
+                            text.SetActive(false);
+                            transitionT = false; 
+                    }else{print("Maybe Try another Spot?");tooClose = false;}
+                   
+                    
+                }
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      }
      
