@@ -205,9 +205,11 @@ public class Ant : MonoBehaviour {
     // Kills the ant
     public void Die()
     {
+        AntManager.main.RemoveAntFromList(this);
         if (previousWaypoint == null && targetWaypoint.GetComponent<Waypoint>() == null)
         {
             Destroy(gameObject);
+            return;
         }
 
         GameObject trashGameObject = Instantiate(
@@ -218,6 +220,14 @@ public class Ant : MonoBehaviour {
             );
 
         Trash trash = trashGameObject.GetComponent<Trash>();
+        if (antLevel == AntManager.SceneView.ABOVE_GROUND)
+        {
+            trash.SetLayer(Trash.Layer.SURFACE);
+        }
+        else
+        {
+            trash.SetLayer(Trash.Layer.UNDERGROUND);
+        }
         TrashManager.main.CreatedNewTrash(trash);
 
         if (previousWaypoint == null)
@@ -346,6 +356,11 @@ public class Ant : MonoBehaviour {
         // Assign target to the next waypoint
         currentWaypoint++;
         targetWaypoint = waypointPath[currentWaypoint];
+
+        if (targetWaypoint.GetComponent<Waypoint>() == null)
+        {
+            return;
+        }
 
         if (targetWaypoint.GetComponent<Waypoint>().CurrentLevel() == WaypointManager.Level.ABOVE_GROUND)
         {

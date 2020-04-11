@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour {
             currentView = CurrentView.SURFACE;
             AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
+            TrashManager.main.SwitchLayers();
             surface.enabled = !surface.enabled;
             ground.SetActive(false);
         }
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour {
             currentView = CurrentView.UNDER_GROUND;
             AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
+            TrashManager.main.SwitchLayers();
             surface.enabled = !surface.enabled;
             ground.SetActive(true);
         }

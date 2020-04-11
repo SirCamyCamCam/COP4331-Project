@@ -35,6 +35,11 @@ public class TrashHandlerAnt : MonoBehaviour {
         ant.antType = Ant.AntType.TRASH_HANDLER;
     }
 
+    private void Start()
+    {
+        StartCoroutine(WaitToFindTrash());
+    }
+
     #endregion
 
     #region Public Methods
@@ -72,6 +77,7 @@ public class TrashHandlerAnt : MonoBehaviour {
         transportingTrash = null;
         trashConnectedWaypoint = null;
         StartCoroutine(WaitToFindTrash());
+        ant.AssignAntState(Ant.AntState.IDLE);
     }
 
     // Finds a drop off site
@@ -111,8 +117,8 @@ public class TrashHandlerAnt : MonoBehaviour {
             return;
         }
 
-        TrashManager.main.MarkAsSelected(transportingTrash);
         Waypoint target = TrashManager.main.ReturnTrashWaypoint(transportingTrash);
+        TrashManager.main.MarkAsSelected(transportingTrash);  
 
         if (target == null)
         {

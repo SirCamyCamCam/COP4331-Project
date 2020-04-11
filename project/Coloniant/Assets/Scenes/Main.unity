@@ -16805,7 +16805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a67ad68e0948e4188a179d3eda4430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefab: {fileID: 0}
+  trashPrefab: {fileID: 1041157871625178, guid: 94fdc5c1832ba8446a85862cfc7a594a,
+    type: 2}
   trashWeight: 0.01
 --- !u!4 &1012446842
 Transform:
@@ -33983,10 +33984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de32d652f376be349ab181613f7196d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leafLife: 200
+  leafLife: 60
   decayRate: 1
   decayMultiplyer: 0.001
   defaultSpawnNum: 30
+  leafWeight: 1
+  farmSiteLeafCapacity: 10
   leafPrefab: {fileID: 1602369423475822, guid: 93583ba5787856045a666ec6bf8554cc, type: 2}
 --- !u!4 &1997388096
 Transform:
@@ -35712,7 +35715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2092847268
 RectTransform:
   m_ObjectHideFlags: 0

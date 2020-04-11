@@ -9,17 +9,41 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour {
 
+    #region Enum
+
+    public enum Layer
+    {
+        SURFACE,
+        UNDERGROUND
+    }
+
+    #endregion
+
     #region Inspector-Fields
 
     [Header("Dependencies")]
     [SerializeField]
     private SpriteRenderer spriteRenderer;
 
+    [Header("Settings")]
+    [SerializeField]
+    private float targetScale;
+    [SerializeField]
+    private float bounceHeight;
+    [SerializeField]
+    private float bounceRate;
+    [SerializeField]
+    private float scaleRate;
+
     #endregion
 
     #region Run-Time Fields
 
     private TrashManager.TrashState trashState;
+    private Layer layer;
+    private float originalHeight;
+    private bool grow;
+    private bool shrink;
 
     #endregion
 
@@ -28,7 +52,58 @@ public class Trash : MonoBehaviour {
     // Use this for initialization
     void Start () {
         trashState = TrashManager.TrashState.WAITING;
+        originalHeight = transform.position.y;
+        transform.localScale = new Vector3(0, 0, 0);
+
+        if (layer == Layer.SURFACE && GameManager.main.currentView == GameManager.CurrentView.UNDER_GROUND)
+        {
+            spriteRenderer.enabled = false;
+        }
+        else if (layer == Layer.UNDERGROUND && GameManager.main.currentView == GameManager.CurrentView.SURFACE)
+        {
+            spriteRenderer.enabled = false;
+        }
 	}
+
+    private void Update()
+    {
+        transform.position = new Vector3
+            (
+            transform.position.x,
+            originalHeight + (Mathf.Sin(Time.time * bounceRate) * bounceHeight),
+            transform.position.z
+            );
+
+        if (transform.localScale.x < targetScale && grow == false)
+        {
+            transform.localScale = new Vector3
+                (
+                transform.localScale.x + scaleRate, 
+                transform.localScale.y + scaleRate, 
+                transform.localScale.z + scaleRate
+                );
+        }
+        else if (transform.localScale.x >= targetScale && grow == false)
+        {
+            transform.localScale = new Vector3(targetScale, targetScale, targetScale);
+            grow = true;
+        }
+
+        if (shrink == true && transform.localScale.x > 0)
+        {
+            transform.localScale = new Vector3
+                (
+                transform.localScale.x - scaleRate,
+                transform.localScale.y - scaleRate,
+                transform.localScale.z - scaleRate
+                );
+        }
+        else if (shrink == true && transform.localScale.x <= 0)
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+            shrink = false;
+        }
+    }
 
     #endregion
 
@@ -51,7 +126,26 @@ public class Trash : MonoBehaviour {
 
     public void DisableSprite()
     {
-        spriteRenderer.enabled = false;
+        shrink = true;
+    }
+
+    public void SetLayer(Layer layer)
+    {
+        this.layer = layer;
+    }
+
+    public void SwitchLayer()
+    {
+        if (layer == Layer.SURFACE)
+        {
+            layer = Layer.UNDERGROUND;
+        }
+        else
+        {
+            layer = Layer.SURFACE;
+        }
+
+        spriteRenderer.enabled = !spriteRenderer.enabled;
     }
 
     #endregion

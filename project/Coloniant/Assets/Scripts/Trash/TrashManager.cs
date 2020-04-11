@@ -130,11 +130,11 @@ public class TrashManager : MonoBehaviour {
 
         if (trashCapacities[site] < 1)
         {
-            return true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
     }
 
@@ -270,6 +270,14 @@ public class TrashManager : MonoBehaviour {
     public GameObject TrashPrefab()
     {
         return trashPrefab;
+    }
+
+    public void SwitchLayers()
+    {
+        foreach (Trash t in trashList)
+        {
+            t.SwitchLayer();
+        }
     }
 
     #endregion

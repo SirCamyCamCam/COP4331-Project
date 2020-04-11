@@ -39,6 +39,10 @@ public class LeafManager : MonoBehaviour {
     private float decayMultiplyer;
     [SerializeField]
     private int defaultSpawnNum;
+    [SerializeField]
+    private float leafWeight;
+    [SerializeField]
+    private int farmSiteLeafCapacity;
 
     [Header("Dependencies")]
     [SerializeField]
@@ -53,6 +57,7 @@ public class LeafManager : MonoBehaviour {
     private Dictionary<Waypoint, List<Leaf>> leavesAtLeafSites;
     private Dictionary<Waypoint, List<Leaf>> leavesAtFarmSites;
     private Dictionary<Leaf, Waypoint> leavesAtFarmWaypoint;
+    private Dictionary<Waypoint, int> farmSiteCapacities;
 
     #endregion
 
@@ -65,6 +70,7 @@ public class LeafManager : MonoBehaviour {
         leavesAtLeafSites = new Dictionary<Waypoint, List<Leaf>>();
         leavesAtFarmSites = new Dictionary<Waypoint, List<Leaf>>();
         leavesAtFarmWaypoint = new Dictionary<Leaf, Waypoint>();
+        farmSiteCapacities = new Dictionary<Waypoint, int>();
         leafList = new List<Leaf>();
         selectedLeaves = new List<Leaf>();
     }
@@ -108,6 +114,7 @@ public class LeafManager : MonoBehaviour {
         l.StartDecay();
         leavesAtFarmSites[w].Add(l);
         leavesAtFarmWaypoint.Add(l, w);
+        farmSiteCapacities[w] += 1;
     }
 
     public void NewFarmWaypoint(Waypoint w)
@@ -119,6 +126,7 @@ public class LeafManager : MonoBehaviour {
 
         List<Leaf> newList = new List<Leaf>();
         leavesAtFarmSites[w] = newList;
+        farmSiteCapacities.Add(w, 0);
     }
 
     public void NewLeafSite(Waypoint w)
@@ -214,14 +222,79 @@ public class LeafManager : MonoBehaviour {
             return;
         }
 
-        if (w = null)
+        if (w == null)
         {
             Debug.Log("Waypoint is null at LeafDeath in LeafManager");
             return;
         }
 
-        //leavesAtFarmSites[w].Remove(l);
-        //leavesAtFarmWaypoint[l].Remove(w);
+
+        leavesAtFarmSites[w].Remove(l);
+        leavesAtFarmWaypoint.Remove(l);
+        AntManager.main.RemoveFromFood(leafWeight);
+        farmSiteCapacities[w] -= 1;
+    }
+
+    public float ReturnLeafWeight()
+    {
+        return leafWeight;
+    }
+
+    public bool CheckFarmSiteFull(Waypoint w)
+    {
+        if (farmSiteCapacities[w] == farmSiteLeafCapacity)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public Waypoint FindFarmSite()
+    {
+        List<Waypoint> farmList = WaypointManager.main.ReturnFarmList();
+        int[] check = new int[farmList.Count];
+        bool sitesNotCheck = true;
+        bool findAnotherRandom = true;
+        int random = 0;
+        Waypoint returnWaypoint = null;
+
+        while (returnWaypoint == null)
+        {
+            sitesNotCheck = false;
+            foreach (int i in check)
+            {
+                if (i == 0)
+                {
+                    sitesNotCheck = true;
+                }
+            }
+
+            if (sitesNotCheck == false)
+            {
+                return null;
+            }
+
+            findAnotherRandom = true;
+            while (findAnotherRandom == true)
+            {
+                random = Random.Range(0, farmList.Count - 1);
+                if (check[random] == 0)
+                {
+                    findAnotherRandom = false;
+                }
+            }
+            check[random] = 1;
+
+            if (CheckFarmSiteFull(farmList[random]) == false)
+            {
+                return farmList[random];
+            }
+        }
+
+        return null;
     }
 
     #endregion

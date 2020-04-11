@@ -52,7 +52,7 @@ public class GardenerAnt : MonoBehaviour {
             leafToChange.StartLeafLife();
             LeafManager.main.RemoveSelectedLeaf(leafToChange);
             leafToChange = null;
-            AntManager.main.AddToFood(3);
+            AntManager.main.AddToFood(LeafManager.main.ReturnLeafWeight());
         }
         else if (leafToChange != null)
         {

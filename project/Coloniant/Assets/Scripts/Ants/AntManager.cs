@@ -442,7 +442,7 @@ public class AntManager : MonoBehaviour{
     // Decreases the current food supply
     public void RemoveFromFood(float ammount)
     {
-        if (ammount > 0)
+        if (ammount < 0)
         {
             return;
         }
@@ -459,6 +459,44 @@ public class AntManager : MonoBehaviour{
     public float ReturnCurrentFoodConsumption()
     {
         return currentConsumption;
+    }
+
+    public void RemoveAntFromList(Ant ant)
+    {
+        if (ant == null)
+        {
+            Debug.Log("Ant null in RemoveAntFromList in AntManager");
+        }
+
+        antList.Remove(ant);  
+
+        switch (ant.antType)
+        {
+            case Ant.AntType.EXCAVATOR:
+                excavatorAnts.Remove(ant);
+                RemoveFromExcavatorCount(ant);
+                break;
+            case Ant.AntType.FORAGER:
+                foragerAnts.Remove(ant);
+                RemoveFromForagerCount(ant);
+                break;
+            case Ant.AntType.GARDENER:
+                gardenerAnts.Remove(ant);
+                RemoveFromGardenerCount(ant);
+                break;
+            case Ant.AntType.QUEEN:
+                queenAnts.Remove(ant);
+                RemoveFromQueenCount(ant);
+                break;
+            case Ant.AntType.SOLDIER:
+                soliderAnts.Remove(ant);
+                RemoveFromSoldierCount(ant);
+                break;
+            case Ant.AntType.TRASH_HANDLER:
+                trashHandlerAnts.Remove(ant);
+                RemoveFromTrashHandlerCount(ant);
+                break;
+        }
     }
 
     #endregion
@@ -515,6 +553,10 @@ public class AntManager : MonoBehaviour{
         // Don't kill any queens so we can always spawn more ants
         if (antList[randomNum].antType == Ant.AntType.QUEEN)
         {
+            if (GetTotalAntCount() == 1)
+            {
+                return;
+            }
             StarveRandomAnt();
         }
         else

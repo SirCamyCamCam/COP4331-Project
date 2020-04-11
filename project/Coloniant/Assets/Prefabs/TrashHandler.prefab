@@ -54,8 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ant: {fileID: 114968820753481604}
-  idleWaitTime: 0
-  dropOffWaiTime: 0
+  idleWaitTime: 3
+  dropOffWaiTime: 3
 --- !u!114 &114968820753481604
 MonoBehaviour:
   m_ObjectHideFlags: 1

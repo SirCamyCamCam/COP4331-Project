@@ -87,16 +87,29 @@ public class Leaf : MonoBehaviour {
 
     private void SetToTrash()
     {
+        float randomX = Random.Range(-1, 1);
+        float randomY = Random.Range(-1, 1);
+
+        Vector3 waypointLocation = LeafManager.main.ReturnWaypointLeafIsAt(this).transform.position;
+
+        Vector3 locationToSpawn = new Vector3(
+            waypointLocation.x + randomX, 
+            waypointLocation.y + randomY, 
+            waypointLocation.z
+            );
+
         GameObject trashGameObject = Instantiate(
             TrashManager.main.TrashPrefab(),
-            gameObject.transform.position,
+            locationToSpawn,
             new Quaternion(0, 0, 0, 0),
             TrashManager.main.gameObject.transform
             );
 
         Trash trash = trashGameObject.GetComponent<Trash>();
+        trash.SetLayer(Trash.Layer.UNDERGROUND);
         TrashManager.main.CreatedNewTrash(trash);
         TrashManager.main.AddTrashToWaypoints(trash, LeafManager.main.ReturnWaypointLeafIsAt(this));
+        LeafManager.main.LeafDeath(this, LeafManager.main.ReturnWaypointLeafIsAt(this));
         Destroy(gameObject);
     }
 
