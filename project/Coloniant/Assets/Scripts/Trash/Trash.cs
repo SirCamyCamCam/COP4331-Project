@@ -40,6 +40,8 @@ public class Trash : MonoBehaviour {
     #region Run-Time Fields
 
     private TrashManager.TrashState trashState;
+    private Waypoint connectedWaypoint1;
+    private Waypoint connectedWaypoint2;
     private Layer layer;
     private float originalHeight;
     private bool grow;
@@ -112,6 +114,11 @@ public class Trash : MonoBehaviour {
     public void MarkAsPickedUp()
     {
         trashState = TrashManager.TrashState.TRANSPORT;
+
+        if (connectedWaypoint1 != null)
+        {
+            FlowManager.main.RemoveTrashFromRoad(connectedWaypoint1, connectedWaypoint2);
+        }
     }
 
     public TrashManager.TrashState ReturnTrashState()
@@ -146,6 +153,25 @@ public class Trash : MonoBehaviour {
         }
 
         spriteRenderer.enabled = !spriteRenderer.enabled;
+    }
+
+    public void AssignConnectedWaypoint(Waypoint w1, Waypoint w2)
+    {
+        if (w1 == null)
+        {
+            Debug.Log("Waypoint 1 null in AssignConnectedWaypoint in Trash");
+            return;
+        }
+        if (w2 == null)
+        {
+            Debug.Log("Waypoint 2 null in AssignConnectedWaypoint in Trash");
+            return;
+        }
+
+        connectedWaypoint1 = w1;
+        connectedWaypoint2 = w2;
+
+        FlowManager.main.AddTrashToRoad(connectedWaypoint1, connectedWaypoint2);
     }
 
     #endregion

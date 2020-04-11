@@ -68,6 +68,7 @@ public class Ant : MonoBehaviour {
     // Walking Actions
     private float walkingNoise;
     private float walkingWaypointDistance;
+    private Coroutine checkAntSpeed;
 
     #endregion
 
@@ -127,6 +128,7 @@ public class Ant : MonoBehaviour {
         {
             return;
         }
+
         if (antState == AntState.IDLE)
         {
             IdleAnt();
@@ -145,7 +147,13 @@ public class Ant : MonoBehaviour {
     // Used to assign the current target
     public void AssignTargetWaypoint(GameObject target)
     {
+        previousWaypoint = targetWaypoint;
         targetWaypoint = target;
+        if (previousWaypoint != null && targetWaypoint.GetComponent<Waypoint>() != null && previousWaypoint.GetComponent<Waypoint>() != null)
+        {
+            FlowManager.main.AddAntToRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+            CallCheckSpeed();
+        }
     }
 
     // Switches between above ground a below ground
@@ -247,6 +255,8 @@ public class Ant : MonoBehaviour {
             {
                 TrashManager.main.AddTrashToWaypoints(trash, previousWaypoint.GetComponent<Waypoint>());
             }
+
+            FlowManager.main.AddTrashToRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
         }
         
         Destroy(gameObject);
@@ -346,6 +356,7 @@ public class Ant : MonoBehaviour {
     // Finds the next Waypoint in the path
     private void FindNextWayPoint()
     {
+        FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
         // If this is the last waypoint, find next task
         if (targetWaypoint == waypointPath[waypointPath.Count - 1])
         {
@@ -355,12 +366,16 @@ public class Ant : MonoBehaviour {
 
         // Assign target to the next waypoint
         currentWaypoint++;
+        previousWaypoint = targetWaypoint;
         targetWaypoint = waypointPath[currentWaypoint];
 
         if (targetWaypoint.GetComponent<Waypoint>() == null)
         {
             return;
         }
+
+        FlowManager.main.AddAntToRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+        CallCheckSpeed();
 
         if (targetWaypoint.GetComponent<Waypoint>().CurrentLevel() == WaypointManager.Level.ABOVE_GROUND)
         {
@@ -405,6 +420,16 @@ public class Ant : MonoBehaviour {
         }
     }
 
+    private void CallCheckSpeed()
+    {
+        if (checkAntSpeed != null)
+        {
+            StopCoroutine(checkAntSpeed);
+        }
+
+        checkAntSpeed = StartCoroutine(CheckSpeedAntShouldGo());
+    }
+
     #endregion
 
     #region Coroutines
@@ -414,6 +439,33 @@ public class Ant : MonoBehaviour {
     {
         yield return new WaitForSeconds(lifeSeconds);
         Die();
+    }
+
+    private IEnumerator CheckSpeedAntShouldGo()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        if (previousWaypoint == null)
+        {
+            currentSpeed = AntManager.main.DefaultAntSpeed();
+            yield break;
+        }
+
+        Waypoint w1 = targetWaypoint.GetComponent<Waypoint>();
+        Waypoint w2 = previousWaypoint.GetComponent<Waypoint>();
+
+        if (w1 == null)
+        {
+            yield break;
+        }
+        if (w2 == null)
+        {
+            yield break;
+        }
+
+        currentSpeed = FlowManager.main.ReturnAntSpeed(w1, w2);
+        checkAntSpeed = null;
+        CallCheckSpeed();
     }
 
     #endregion

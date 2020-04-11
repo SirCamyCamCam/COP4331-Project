@@ -28864,6 +28864,49 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692062096}
   m_CullTransparentMesh: 0
+--- !u!1 &1695610036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695610038}
+  - component: {fileID: 1695610037}
+  m_Layer: 0
+  m_Name: '[FlowManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1695610037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695610036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23aa544e40407674c972566e150dbfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaxAnts: 5
+  upgradeAnts: 2
+  trashWeight: 0.5
+--- !u!4 &1695610038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695610036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.5168295, y: -11.141033, z: -0.2760417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1703157310
 GameObject:
   m_ObjectHideFlags: 0
@@ -32271,7 +32314,7 @@ MonoBehaviour:
   startEntrancePosition: {fileID: 1230897717}
   startExitPostion: {fileID: 675243823}
   startLeafPostion: {fileID: 925357854}
-  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  lineMaterial: {fileID: 2100000, guid: 09f02ac000c657345bdce6d1ae8ed3d6, type: 2}
   lineWidth: 0.3
   waypointPrefab: {fileID: 1059635954423062, guid: 13c6f02efa19a79458d2ea7e5dd598e1,
     type: 2}
@@ -36541,10 +36584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 0
-  defaultAntSpeed: 3
+  defaultAntSpeed: 5
   defaultIdleNoise: 0.1
-  defaultRotationSpeed: 3
-  defaultIdleDistance: 2
+  defaultRotationSpeed: 4
+  defaultIdleDistance: 3
   defaultWalkingNoise: 0.05
   defaultWalkingWaypointDistance: 1
   queenAntConsumptionRate: 1

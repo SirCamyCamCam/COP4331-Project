@@ -376,7 +376,7 @@ public class WaypointManager : MonoBehaviour {
                 LineRenderer newLine = new GameObject().AddComponent<LineRenderer>();
                 newLine.transform.parent = transform;
                 newLine.gameObject.name = "LineRenderer";
-                newLine.material = main.lineMaterial;
+                newLine.material = lineMaterial;
                 newLine.startWidth = lineWidth;
                 newLine.endWidth = lineWidth;
                 newLine.numCapVertices = 5;
@@ -400,6 +400,9 @@ public class WaypointManager : MonoBehaviour {
                     newLine.enabled = false;
                 }
                 waypointLines.Add(newBridge, newLine);
+
+                // Connect to flow manager
+                FlowManager.main.NewRoad(newWaypointClass, w, newLine);
             }
         }
 
