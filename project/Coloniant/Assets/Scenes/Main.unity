@@ -19955,6 +19955,7 @@ GameObject:
   - component: {fileID: 1151010209}
   - component: {fileID: 1151010208}
   - component: {fileID: 1151010207}
+  - component: {fileID: 1151010206}
   m_Layer: 5
   m_Name: ChangeViews
   m_TagString: Untagged
@@ -19981,6 +19982,22 @@ RectTransform:
   m_AnchoredPosition: {x: -860.43, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1151010206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151010204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67e878f8080ea443bc34df16c390eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surface: {fileID: 1782185777}
+  ground: {fileID: 1359141640}
+  flowUpdateSeconds: 0
+  masterVolume: 0
+  currentView: 0
 --- !u!114 &1151010207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20020,8 +20037,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c67e878f8080ea443bc34df16c390eb0, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1151010206}
+        m_MethodName: SwitchViews
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
