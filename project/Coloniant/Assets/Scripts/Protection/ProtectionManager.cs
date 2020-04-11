@@ -28,6 +28,8 @@ public class ProtectionManager : MonoBehaviour {
 
     #region Run-Time Fields
 
+    private bool allowCheck;
+
     #endregion
 
     #region Monobehaviors
@@ -37,9 +39,18 @@ public class ProtectionManager : MonoBehaviour {
         main = this;
     }
 
+    private void Start()
+    {
+        allowCheck = false;
+        StartCoroutine(WaitToStart());
+    }
+
     // Update is called once per frame
     void Update () {
-        CheckPercent();
+        if (allowCheck == true)
+        {
+            CheckPercent();
+        }
 	}
 
     #endregion
@@ -48,7 +59,21 @@ public class ProtectionManager : MonoBehaviour {
 
     public float ReturnCurrentPercentage()
     {
-        return (AntManager.main.GetSoliderCount() / AntManager.main.GetTotalAntCount()) / (requieredSoldierPecentage);
+        float percent = requieredSoldierPecentage / ((float)AntManager.main.GetSoliderCount() / (float)AntManager.main.GetTotalAntCount());
+
+        if (percent < 0)
+        {
+            percent = 0;
+        }
+
+        if (percent > 1)
+        {
+            percent = 1;
+        }
+
+        percent = 1 - percent;
+
+        return percent;
     }
 
     #endregion
@@ -57,10 +82,21 @@ public class ProtectionManager : MonoBehaviour {
 
     private void CheckPercent()
     {
-        if (AntManager.main.GetSoliderCount() / AntManager.main.GetTotalAntCount() > requieredSoldierPecentage)
+        Debug.Log((float)AntManager.main.GetSoliderCount() / (float)AntManager.main.GetTotalAntCount());
+        if ((float)AntManager.main.GetSoliderCount() / (float)AntManager.main.GetTotalAntCount() < requieredSoldierPecentage)
         {
             AntManager.main.KillPercenatgeAnt(percentThatGetKilled);
         }
+    }
+
+    #endregion
+
+    #region Corutines
+
+    private IEnumerator WaitToStart()
+    {
+        yield return new WaitForSeconds(1f);
+        allowCheck = true;
     }
 
     #endregion
