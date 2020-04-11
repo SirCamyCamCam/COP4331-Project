@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:4
--out:Temp/Assembly-CSharp.dll
+-out:Temp/Unity.TextMeshPro.dll
 -nostdlib
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -66,18 +66,28 @@
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/Unity.Locator.dll"
--r:Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
--r:C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll
--r:C:/Users/ThePr/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/Editor/UnityEditor.Analytics.dll
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
+-r:C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll"
@@ -183,55 +193,48 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:ENABLE_VSTU
-Assets/Scripts/Ants/Ant.cs
-Assets/Scripts/Ants/AntManager.cs
-Assets/Scripts/Ants/ExcavatorAnt.cs
-Assets/Scripts/Ants/ForagerAnt.cs
-Assets/Scripts/Ants/GardenerAnt.cs
-Assets/Scripts/Ants/QueenAnt.cs
-Assets/Scripts/Ants/SoliderAnt.cs
-Assets/Scripts/Ants/TrashHandlerAnt.cs
-Assets/Scripts/Audio/AudioCore.cs
-Assets/Scripts/Camera/CameraMovement.cs
-Assets/Scripts/Camera/CameraZoom.cs
-Assets/Scripts/Core/GameManager.cs
-Assets/Scripts/Leaves/Leaf.cs
-Assets/Scripts/Leaves/LeafManager.cs
-Assets/Scripts/MainMenu/ButtonPress.cs
-Assets/Scripts/MainMenu/SettingsMenu.cs
-Assets/Scripts/TestScript/SpawnAntTest.cs
-Assets/Scripts/TestScript/TestAnt.cs
-Assets/Scripts/TestScript/TestAntManager.cs
-Assets/Scripts/TestScript/TestCamera.cs
-Assets/Scripts/TestScript/TestForagerAnt.cs
-Assets/Scripts/TestScript/TestGameManager.cs
-Assets/Scripts/TestScript/TestGardenerAnt.cs
-Assets/Scripts/TestScript/TestLeaf.cs
-Assets/Scripts/TestScript/TestLeafManager.cs
-Assets/Scripts/TestScript/TestLineRenderer.cs
-Assets/Scripts/TestScript/TestMainUIManager.cs
-Assets/Scripts/TestScript/TestQueenAnt.cs
-Assets/Scripts/TestScript/TestSpawnExcavatorButton.cs
-Assets/Scripts/TestScript/TestSpawnForagerButton.cs
-Assets/Scripts/TestScript/TestSpawnGardenerButton.cs
-Assets/Scripts/TestScript/TestSpawnQueenButton.cs
-Assets/Scripts/TestScript/TestSpawnSoliderButton.cs
-Assets/Scripts/TestScript/TestSpawnTrashHandlerButton.cs
-Assets/Scripts/TestScript/TestWaypoint.cs
-Assets/Scripts/TestScript/TestWaypointManager.cs
-Assets/Scripts/Trash/Trash.cs
-Assets/Scripts/Trash/TrashManager.cs
-Assets/Scripts/UI/FadeTransition.cs
-Assets/Scripts/UI/MainUIManager.cs
-Assets/Scripts/UI/SpawnExcavatorButton.cs
-Assets/Scripts/UI/SpawnForagerButton.cs
-Assets/Scripts/UI/SpawnGardenerButton.cs
-Assets/Scripts/UI/SpawnQueenButton.cs
-Assets/Scripts/UI/SpawnSoliderButton.cs
-Assets/Scripts/UI/SpawnTrashHandlerButton.cs
-Assets/Scripts/WayPoints/BridgeCreate.cs
-Assets/Scripts/WayPoints/OBJFinder.cs
-Assets/Scripts/WayPoints/Waypoint.cs
-Assets/Scripts/WayPoints/WaypointManager.cs
-Assets/Scripts/WayPoints/WaypointSpawner.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/FastAction.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/MaterialReferenceManager.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/PackageResourceImporterWindow.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TextContainer.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TextMeshPro.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TextMeshProUGUI.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Asset.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_ColorGradient.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Compatibility.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_CoroutineTween.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_DefaultControls.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Dropdown.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_FontAsset.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_InputField.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_InputValidator.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_LineInfo.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_ListPool.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_MaterialManager.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_MeshInfo.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_ObjectPool.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_ScrollbarEventHandler.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SelectionCaret.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Settings.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Sprite.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SpriteAnimator.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SpriteAsset.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SpriteAssetImportFormats.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Style.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_StyleSheet.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SubMesh.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_SubMeshUI.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_Text.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_TextElement.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_TextInfo.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_TextUtilities.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_UpdateManager.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_UpdateRegistery.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMP_XmlTagStack.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_EventManager.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_ExtensionMethods.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_FontUtilities.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_MeshUtilities.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_Private.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_ShaderUtilities.cs
+C:/Users/Henry/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.textmeshpro@1.2.4/Scripts/Runtime/TMPro_UGUI_Private.cs
