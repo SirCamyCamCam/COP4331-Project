@@ -65,10 +65,12 @@
      <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\Core\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Flow\FlowManager.cs" />
      <Compile Include="Assets\Scripts\Leaves\Leaf.cs" />
      <Compile Include="Assets\Scripts\Leaves\LeafManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
      <Compile Include="Assets\Scripts\MainMenu\SettingsMenu.cs" />
+     <Compile Include="Assets\Scripts\Protection\ProtectionManager.cs" />
      <Compile Include="Assets\Scripts\TestScript\SpawnAntTest.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestAnt.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestAntManager.cs" />
