@@ -85,8 +85,8 @@ public class AntManager : MonoBehaviour{
     private List<Ant> trashHandlerAnts;
     private List<Ant> foragerAnts;
     // Food
-    public float currentFood;
-    public float currentConsumption;
+    private float currentFood;
+    private float currentConsumption;
 
     #endregion
 
