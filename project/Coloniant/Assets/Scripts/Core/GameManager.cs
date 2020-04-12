@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     [Header("Dependencies")]
     [SerializeField]
-    private SpriteRenderer surface;
+    private GameObject surface;
     [SerializeField]
     private GameObject ground;
 
@@ -58,14 +58,10 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        surface.enabled = false;
+        surface.SetActive(false);
         ground.SetActive(true);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	}
-
     #endregion
 
     #region Public Methods
@@ -84,7 +80,7 @@ public class GameManager : MonoBehaviour {
             AntManager.main.SwitchLevelView(AntManager.SceneView.ABOVE_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.ABOVE_GROUND);
             TrashManager.main.SwitchLayers();
-            surface.enabled = !surface.enabled;
+            surface.SetActive(true);
             ground.SetActive(false);
         }
         else
@@ -93,7 +89,7 @@ public class GameManager : MonoBehaviour {
             AntManager.main.SwitchLevelView(AntManager.SceneView.UNDER_GROUND);
             WaypointManager.main.SwitchWaypointLevel(WaypointManager.Level.UNDER_GROUND);
             TrashManager.main.SwitchLayers();
-            surface.enabled = !surface.enabled;
+            surface.SetActive(false);
             ground.SetActive(true);
         }
     }

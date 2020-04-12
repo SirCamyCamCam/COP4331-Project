@@ -33,6 +33,8 @@ public class TrashManager : MonoBehaviour {
     [Header("Settings")]
     [SerializeField]
     private float trashWeight;
+    [SerializeField]
+    private float trashDeleteTime;
 
     #endregion
 
@@ -104,6 +106,7 @@ public class TrashManager : MonoBehaviour {
         }
 
         trashCapacities[site] += trashWeight;
+        StartCoroutine(DeleteTrash(site));
     }
 
     // Creates a new trash site with 0 filled capacity
@@ -280,11 +283,41 @@ public class TrashManager : MonoBehaviour {
         }
     }
 
+    public float ReturnTotalTrashCapacity()
+    {
+        return trashSiteList.Count;
+    }
+
+    public float ReturnTotalCurrentTrash()
+    {
+        float count = 0;
+
+        foreach(Waypoint w in trashSiteList)
+        {
+            count += trashCapacities[w];
+        }
+
+        count += (float)trashList.Count * trashWeight;
+
+        return count;
+    }
+
     #endregion
 
     #region Private Methods
 
 
+
+    #endregion
+
+    #region Coroutines
+
+    private IEnumerator DeleteTrash(Waypoint w)
+    {
+        yield return new WaitForSeconds(trashDeleteTime);
+
+        trashCapacities[w] -= trashWeight;
+    }
 
     #endregion
 }

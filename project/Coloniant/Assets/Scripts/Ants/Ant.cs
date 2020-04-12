@@ -241,6 +241,7 @@ public class Ant : MonoBehaviour {
         if (previousWaypoint == null)
         {
             TrashManager.main.AddTrashToWaypoints(trash, targetWaypoint.GetComponent<Waypoint>());
+            trash.AssignOneWaypoint(targetWaypoint.GetComponent<Waypoint>());
         }
         else
         {
@@ -256,7 +257,8 @@ public class Ant : MonoBehaviour {
                 TrashManager.main.AddTrashToWaypoints(trash, previousWaypoint.GetComponent<Waypoint>());
             }
 
-            FlowManager.main.AddTrashToRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+            trash.AssignConnectedWaypoint(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+            FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
         }
         
         Destroy(gameObject);
@@ -356,7 +358,10 @@ public class Ant : MonoBehaviour {
     // Finds the next Waypoint in the path
     private void FindNextWayPoint()
     {
-        FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+        if (targetWaypoint.GetComponent<Waypoint>() != null && previousWaypoint.GetComponent<Waypoint>() != null)
+        {
+            FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+        }
         // If this is the last waypoint, find next task
         if (targetWaypoint == waypointPath[waypointPath.Count - 1])
         {
@@ -417,6 +422,12 @@ public class Ant : MonoBehaviour {
             case AntType.TRASH_HANDLER:
                 gameObject.GetComponent<TrashHandlerAnt>().DecideNextMove();
                 break;
+            case AntType.SOLDIER:
+                gameObject.GetComponent<SoliderAnt>().DecideNextMove();
+                break;
+            case AntType.EXCAVATOR:
+                gameObject.GetComponent<ExcavatorAnt>().DecideNextMove();
+                break;
         }
     }
 
@@ -443,7 +454,7 @@ public class Ant : MonoBehaviour {
 
     private IEnumerator CheckSpeedAntShouldGo()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.3f);
 
         if (previousWaypoint == null)
         {

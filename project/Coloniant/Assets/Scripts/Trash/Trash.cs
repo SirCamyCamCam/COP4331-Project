@@ -115,7 +115,11 @@ public class Trash : MonoBehaviour {
     {
         trashState = TrashManager.TrashState.TRANSPORT;
 
-        if (connectedWaypoint1 != null)
+        if (connectedWaypoint1 != null && connectedWaypoint2 == null)
+        {
+            FlowManager.main.RemoveTrashFromAllConnectedRoads(connectedWaypoint1);
+        }
+        if (connectedWaypoint1 != null && connectedWaypoint2 != null)
         {
             FlowManager.main.RemoveTrashFromRoad(connectedWaypoint1, connectedWaypoint2);
         }
@@ -128,6 +132,7 @@ public class Trash : MonoBehaviour {
 
     public void DeleteTrashPrefab()
     {
+        TrashManager.main.RemoveTrashFromAll(this);
         Destroy(gameObject);
     }
 
@@ -172,6 +177,18 @@ public class Trash : MonoBehaviour {
         connectedWaypoint2 = w2;
 
         FlowManager.main.AddTrashToRoad(connectedWaypoint1, connectedWaypoint2);
+    }
+
+    public void AssignOneWaypoint(Waypoint w)
+    {
+        if (w == null)
+        {
+            Debug.Log("Waypoint null in AssignOneWaypoint in Trash");
+            return;
+        }
+
+        connectedWaypoint1 = w;
+        FlowManager.main.AddTrashToAllConnectedRoads(connectedWaypoint1);
     }
 
     #endregion

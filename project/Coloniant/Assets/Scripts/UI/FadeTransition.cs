@@ -26,14 +26,25 @@ public class FadeTransition : MonoBehaviour {
 
     #endregion
 
+    #region Run-Time Fields
+
+    private Color32 clear;
+    private Color32 filled;
+
+    #endregion
+
     #region Monohehaviors
 
     // Use this for initialization
     void Start () {
+        clear = new Color32(129, 48, 107, 0);
+        filled = new Color32(129, 48, 107, 255);
+
+
 		if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             backgroundImage.enabled = false;
-            backgroundImage.color = Color.clear;
+            backgroundImage.color = clear;
             if (loadingText != null)
             {
                 loadingText.enabled = false;
@@ -63,14 +74,13 @@ public class FadeTransition : MonoBehaviour {
     {
         float startTime = Time.time;
         backgroundImage.enabled = true;
-        Color originalPanelColor = backgroundImage.color;
         while (Time.time - startTime <= fadeTime)
         {
-            backgroundImage.color = Color.Lerp(originalPanelColor, Color.black, (Time.time - startTime) / fadeTime);
+            backgroundImage.color = Color.Lerp(clear, filled, (Time.time - startTime) / fadeTime);
             yield return 0;
         }
 
-        backgroundImage.color = Color.black;
+        backgroundImage.color = filled;
         SceneManager.LoadScene(newScene);
     }
 
@@ -83,12 +93,12 @@ public class FadeTransition : MonoBehaviour {
         while (Time.time - startTime <= fadeTime)
         {
             loadingText.color = Color.Lerp(originalTextColor, Color.clear, (Time.time - startTime) / fadeTime);
-            backgroundImage.color = Color.Lerp(originalPanelColor, Color.clear, (Time.time - startTime) / fadeTime);
+            backgroundImage.color = Color.Lerp(filled, clear, (Time.time - startTime) / fadeTime);
             yield return 0;
         }
 
         loadingText.color = Color.clear;
-        backgroundImage.color = Color.clear;
+        backgroundImage.color = clear;
         loadingText.enabled = false;
         backgroundImage.enabled = false;
     }

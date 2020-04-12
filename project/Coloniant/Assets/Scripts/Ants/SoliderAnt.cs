@@ -14,6 +14,8 @@ public class SoliderAnt : MonoBehaviour {
 
     [SerializeField]
     private Ant ant;
+    [SerializeField]
+    private float patrolWaitTime;
 
     #endregion
 
@@ -26,26 +28,44 @@ public class SoliderAnt : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        StartCoroutine(WaitToPatrol());
 	}
-
-    // Update is called once per frame
-    /*void Update () {
-		
-	}*/
 
     #endregion
 
     #region Public Methods
 
-    public void Patrol()
+    public void DecideNextMove()
+    {
+        StartCoroutine(WaitToPatrol());
+        ant.AssignAntState(Ant.AntState.IDLE);
+        // No Repond for time sake
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private void Patrol()
+    {
+        Waypoint w = WaypointManager.main.ReturnRandomWaypoint();
+        List<GameObject> path = WaypointManager.main.SearchPathKnownTarget(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(), w);
+        ant.AssignWaypointList(path);
+    }
+
+    private void Respond()
     {
 
     }
 
-    public void Respond()
-    {
+    #endregion
 
+    #region Coroutines
+
+    private IEnumerator WaitToPatrol()
+    {
+        yield return new WaitForSeconds(patrolWaitTime);
+        Patrol();
     }
 
     #endregion

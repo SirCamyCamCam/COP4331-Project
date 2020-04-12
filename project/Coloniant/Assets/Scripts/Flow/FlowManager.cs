@@ -18,7 +18,7 @@ public class FlowManager : MonoBehaviour {
 
     #region Inner Classes
 
-    private class Road
+    public class Road
     {
         private Waypoint waypoint1;
         private Waypoint waypoint2;
@@ -39,13 +39,20 @@ public class FlowManager : MonoBehaviour {
             currentAnts = 0;
         }
 
-        public void AddToMaxAnts(int num)
+        public void AddToMaxAnts()
         {
-            if (num < 0)
+            maxAnts += main.upgradeAnts;
+
+            if (lineRenderer.startWidth < main.maxWidth)
             {
-                return;
+                lineRenderer.startWidth += main.widthMultiplyer;
+                lineRenderer.endWidth += main.widthMultiplyer;
             }
-            maxAnts += num;
+            else
+            {
+                lineRenderer.startWidth = main.maxWidth;
+                lineRenderer.endWidth = main.maxWidth;
+            }
         }
         
         public void RemoveFromMaxAnts(int num)
@@ -137,12 +144,21 @@ public class FlowManager : MonoBehaviour {
     private int upgradeAnts;
     [SerializeField]
     private float trashWeight;
+    [SerializeField]
+    private float upgradePercent;
+    [SerializeField]
+    private float widthMultiplyer;
+    [SerializeField]
+    private float maxWidth;
+    [SerializeField]
+    private AnimationCurve flowCurve;
 
     #endregion
 
     #region Run-Time Fields
 
     private List<Road> roadList;
+    private List<Road> selectedRoads;
     private Dictionary<Waypoint, List<Road>> waypointKeys;
 
     #endregion
@@ -159,6 +175,7 @@ public class FlowManager : MonoBehaviour {
     {
         roadList = new List<Road>();
         waypointKeys = new Dictionary<Waypoint, List<Road>>();
+        selectedRoads = new List<Road>();
 	}
 
     private void Update()
@@ -377,12 +394,14 @@ public class FlowManager : MonoBehaviour {
             totalCapacity += r.ReturnMaxAnts();
         }
 
-        float flow = totalAnts / totalCapacity;
+        float flow = (float)totalAnts / (float)totalCapacity;
 
         if (flow > 1)
         {
             flow = 1;
         }
+
+        flow = 1 - flow;
 
         return flow;
     }
@@ -426,6 +445,59 @@ public class FlowManager : MonoBehaviour {
         return roadToUse.ReturnAntSpeed();
     }
 
+    public void AddTrashToAllConnectedRoads(Waypoint w)
+    {
+        if (w == null)
+        {
+            Debug.Log("Waypoint is null in AddTrashToAllConnectedRoads in FlowManager");
+            return;
+        }
+
+        foreach (Road r in waypointKeys[w])
+        {
+            r.AddToTrash();
+        }
+    }
+
+    public void RemoveTrashFromAllConnectedRoads(Waypoint w)
+    {
+        if (w == null)
+        {
+            Debug.Log("Waypoint is null in RemoveTrashFromAllConnectedRoads in FlowManager");
+            return;
+        }
+
+        foreach (Road r in waypointKeys[w])
+        {
+            r.RemoveFromTrash();
+        }
+    }
+
+    public Road FindNeededExpansion()
+    {
+        foreach(Road r in roadList)
+        {
+            if ((float)r.ReturnCurrentAnts() / (float)r.ReturnMaxAnts() > upgradePercent && selectedRoads.Contains(r) == false)
+            {
+                selectedRoads.Add(r);
+                return r;
+            }
+        }
+
+        return null;
+    }
+
+    public void RemoveFromSelectedRoads(Road r)
+    {
+        if (r == null)
+        {
+            Debug.Log("Road null in RemoveFromSelectedRoads in FlowManager");
+            return;
+        }
+
+        selectedRoads.Remove(r);
+    }
+
     #endregion
 
     #region Private Methods
@@ -446,12 +518,7 @@ public class FlowManager : MonoBehaviour {
             r.ReturnLinerenderer().startColor = c;
             r.ReturnLinerenderer().endColor = c;
 
-            float speed = 1.0f - flow;
-            if (speed < 0.1f)
-            {
-                speed = 0.1f;
-            }
-
+            float speed = flowCurve.Evaluate(1 - flow);
             r.AssignAntSpeed(AntManager.main.DefaultAntSpeed() * speed);
         }
     }
