@@ -231,7 +231,6 @@ public class WaypointSpawner : MonoBehaviour {
                 manager.SpawnWaypoint(WaypointManager.WaypointType.FARM_SITE, WaypointManager.Level.UNDER_GROUND, transitionwaypoint, adjust);
                 transitionwaypoint.Clear();
                 pickspawnlocation = false;
-                text.SetActive(false);
                 farmT = false;
                 tooClosePanel.SetActive(false);
                 selectSpawnLocation.SetActive(false);
@@ -282,7 +281,6 @@ public class WaypointSpawner : MonoBehaviour {
                 manager.SpawnWaypoint(WaypointManager.WaypointType.TRANSITION, WaypointManager.Level.UNDER_GROUND, transitionwaypoint, adjust);
                 transitionwaypoint.Clear();
                 pickspawnlocation = false;
-                text.SetActive(false);
                 transitionT = false;
                 tooClosePanel.SetActive(false);
                 selectSpawnLocation.SetActive(false);
@@ -332,7 +330,6 @@ public class WaypointSpawner : MonoBehaviour {
                 manager.SpawnWaypoint(WaypointManager.WaypointType.NURSERY_SITE, WaypointManager.Level.UNDER_GROUND, transitionwaypoint, adjust);
                 transitionwaypoint.Clear();
                 pickspawnlocation = false;
-                text.SetActive(false);
                 nurseT = false;
                 tooClosePanel.SetActive(false);
                 selectSpawnLocation.SetActive(false);
@@ -382,7 +379,6 @@ public class WaypointSpawner : MonoBehaviour {
                 manager.SpawnWaypoint(WaypointManager.WaypointType.TRASH_SITE, WaypointManager.Level.UNDER_GROUND, transitionwaypoint, adjust);
                 transitionwaypoint.Clear();
                 pickspawnlocation = false;
-                text.SetActive(false);
                 trashT = false;
                 tooClosePanel.SetActive(false);
                 selectSpawnLocation.SetActive(false);

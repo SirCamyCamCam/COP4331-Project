@@ -567,7 +567,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: ShowSpawnWaypointPanel
         m_Mode: 1
         m_Arguments:
@@ -8475,7 +8475,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: FarmT
         m_Mode: 1
         m_Arguments:
@@ -27770,7 +27770,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: NurseT
         m_Mode: 1
         m_Arguments:
@@ -37132,7 +37132,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: CancelSpawningWaypoint
         m_Mode: 1
         m_Arguments:
@@ -40001,7 +40001,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: pickconnectedF
         m_Mode: 1
         m_Arguments:
@@ -41344,7 +41344,7 @@ RectTransform:
   m_Children:
   - {fileID: 1576423845}
   m_Father: {fileID: 1051611852}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41730,7 +41730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: TransitionT
         m_Mode: 1
         m_Arguments:
@@ -58013,6 +58013,7 @@ GameObject:
   - component: {fileID: 1850984944}
   - component: {fileID: 1850984945}
   - component: {fileID: 1850984946}
+  - component: {fileID: 1850984947}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -58092,6 +58093,28 @@ MonoBehaviour:
   Exit: {fileID: 1097731662}
   AvgConsumption: {fileID: 2004619166}
   numSoldiers: {fileID: 2061274096}
+--- !u!114 &1850984947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850984943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e19e2a25fb98b4ba9b11a61c365c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectingConncected: {fileID: 402740181}
+  waypointOptionsPanel: {fileID: 1190810777}
+  spawnAntsPanel: {fileID: 1806583947}
+  startSpawnSequenceButton: {fileID: 16649046}
+  selectSpawnLocation: {fileID: 412043334}
+  tooClosePanel: {fileID: 1084105146}
+  lineMaterial: {fileID: 2100000, guid: 09f02ac000c657345bdce6d1ae8ed3d6, type: 2}
+  lineWidth: 0.3
+  manager: {fileID: 1901109182}
+  finder: {fileID: 1477167266}
+  text: {fileID: 0}
 --- !u!1 &1851846172
 GameObject:
   m_ObjectHideFlags: 0
@@ -60089,7 +60112,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850984946}
+      - m_Target: {fileID: 1850984947}
         m_MethodName: TrashT
         m_Mode: 1
         m_Arguments:
@@ -65764,7 +65787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2092847268
 RectTransform:
   m_ObjectHideFlags: 0

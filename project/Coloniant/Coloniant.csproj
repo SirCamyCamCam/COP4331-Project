@@ -315,6 +315,7 @@
     <Compile Include="Assets\Scripts\Ants\SoliderAnt.cs" />
     <Compile Include="Assets\Scripts\Ants\TrashHandlerAnt.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioCore.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraZoom.cs" />
     <Compile Include="Assets\Scripts\Core\GameManager.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="Assets\Scripts\Trash\TrashManager.cs" />
     <Compile Include="Assets\Scripts\UI\FadeTransition.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PopUps.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnExcavatorButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnForagerButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpawnGardenerButton.cs" />
