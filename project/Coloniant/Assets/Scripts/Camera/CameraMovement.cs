@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
     public float panSpeed;
     public Vector2 panLimit;
     public float scrollSpeed = 20f;
-    public float minHeight = -70;
+    public float minHeight = -24;
     public float maxHeight = -10;
 
     #endregion
@@ -39,7 +39,7 @@ public class CameraMovement : MonoBehaviour
         //If the player wants to move the camera faster
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            panSpeed = 4f;
+            panSpeed = 20f;
         }
         else
         {
