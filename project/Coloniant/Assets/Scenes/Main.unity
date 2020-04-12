@@ -17002,6 +17002,7 @@ MonoBehaviour:
   trashPrefab: {fileID: 1041157871625178, guid: 94fdc5c1832ba8446a85862cfc7a594a,
     type: 2}
   trashWeight: 0.01
+  trashDeleteTime: 60
 --- !u!4 &1012446842
 Transform:
   m_ObjectHideFlags: 0
@@ -29227,9 +29228,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aa544e40407674c972566e150dbfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaxAnts: 10
-  upgradeAnts: 10
+  defaultMaxAnts: 6
+  upgradeAnts: 2
   trashWeight: 0.5
+  upgradePercent: 0.7
+  widthMultiplyer: 0.2
+  maxWidth: 2.5
+  flowCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.11555481
+      value: 0.03779602
+      inSlope: 2.3560414
+      outSlope: 2.3560414
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17890495
+    - serializedVersion: 3
+      time: 1
+      value: 1.0126038
+      inSlope: 0.30976146
+      outSlope: 0.30976146
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.20112126
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1695610038
 Transform:
   m_ObjectHideFlags: 0

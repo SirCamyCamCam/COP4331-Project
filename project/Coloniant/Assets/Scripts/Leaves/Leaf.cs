@@ -107,6 +107,8 @@ public class Leaf : MonoBehaviour {
 
         Trash trash = trashGameObject.GetComponent<Trash>();
         trash.SetLayer(Trash.Layer.UNDERGROUND);
+        FlowManager.main.AddTrashToAllConnectedRoads(LeafManager.main.ReturnWaypointLeafIsAt(this));
+        trash.AssignOneWaypoint(LeafManager.main.ReturnWaypointLeafIsAt(this));
         TrashManager.main.CreatedNewTrash(trash);
         TrashManager.main.AddTrashToWaypoints(trash, LeafManager.main.ReturnWaypointLeafIsAt(this));
         LeafManager.main.LeafDeath(this, LeafManager.main.ReturnWaypointLeafIsAt(this));

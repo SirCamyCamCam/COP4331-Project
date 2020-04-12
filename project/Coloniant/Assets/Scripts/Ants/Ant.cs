@@ -241,6 +241,7 @@ public class Ant : MonoBehaviour {
         if (previousWaypoint == null)
         {
             TrashManager.main.AddTrashToWaypoints(trash, targetWaypoint.GetComponent<Waypoint>());
+            trash.AssignOneWaypoint(targetWaypoint.GetComponent<Waypoint>());
         }
         else
         {
@@ -256,7 +257,8 @@ public class Ant : MonoBehaviour {
                 TrashManager.main.AddTrashToWaypoints(trash, previousWaypoint.GetComponent<Waypoint>());
             }
 
-            FlowManager.main.AddTrashToRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+            trash.AssignConnectedWaypoint(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
+            FlowManager.main.RemoveAntFromRoad(targetWaypoint.GetComponent<Waypoint>(), previousWaypoint.GetComponent<Waypoint>());
         }
         
         Destroy(gameObject);
@@ -422,6 +424,9 @@ public class Ant : MonoBehaviour {
                 break;
             case AntType.SOLDIER:
                 gameObject.GetComponent<SoliderAnt>().DecideNextMove();
+                break;
+            case AntType.EXCAVATOR:
+                gameObject.GetComponent<ExcavatorAnt>().DecideNextMove();
                 break;
         }
     }

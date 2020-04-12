@@ -14,6 +14,16 @@ public class ExcavatorAnt : MonoBehaviour {
 
     [SerializeField]
     private Ant ant;
+    [SerializeField]
+    private float expansionTime;
+    [SerializeField]
+    private float waitToFindTime;
+
+    #endregion
+
+    #region Run-Time Fields
+
+    private FlowManager.Road road;
 
     #endregion
 
@@ -26,11 +36,11 @@ public class ExcavatorAnt : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        StartCoroutine(WaitToFindExpansion());
 	}
-	
-	// Update is called once per frame
-	/*void Update () {
+
+    // Update is called once per frame
+    /*void Update () {
 		
 	}*/
 
@@ -38,14 +48,75 @@ public class ExcavatorAnt : MonoBehaviour {
 
     #region Public Methods
 
-    public void IncreaseSize()
+    public void DecideNextMove()
     {
-
+        if (road != null)
+        {
+            StartCoroutine(WaitToIncreaseSize());
+            ant.AssignAntState(Ant.AntState.IDLE);
+        }
+        else
+        {
+            StartCoroutine(WaitToFindExpansion());
+            ant.AssignAntState(Ant.AntState.IDLE);
+        }
     }
 
-    public void FindExpansion()
-    {
+    #endregion
 
+    #region Private Methods
+
+    private void IncreaseSize()
+    {
+        if (road == null)
+        {
+            Debug.Log("Road null in IncreaseSize in ExcavatorAnt");
+            return;
+        }
+        road.AddToMaxAnts();
+        FlowManager.main.RemoveFromSelectedRoads(road);
+        road = null;
+        StartCoroutine(WaitToFindExpansion());
+        ant.AssignAntState(Ant.AntState.IDLE);
+    }
+
+    private void FindExpansion()
+    {
+        road = FlowManager.main.FindNeededExpansion();
+
+        if (road == null)
+        {
+            StartCoroutine(WaitToFindExpansion());
+            return;
+        }
+
+        List<GameObject> path1 = WaypointManager.main.SearchPathKnownTarget(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(), road.ReturnWaypoint1());
+        List<GameObject> path2 = WaypointManager.main.SearchPathKnownTarget(ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(), road.ReturnWaypoint2());
+
+        if (path1.Count <= path2.Count)
+        {
+            ant.AssignWaypointList(path1);
+        }
+        else
+        {
+            ant.AssignWaypointList(path2);
+        }
+    }
+
+    #endregion
+
+    #region Coroutines
+
+    private IEnumerator WaitToIncreaseSize()
+    {
+        yield return new WaitForSeconds(expansionTime);
+        IncreaseSize();
+    }
+
+    private IEnumerator WaitToFindExpansion()
+    {
+        yield return new WaitForSeconds(waitToFindTime);
+        FindExpansion();
     }
 
     #endregion

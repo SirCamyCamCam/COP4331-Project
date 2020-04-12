@@ -502,7 +502,7 @@ public class AntManager : MonoBehaviour{
 
     public void KillPercenatgeAnt(float percent)
     {
-        int numToKill = (int)(GetTotalAntCount() * percent);
+        int numToKill = (int)((float)GetTotalAntCount() * percent);
 
         for (int i = 0; i < numToKill; i++)
         {

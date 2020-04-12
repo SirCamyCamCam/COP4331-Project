@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antSpriteRenderer: {fileID: 212264057404952824}
-  lifeSeconds: 1000
+  lifeSeconds: 200
   antGameObject: {fileID: 1600199081064336}
   antType: 0
 --- !u!212 &212264057404952824
