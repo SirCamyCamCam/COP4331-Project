@@ -301,8 +301,8 @@ public class MainUIManager : MonoBehaviour {
             ratio = 0;
         }
 
-        foodRatioSlider.value = ratio;
-        Color c = new Color(ratio, 1 - ratio, 0, 1);
+        foodRatioSlider.value = 1 - ratio;
+        Color c = new Color(1 - ratio > 0.5 ? 2 - (2 * (1 - ratio)): 1, 1 - ratio < 0.5f ? (2 * (1 - ratio)): 1, 0, 1);
         foodSliderImage.color = c;
     }
 
@@ -327,8 +327,9 @@ public class MainUIManager : MonoBehaviour {
     // Updates the proteciton slider
     private void UpdateProtectionSlider()
     {
-        protectionRatioSlider.value =  ProtectionManager.main.ReturnCurrentPercentage();
-        Color c = new Color(1 - ProtectionManager.main.ReturnCurrentPercentage(), ProtectionManager.main.ReturnCurrentPercentage(), 0, 1);
+        float current = ProtectionManager.main.ReturnCurrentPercentage();
+        protectionRatioSlider.value = current;
+        Color c = new Color(current > 0.5f ? 2 - (2 * current) : 1, current < 0.5f ? (2 * current): 1, 0, 1);
         protectionSliderImage.color = c;
     }
 
@@ -359,15 +360,16 @@ public class MainUIManager : MonoBehaviour {
         }
         trashRatioSlider.value = ratio;
 
-        Color c = new Color(ratio, 1 - ratio, 0, 1);
+        Color c = new Color(ratio < 0.5f ? (2 * ratio) : 1, ratio > 0.5f ? 2 - (2 * ratio) : 1, 0, 1);
         trashSliderImage.color = c;
     }
 
     // Updates the flow slider
     private void UpdateFlowSlider()
     {
-        flowSlider.value = FlowManager.main.ReturnTotalFlow();
-        Color c = new Color(1 - FlowManager.main.ReturnTotalFlow(), FlowManager.main.ReturnTotalFlow(), 0, 1);
+        float ratio = FlowManager.main.ReturnTotalFlow();
+        flowSlider.value = ratio;
+        Color c = new Color(ratio > 0.5f ? 2 - (2 * ratio) : 1, ratio < 0.5f ? (2 * ratio) : 1, 0, 1);
         flowSliderImage.color = c;
     }
 

@@ -72,6 +72,10 @@ public class FlowManager : MonoBehaviour {
         public void RemoveAnAnt()
         {
             currentAnts -= 1;
+            if (currentAnts < 0)
+            {
+                currentAnts = 0;
+            }
         }
 
         public void AddToTrash()
@@ -82,6 +86,10 @@ public class FlowManager : MonoBehaviour {
         public void RemoveFromTrash()
         {
             trash -= 1;
+            if (trash < 0)
+            {
+                trash = 0;
+            }
         }
 
         public List<Waypoint> ReturnWaypointList()
@@ -514,7 +522,7 @@ public class FlowManager : MonoBehaviour {
                 flow = 1;
             }
 
-            Color c = new Color(flow, 1 - flow, 0, 1);
+            Color c = new Color(1 - flow > 0.5f ? 2 - (2 * (1 - flow)) : 1, (1 - flow) > 0.5f ? (2 * (1 - flow)) : 1, 0, 1);
             r.ReturnLinerenderer().startColor = c;
             r.ReturnLinerenderer().endColor = c;
 

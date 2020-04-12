@@ -45,7 +45,6 @@ public class OBJFinder : MonoBehaviour {
         }
         else
         {
-            print("failed grabbing waypoint");
             return null; 
         }
     }

@@ -349,7 +349,7 @@ public class Ant : MonoBehaviour {
     // Checks the distance between the ant and the waypoint
     private void CheckWaypointDistance()
     {
-        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < walkingWaypointDistance)
+        if (Vector2.Distance(antGameObject.transform.position, targetWaypoint.transform.position) < walkingWaypointDistance && antState != AntState.IDLE)
         {
             FindNextWayPoint();
         }
