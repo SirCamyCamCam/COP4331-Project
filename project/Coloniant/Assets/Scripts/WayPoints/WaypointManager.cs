@@ -57,22 +57,6 @@ public class WaypointManager : MonoBehaviour {
 
     #region Inspector Fields
 
-    [Header("Starter Waypoint Locations")]
-    [SerializeField]
-    private GameObject startNurseryPosition;
-    [SerializeField]
-    private GameObject startTrashPosition;
-    [SerializeField]
-    private GameObject startFarmPosition;
-    [SerializeField]
-    private GameObject startTransitionPosition;
-    [SerializeField]
-    private GameObject startEntrancePosition;
-    [SerializeField]
-    private GameObject startExitPostion;
-    [SerializeField]
-    private GameObject startLeafPostion;
-
     [Header("Line Renderer")]
     public Material lineMaterial;
     public float lineWidth;
@@ -84,6 +68,10 @@ public class WaypointManager : MonoBehaviour {
     [Header("Settings")]
     [SerializeField]
     private int maxAntsOnStart;
+    [SerializeField]
+    private float maxSpawnDistance;
+    [SerializeField]
+    private float minAllowedBetweenDistance;
 
     [Space(10)]
     [Header("Sprite Renderers")]
@@ -189,63 +177,132 @@ public class WaypointManager : MonoBehaviour {
         List<Waypoint> transitionWaypoint = new List<Waypoint>();
         List<Waypoint> entranceWaypoint = new List<Waypoint>();
         List<Waypoint> exitWaypoint = new List<Waypoint>();
-        // Spawn Transition point
-        transitionWaypoint.Add(
-            SpawnWaypoint(
-                WaypointType.TRANSITION,
-                Level.UNDER_GROUND, 
-                transitionWaypoint,
-                startTransitionPosition.transform.position
-                )
-            );
-        // Spawn farm point
-        SpawnWaypoint(
-            WaypointType.FARM_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startFarmPosition.transform.position
-            );
+        bool allowedSpawn = false;
+
+        while (allowedSpawn == false)
+        {
+            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+
+            Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance)
+            {
+                // Spawn Transition point
+                transitionWaypoint.Add(
+                    SpawnWaypoint(
+                        WaypointType.TRANSITION,
+                        Level.UNDER_GROUND,
+                        transitionWaypoint,
+                        spawn
+                        )
+                    );
+                break;
+            }
+        }
+
+        while (allowedSpawn == false)
+        {
+            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+
+            Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance 
+                && Vector2.Distance(transitionWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance)
+            {
+                // Spawn farm point
+                SpawnWaypoint(
+                    WaypointType.FARM_SITE,
+                    Level.UNDER_GROUND,
+                    transitionWaypoint,
+                    spawn
+                    );
+                break;
+            }
+        }
+
         // Spawn exit point
         exitWaypoint.Add(
             SpawnWaypoint(
                 WaypointType.EXIT,
                 Level.UNDER_GROUND,
-                transitionWaypoint, 
-                startExitPostion.transform.position
+                transitionWaypoint,
+                Vector2.zero
                 )
             );
-        // Spawn nursery point
-        SpawnWaypoint(
-            WaypointType.NURSERY_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startNurseryPosition.transform.position
-            );
+
+        while (allowedSpawn == false)
+        {
+            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+
+            Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance
+                && Vector2.Distance(transitionWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance
+                && Vector2.Distance(farmWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance)
+            {
+                // Spawn nursery point
+                SpawnWaypoint(
+                    WaypointType.NURSERY_SITE,
+                    Level.UNDER_GROUND,
+                    transitionWaypoint,
+                    spawn
+                    );
+                break;
+            }
+        }
+
         // Spawn entrance point
         entranceWaypoint.Add(
             SpawnWaypoint(
                 WaypointType.ENTRANCE,
                 Level.ABOVE_GROUND,
                 exitWaypoint,
-                startEntrancePosition.transform.position
+                Vector2.zero
                 )
             );
-        // Spawn trash site
-        SpawnWaypoint(
-            WaypointType.TRASH_SITE,
-            Level.UNDER_GROUND,
-            transitionWaypoint,
-            startTrashPosition.transform.position
-            );
-        // Spawn Leaf site
-        SpawnWaypoint(
-            WaypointType.LEAF_SITE,
-            Level.ABOVE_GROUND,
-            entranceWaypoint,
-            startLeafPostion.transform.position
-            );
 
-        Destroy(startNurseryPosition.transform.parent.gameObject);
+        while (allowedSpawn == false)
+        {
+            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+
+            Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance
+                && Vector2.Distance(transitionWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance
+                && Vector2.Distance(farmWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance
+                && Vector2.Distance(nurseryWaypoints[0].transform.position, spawn) > minAllowedBetweenDistance)
+            {
+                // Spawn trash site
+                SpawnWaypoint(
+                    WaypointType.TRASH_SITE,
+                    Level.UNDER_GROUND,
+                    transitionWaypoint,
+                    spawn
+                    );
+                break;
+            }
+        }
+
+
+        List<Waypoint> leaves = new List<Waypoint>();
+        leaves.Add(entranceWaypoint[0]);
+        for (int i = 0; i < 20; i++)
+        {
+
+            while (allowedSpawn == false)
+            {
+                float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+
+                Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+                break;
+            }
+        }
     }
     
     private List<GameObject> SearchWaypointPathRecursiveType(
