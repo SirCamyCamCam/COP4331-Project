@@ -3203,6 +3203,7 @@ GameObject:
   - component: {fileID: 1216956832}
   - component: {fileID: 1216956834}
   - component: {fileID: 1216956833}
+  - component: {fileID: 1216956835}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3225,8 +3226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -0.00597}
-  m_SizeDelta: {x: 1900, y: 1080}
+  m_AnchoredPosition: {x: -127, y: 46.8}
+  m_SizeDelta: {x: 2247.5, y: 1277.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216956833
 MonoBehaviour:
@@ -3262,6 +3263,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1216956831}
   m_CullTransparentMesh: 0
+--- !u!114 &1216956835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216956831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a0b6c9ba2b82e4c8572537ee86d025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {x: 300, y: -100}
+  moveTime: 40
+  backgroundTransform: {fileID: 1216956832}
 --- !u!1 &1316236654
 GameObject:
   m_ObjectHideFlags: 0

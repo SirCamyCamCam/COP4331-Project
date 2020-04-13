@@ -448,7 +448,8 @@ public class Ant : MonoBehaviour {
     // Waits the specified seconds to kill an ant
     private IEnumerator waitToKillAnt()
     {
-        yield return new WaitForSeconds(lifeSeconds);
+        int randomAddedSec = Random.Range(0, 150);
+        yield return new WaitForSeconds(lifeSeconds + randomAddedSec);
         Die();
     }
 

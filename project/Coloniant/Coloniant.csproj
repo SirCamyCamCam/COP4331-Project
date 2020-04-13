@@ -322,6 +322,7 @@
     <Compile Include="Assets\Scripts\Flow\FlowManager.cs" />
     <Compile Include="Assets\Scripts\Leaves\Leaf.cs" />
     <Compile Include="Assets\Scripts\Leaves\LeafManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\BackgroundParallax.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\MainMenu\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\Protection\ProtectionManager.cs" />
