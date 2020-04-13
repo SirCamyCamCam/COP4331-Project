@@ -125,6 +125,7 @@ public class AntManager : MonoBehaviour{
         AddAntsToSpawn(Ant.AntType.GARDENER);
         AddAntsToSpawn(Ant.AntType.SOLDIER);
         AddAntsToSpawn(Ant.AntType.SOLDIER);
+        AddAntsToSpawn(Ant.AntType.SOLDIER);
         AddAntsToSpawn(Ant.AntType.TRASH_HANDLER);
         UpdateFoodStatus();
     }

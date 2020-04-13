@@ -114,6 +114,10 @@ public class WaypointSpawner : MonoBehaviour {
         if(finder.Getgrab() != null)
         {
             reference = finder.Getgrab().GetComponent<Waypoint>(); 
+            if (reference.ReturnWaypointType() == WaypointManager.WaypointType.LEAF_SITE)
+            {
+                return null;
+            }
             transitionwaypoint.Add(reference);
 
             LineRenderer l = new GameObject().AddComponent<LineRenderer>();
@@ -219,7 +223,7 @@ public class WaypointSpawner : MonoBehaviour {
         {
             foreach (Waypoint way in manager.allWaypoints)
             {
-                if (Vector3.Distance(way.transform.position, adjust) < 10)
+                if (Vector3.Distance(way.transform.position, adjust) < 10 && way.ReturnWaypointType() != WaypointManager.WaypointType.LEAF_SITE)
                 {
                     tooClose = true;
                 }
