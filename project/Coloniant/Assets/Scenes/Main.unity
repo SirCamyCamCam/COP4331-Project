@@ -55983,7 +55983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Base Under Danger!
+  m_Text: 'Base Under Attack! '
 --- !u!222 &1767991976
 CanvasRenderer:
   m_ObjectHideFlags: 0
