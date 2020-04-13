@@ -96,9 +96,17 @@ public class ForagerAnt : MonoBehaviour {
 
     private void GoToLeafSite()
     {
-        List<GameObject> waypointList = WaypointManager.main.SearchPathUnknownTarget(
+        Waypoint target = WaypointManager.main.ReturnRandomLeafSite();
+
+        if (target == null)
+        {
+            ant.AssignAntState(Ant.AntState.IDLE);
+            StartCoroutine(waitToGoToLeafSite());
+            return;
+        }
+        List<GameObject> waypointList = WaypointManager.main.SearchPathKnownTarget(
             ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),
-            WaypointManager.WaypointType.LEAF_SITE
+            target
             );
 
         if (waypointList == null)
@@ -111,7 +119,7 @@ public class ForagerAnt : MonoBehaviour {
 
     private void GoToFarmSite()
     {
-        Waypoint targetFarm = LeafManager.main.FindFarmSite();
+        Waypoint targetFarm = WaypointManager.main.ReturnRandomFarmSite();
 
         if (targetFarm == null)
         {
@@ -119,6 +127,13 @@ public class ForagerAnt : MonoBehaviour {
             StartCoroutine(waitToGoToFarmSite());
             return;
         }
+
+        /*if (LeafManager.main.CheckFarmSiteFull(targetFarm) == true)
+        {
+            ant.AssignAntState(Ant.AntState.IDLE);
+            StartCoroutine(waitToGoToFarmSite());
+            return;
+        }*/
 
         List<GameObject> waypointList = WaypointManager.main.SearchPathKnownTarget(
             ant.ReturnCurrentWaypoint().GetComponent<Waypoint>(),

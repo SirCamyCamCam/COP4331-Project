@@ -881,6 +881,24 @@ public class WaypointManager : MonoBehaviour {
         return allWaypoints[random];
     }
 
+    public Waypoint ReturnRandomLeafSite()
+    {
+        int random = Random.Range(0, leafWaypoints.Count - 1);
+        return leafWaypoints[random];
+    }
+
+    public Waypoint ReturnRandomFarmSite()
+    {
+        int random = Random.Range(0, farmWaypoints.Count - 1);
+        return farmWaypoints[random];
+    }
+
+    public Waypoint ReturnRandomTrashSite()
+    {
+        int random = Random.Range(0, trashSitesWaypoint.Count - 1);
+        return trashSitesWaypoint[random];
+    }
+
     #endregion
 
     #region Coroutines

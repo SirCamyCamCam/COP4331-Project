@@ -85,7 +85,7 @@ public class TrashHandlerAnt : MonoBehaviour {
     {
         transportingTrash.MarkAsPickedUp();
         transportingTrash.DisableSprite();
-        Waypoint targetSite = TrashManager.main.FindDropOffSite();
+        Waypoint targetSite = WaypointManager.main.ReturnRandomTrashSite();
 
         if (targetSite == null)
         {
@@ -93,6 +93,13 @@ public class TrashHandlerAnt : MonoBehaviour {
             ant.AssignAntState(Ant.AntState.IDLE);
             return;
         }
+
+        /*if (TrashManager.main.CheckTrashSiteFull(targetSite) == true)
+        {
+            StartCoroutine(WaitToFindDropOffSite());
+            ant.AssignAntState(Ant.AntState.IDLE);
+            return;
+        }*/
 
         if (trashConnectedWaypoint != null)
         {

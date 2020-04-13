@@ -191,6 +191,7 @@ public class TrashManager : MonoBehaviour {
         }
 
         trashWaitingWaypoints.Add(trash, waypoint);
+        
     }
 
     // Returns the waypoint to which the ant must go before the trash
