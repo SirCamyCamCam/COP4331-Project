@@ -72,6 +72,14 @@ public class WaypointManager : MonoBehaviour {
     private float maxSpawnDistance;
     [SerializeField]
     private float minAllowedBetweenDistance;
+    [SerializeField]
+    private float maxLeafSpawnDistance;
+    [SerializeField]
+    private float minLeafBetweenDistance;
+    [SerializeField]
+    private float maxLeafConnectedDistance;
+    [SerializeField]
+    private bool spawnLeavesRandomly;
 
     [Space(10)]
     [Header("Sprite Renderers")]
@@ -89,6 +97,11 @@ public class WaypointManager : MonoBehaviour {
     private Sprite enterSprite;
     [SerializeField]
     private Sprite leafSprite;
+
+    [Space(5)]
+    [Header("Dependencies")]
+    [SerializeField]
+    private GameObject[] leafSpawns;
 
     #endregion
 
@@ -144,15 +157,126 @@ public class WaypointManager : MonoBehaviour {
         flowUpdateTime = GameManager.main.FlowUpdateSeconds();
         StartCoroutine(waitToUpdateOverallFlow());
 	}
-	
-	// Update is called once per frame
-	/*void Update () {
-        
-	}*/
 
     #endregion
 
     #region Private Methods
+
+    private void SpawnTheLEaves()
+    {
+        bool allowedSpawn = false;
+        List<Waypoint> leaves = new List<Waypoint>();
+        for (int j = 0; j < 4; j++)
+        {
+            Debug.Log("New J!");
+            leaves.Add(entranceWaypoints[0]);
+            for (int i = 0; i < 20; i++)
+            {
+                Debug.Log("New Waypoint!");
+                while (allowedSpawn == false)
+                {
+                    Debug.Log("Finding a new spawn location");
+                    float randomX = 0;
+                    float randomY = 0;
+
+                    if (j == 0)
+                    {
+                        randomX = Random.Range(0, i * maxLeafSpawnDistance);
+                        randomY = Random.Range(0, i * maxLeafSpawnDistance);
+                    }
+                    else if (j == 1)
+                    {
+                        randomX = Random.Range(-(i * maxLeafSpawnDistance), 0);
+                        randomY = Random.Range(0, (i * maxLeafSpawnDistance));
+                    }
+                    else if (j == 2)
+                    {
+                        randomX = Random.Range(-(i * maxLeafSpawnDistance), 0);
+                        randomY = Random.Range(-(i * maxLeafSpawnDistance), 0);
+                    }
+                    else if (j == 3)
+                    {
+                        randomX = Random.Range(0, i * maxLeafSpawnDistance);
+                        randomY = Random.Range(-(i * maxLeafSpawnDistance), 0);
+                    }
+
+                    Vector3 spawn = new Vector3(randomX, randomY, 0);
+
+                    bool allowedInAll = true;
+
+                    for (int l = 0; l < ReturnLeafList().Count; l++)
+                    {
+                        if (Vector2.Distance(spawn, ReturnLeafList()[l].transform.position) < minLeafBetweenDistance)
+                        {
+                            allowedInAll = false;
+                        }
+                    }
+
+                    if (ReturnLeafList().Count == 0)
+                    {
+                        if (Vector2.Distance(spawn, Vector2.zero) < minAllowedBetweenDistance)
+                        {
+                            allowedInAll = false;
+                        }
+                    }
+
+                    if (allowedInAll == true)
+                    {
+                        Debug.Log("Found a valid spawn position!");
+                        int randomAllowedConnection = Random.Range(3, 6);
+                        int randomNumConncected = Random.Range(1, leaves.Count / randomAllowedConnection);
+                        if (randomNumConncected == 0)
+                        {
+                            randomNumConncected = 1;
+                        }
+
+                        List<Waypoint> randomChosen = new List<Waypoint>();
+
+                        for (int k = 0; k < randomNumConncected; k++)
+                        {
+                            for (int p = 0; p < leaves.Count - 1; p++)
+                            {
+                                int randomNum = Random.Range(0, leaves.Count - 1);
+                                Waypoint chosen = leaves[randomNum];
+                                if (randomChosen.Contains(chosen) == false && Vector2.Distance(spawn, chosen.transform.position) < maxLeafConnectedDistance)
+                                {
+                                    randomChosen.Add(chosen);
+                                    Debug.Log("Found a valid connection candidate!");
+                                }
+                            }
+
+                            if (randomChosen.Count == 0)
+                            {
+                                Debug.Log("Didn't find any valid canidates");
+                                Waypoint w = null;
+                                float minDistance = int.MaxValue;
+                                foreach (Waypoint way in leaves)
+                                {
+                                    if (Vector2.Distance(spawn, way.transform.position) < minDistance)
+                                    {
+                                        w = way;
+                                        minDistance = Vector2.Distance(spawn, way.transform.position);
+                                    }
+                                }
+
+                                randomChosen.Add(w);
+                            }
+                        }
+
+                        SpawnWaypoint(
+                            WaypointType.LEAF_SITE,
+                            Level.ABOVE_GROUND,
+                            randomChosen,
+                            spawn
+                            );
+                        break;
+                    }
+                }
+            }
+
+            leaves.Clear();
+        }
+    }
 
     // Updates all the flow values
     private void UpdateFlowValues()
@@ -179,14 +303,37 @@ public class WaypointManager : MonoBehaviour {
         List<Waypoint> exitWaypoint = new List<Waypoint>();
         bool allowedSpawn = false;
 
+        int randomDirection = Random.Range(0, 3);
+
         while (allowedSpawn == false)
         {
-            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomX = 0;
+            float randomY = 0;
+
+            if (randomDirection == 0)
+            {
+                randomX = Random.Range(-maxSpawnDistance / 3, 0);
+                randomY = Random.Range(-maxSpawnDistance / 3, maxSpawnDistance / 3);
+            }
+            else if (randomDirection == 1)
+            {
+                randomX = Random.Range(0, maxSpawnDistance / 3);
+                randomY = Random.Range(-maxSpawnDistance / 3, maxSpawnDistance / 3);
+            }
+            else if (randomDirection == 2)
+            {
+                randomX = Random.Range(-maxSpawnDistance / 3, maxSpawnDistance / 3);
+                randomY = Random.Range(-maxSpawnDistance / 3, 0);
+            }
+            else if (randomDirection == 3)
+            {
+                randomX = Random.Range(-maxSpawnDistance / 3, maxSpawnDistance / 3);
+                randomY = Random.Range(0, maxSpawnDistance / 3);
+            }
 
             Vector3 spawn = new Vector3(randomX, randomY, 0);
 
-            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance)
+            if (Vector2.Distance(Vector2.zero, spawn) > minAllowedBetweenDistance / 1.5f)
             {
                 // Spawn Transition point
                 transitionWaypoint.Add(
@@ -203,8 +350,29 @@ public class WaypointManager : MonoBehaviour {
 
         while (allowedSpawn == false)
         {
-            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomX = 0;
+            float randomY = 0;
+
+            if (randomDirection == 0)
+            {
+                randomX = Random.Range(-maxSpawnDistance, 0);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 1)
+            {
+                randomX = Random.Range(0, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 2)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, 0);
+            }
+            else if (randomDirection == 3)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(0, maxSpawnDistance);
+            }
 
             Vector3 spawn = new Vector3(randomX, randomY, 0);
 
@@ -234,8 +402,29 @@ public class WaypointManager : MonoBehaviour {
 
         while (allowedSpawn == false)
         {
-            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomX = 0;
+            float randomY = 0;
+
+            if (randomDirection == 0)
+            {
+                randomX = Random.Range(-maxSpawnDistance, 0);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 1)
+            {
+                randomX = Random.Range(0, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 2)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, 0);
+            }
+            else if (randomDirection == 3)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(0, maxSpawnDistance);
+            }
 
             Vector3 spawn = new Vector3(randomX, randomY, 0);
 
@@ -266,8 +455,29 @@ public class WaypointManager : MonoBehaviour {
 
         while (allowedSpawn == false)
         {
-            float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-            float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            float randomX = 0;
+            float randomY = 0;
+
+            if (randomDirection == 0)
+            {
+                randomX = Random.Range(-maxSpawnDistance, 0);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 1)
+            {
+                randomX = Random.Range(0, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+            }
+            else if (randomDirection == 2)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(-maxSpawnDistance, 0);
+            }
+            else if (randomDirection == 3)
+            {
+                randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
+                randomY = Random.Range(0, maxSpawnDistance);
+            }
 
             Vector3 spawn = new Vector3(randomX, randomY, 0);
 
@@ -287,20 +497,20 @@ public class WaypointManager : MonoBehaviour {
             }
         }
 
-
-        List<Waypoint> leaves = new List<Waypoint>();
-        leaves.Add(entranceWaypoint[0]);
-        for (int i = 0; i < 20; i++)
+        if (spawnLeavesRandomly == true)
         {
-
-            while (allowedSpawn == false)
+            SpawnTheLEaves();
+        }
+        else
+        {
+            foreach (GameObject g in leafSpawns)
             {
-                float randomX = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-                float randomY = Random.Range(-maxSpawnDistance, maxSpawnDistance);
-
-                Vector3 spawn = new Vector3(randomX, randomY, 0);
-
-                break;
+                SpawnWaypoint(
+                    WaypointType.LEAF_SITE,
+                    Level.ABOVE_GROUND,
+                    entranceWaypoint,
+                    g.transform.position
+                    );
             }
         }
     }

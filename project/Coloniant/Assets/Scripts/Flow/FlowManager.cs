@@ -522,7 +522,7 @@ public class FlowManager : MonoBehaviour {
                 flow = 1;
             }
 
-            Color c = new Color(1 - flow > 0.5f ? 2 - (2 * (1 - flow)) : 1, (1 - flow) > 0.5f ? (2 * (1 - flow)) : 1, 0, 1);
+            Color c = new Color(1 - flow > 0.5f ? 2 - (2 * (1 - flow)) : 1, (1 - flow) < 0.5f ? (2 * (1 - flow)) : 1, 0, 1);
             r.ReturnLinerenderer().startColor = c;
             r.ReturnLinerenderer().endColor = c;
 
